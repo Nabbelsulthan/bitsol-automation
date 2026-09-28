@@ -7,7 +7,7 @@ import consultancyImage from '../../assets/service/consultancy.png';
 
 import dgControlImage from '../../assets/service/dg-control.png';
 import conveyingBatchingImage from '../../assets/service/conveying-batching.png';
-import vacuumFurnaceImage from '../../assets/service/vacuum-furnace.png';
+import vacuumFurnaceImage from '../../assets/service/vaccum-furnace.png';
 import scadaHmiImage from '../../assets/service/scada-hmi.png';
 import spmControlImage from '../../assets/service/spm-control.png';
 import energyManagementImage from '../../assets/service/energy-management.png';

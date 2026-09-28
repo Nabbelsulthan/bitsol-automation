@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Products.css";
-
-
+import plc from "../../assets/products/plc.png";
+import scada from "../../assets/products/scada.png";
+import hmi from "../../assets/products/hmi.png";
+import vfd from "../../assets/products/vfd.png";
+import software from "../../assets/products/software.png";
+import panel from "../../assets/products/panel.png";
+import sensors from "../../assets/products/sensors.png"
 /* =========================================================
    PRODUCT DATA
    ========================================================= */
@@ -15,6 +20,7 @@ const products = [
         code: "PLC",
         category: "CONTROL",
         title: "Programmable Logic Controllers",
+
         description:
             "PLC systems provide the logic and control layer behind machines, production lines and industrial processes.",
         applications: [
@@ -34,7 +40,7 @@ const products = [
             "Omron",
             "Mitsubishi",
         ],
-        image: null,
+        image: plc,
         tone: "warm",
     },
 
@@ -54,7 +60,7 @@ const products = [
             "Production Monitoring",
         ],
         brands: [],
-        image: null,
+        image: scada,
         tone: "cool",
     },
 
@@ -74,7 +80,7 @@ const products = [
             "Operator Interfaces",
         ],
         brands: [],
-        image: null,
+        image: hmi,
         tone: "pearl",
     },
 
@@ -94,7 +100,7 @@ const products = [
             "Industrial Machinery",
         ],
         brands: [],
-        image: null,
+        image: vfd,
         tone: "sage",
     },
 
@@ -114,7 +120,7 @@ const products = [
             "Industrial Monitoring",
         ],
         brands: [],
-        image: null,
+        image: software,
         tone: "sand",
     },
 
@@ -134,7 +140,7 @@ const products = [
             "Industrial Equipment",
         ],
         brands: [],
-        image: null,
+        image: panel,
         tone: "stone",
     },
 
@@ -154,29 +160,29 @@ const products = [
             "Industrial Automation",
         ],
         brands: [],
-        image: null,
+        image: sensors,
         tone: "mist",
     },
 
-    {
-        id: "sms",
-        number: "08",
-        code: "SMS",
-        category: "APPLICATION",
-        title: "Industrial Monitoring & Alerts",
-        description:
-            "Application-based notification solutions deliver equipment, alarm and process information through automated messaging.",
-        applications: [
-            "Alarm Notifications",
-            "Equipment Alerts",
-            "Process Notifications",
-            "Remote Status Updates",
-            "Industrial Monitoring",
-        ],
-        brands: [],
-        image: null,
-        tone: "rose",
-    },
+    // {
+    //     id: "sms",
+    //     number: "08",
+    //     code: "SMS",
+    //     category: "APPLICATION",
+    //     title: "Industrial Monitoring & Alerts",
+    //     description:
+    //         "Application-based notification solutions deliver equipment, alarm and process information through automated messaging.",
+    //     applications: [
+    //         "Alarm Notifications",
+    //         "Equipment Alerts",
+    //         "Process Notifications",
+    //         "Remote Status Updates",
+    //         "Industrial Monitoring",
+    //     ],
+    //     brands: [],
+    //     image: null,
+    //     tone: "rose",
+    // },
 ];
 
 
@@ -187,9 +193,8 @@ const products = [
 function ProductSpecimen({ product, featured = false }) {
     return (
         <div
-            className={`product-specimen product-specimen--${product.tone} ${
-                featured ? "product-specimen--featured" : ""
-            }`}
+            className={`product-specimen product-specimen--${product.tone} ${featured ? "product-specimen--featured" : ""
+                }`}
         >
 
             <div className="specimen-head">
@@ -795,11 +800,10 @@ export default function Products() {
                                 <article
                                     key={product.id}
                                     id={`product-${product.id}`}
-                                    className={`product-story ${
-                                        index % 2 === 1
+                                    className={`product-story ${index % 2 === 1
                                             ? "product-story--reverse"
                                             : ""
-                                    }`}
+                                        }`}
                                 >
 
 

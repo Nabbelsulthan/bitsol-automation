@@ -17,12 +17,22 @@ import {
 
 import heroImage
     from "../../assets/images/bitsol-hero5.jpg";
+    
 
 import heroImageTwo
     from "../../assets/images/bitsol-hero2.png";
 
 import heroImageThree
     from "../../assets/images/bitsol-hero4.png";
+
+import heroImageSystemOne
+    from "../../assets/images/bitsol-hero.png";
+
+import heroImageSystemTwo
+    from "../../assets/images/bitsol-hero1.png";
+
+import heroImageSystemThree
+    from "../../assets/images/bitsol-hero3.png";
 
 
 import BrandsWeDeal
@@ -59,6 +69,96 @@ const heroScenes = [
     {
         id: 1,
 
+        image: heroImageSystemOne,
+
+        isSystemVisual: true,
+
+        eyebrow:
+            "SCADA & HMI SYSTEMS",
+
+        titleLine1:
+            "WE VISUALIZE",
+
+        titleLine2:
+            "THE PROCESS",
+
+        titleAccent:
+            "IN REAL TIME.",
+
+        description:
+            "Operator HMI and SCADA interfaces designed to make complex industrial processes easier to monitor and control.",
+
+        sideLabels: [
+            "HMI",
+            "SCADA",
+            "PROCESS CONTROL"
+        ]
+    },
+
+
+    {
+        id: 2,
+
+        image: heroImageSystemTwo,
+
+        isSystemVisual: true,
+
+        eyebrow:
+            "PLC & SCADA INTEGRATION",
+
+        titleLine1:
+            "WE CONNECT",
+
+        titleLine2:
+            "THE PLANT",
+
+        titleAccent:
+            "FROM CONTROL TO SCADA.",
+
+        description:
+            "PLC, field devices, networks and supervisory systems brought together into one clear industrial control environment.",
+
+        sideLabels: [
+            "PLC",
+            "NETWORKS",
+            "SCADA"
+        ]
+    },
+
+
+    {
+        id: 3,
+
+        image: heroImageSystemThree,
+
+        isSystemVisual: true,
+
+        eyebrow:
+            "INDUSTRIAL PROCESS CONTROL",
+
+        titleLine1:
+            "WE MAKE",
+
+        titleLine2:
+            "COMPLEX PROCESSES",
+
+        titleAccent:
+            "EASIER TO CONTROL.",
+
+        description:
+            "Process visualization that gives operators a clear view of equipment, operating conditions and production status.",
+
+        sideLabels: [
+            "MIMIC",
+            "PROCESS",
+            "MONITORING"
+        ]
+    },
+
+
+    {
+        id: 4,
+
         image: heroImage,
 
         eyebrow:
@@ -85,7 +185,7 @@ const heroScenes = [
 
 
     {
-        id: 2,
+        id: 5,
 
         image: heroImageTwo,
 
@@ -113,7 +213,7 @@ const heroScenes = [
 
 
     {
-        id: 3,
+        id: 6,
 
         image: heroImageThree,
 
@@ -293,44 +393,36 @@ const Home = () => {
 
 
 
+
     /* =====================================================
-       HERO CAROUSEL
+   HERO CAROUSEL
 
-       IMPORTANT:
+   The timer resets after every slide change.
+   This means:
+   - Automatic change → 6 seconds
+   - Manual arrow click → fresh 6 seconds
+   - Dot click → fresh 6 seconds
 
-       The timer is independent from image dimensions.
-
-       The hero itself is always 100svh.
-       ===================================================== */
+   The visitor always gets the full 6 seconds
+   to view the newly selected slide.
+   ===================================================== */
 
     useEffect(() => {
-
         if (introVisible) {
             return;
         }
 
-
-        const timer =
-            window.setInterval(() => {
-
-                setActiveSlide(
-                    previous =>
-                        (
-                            previous + 1
-                        ) %
-                        heroScenes.length
-                );
-
-            }, HERO_INTERVAL);
-
+        const timer = window.setTimeout(() => {
+            setActiveSlide(previous =>
+                (previous + 1) % heroScenes.length
+            );
+        }, HERO_INTERVAL);
 
         return () => {
-
-            window.clearInterval(timer);
-
+            window.clearTimeout(timer);
         };
 
-    }, [introVisible]);
+    }, [activeSlide, introVisible]);
 
 
 
@@ -343,6 +435,34 @@ const Home = () => {
 
             setActiveSlide(
                 index
+            );
+
+        };
+
+
+    const goToPreviousSlide =
+        () => {
+
+            setActiveSlide(
+                previous =>
+                    (
+                        previous - 1 + heroScenes.length
+                    ) %
+                    heroScenes.length
+            );
+
+        };
+
+
+    const goToNextSlide =
+        () => {
+
+            setActiveSlide(
+                previous =>
+                    (
+                        previous + 1
+                    ) %
+                    heroScenes.length
             );
 
         };
@@ -551,7 +671,13 @@ const Home = () => {
 
             <section
                 id="home"
-                className="home-hero"
+                className={`
+                    home-hero
+                    ${currentScene.isSystemVisual
+                        ? "home-hero--system"
+                        : ""
+                    }
+                `}
             >
 
 
@@ -618,10 +744,14 @@ const Home = () => {
                                     `${currentScene.eyebrow} - Bitsol Automation`
                                 }
 
-                                className="
+                                className={`
                                     home-hero__image
                                     kenburns-right
-                                "
+                                    ${currentScene.isSystemVisual
+                                        ? "home-hero__image--system"
+                                        : ""
+                                    }
+                                `}
                             />
 
                         </motion.div>
@@ -1051,6 +1181,16 @@ const Home = () => {
                     "
                 >
 
+                    <button
+                        type="button"
+                        className="home-hero__carousel-arrow home-hero__carousel-arrow--prev"
+                        aria-label="Previous hero slide"
+                        onClick={goToPreviousSlide}
+                    >
+                        <span aria-hidden="true">‹</span>
+                    </button>
+
+
                     <div
                         className="
                             home-hero__carousel-count
@@ -1083,7 +1223,12 @@ const Home = () => {
                                 home-hero__carousel-total
                             "
                         >
-                            03
+                            {String(
+                                heroScenes.length
+                            ).padStart(
+                                2,
+                                "0"
+                            )}
                         </span>
 
                     </div>
@@ -1111,17 +1256,15 @@ const Home = () => {
                                         type="button"
 
                                         aria-label={
-                                            `Show hero slide ${
-                                                index + 1
+                                            `Show hero slide ${index + 1
                                             }`
                                         }
 
                                         className={`
                                             home-hero__carousel-dot
-                                            ${
-                                                activeSlide === index
-                                                    ? "is-active"
-                                                    : ""
+                                            ${activeSlide === index
+                                                ? "is-active"
+                                                : ""
                                             }
                                         `}
 
@@ -1141,6 +1284,16 @@ const Home = () => {
                         }
 
                     </div>
+
+
+                    <button
+                        type="button"
+                        className="home-hero__carousel-arrow home-hero__carousel-arrow--next"
+                        aria-label="Next hero slide"
+                        onClick={goToNextSlide}
+                    >
+                        <span aria-hidden="true">›</span>
+                    </button>
 
                 </div>
 
