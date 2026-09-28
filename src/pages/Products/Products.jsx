@@ -254,7 +254,7 @@ export default function Products() {
         AOS.init({
             duration: 850,
             easing: "ease-out-cubic",
-            once: true,
+            once: false,
             offset: 80,
         });
 

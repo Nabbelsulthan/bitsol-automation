@@ -1,12 +1,21 @@
 /* =========================================================
    BITSOL AUTOMATION
    WHY CHOOSE US
+   PREMIUM INDUSTRIAL EDITORIAL
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION
    ========================================================= */
 
 .why-choose {
     position: relative;
+
     width: 100%;
+
     background: var(--color-background);
+
     overflow: hidden;
 }
 
@@ -23,7 +32,14 @@
 
     margin-inline: auto;
 
-    padding-block: var(--section-padding-large);
+    /*
+        Extra top space prevents the fixed navbar
+        from covering the heading.
+    */
+
+    padding-top: 150px;
+
+    padding-bottom: var(--section-padding-large);
 }
 
 
@@ -34,51 +50,20 @@
 .why-choose__header {
     display: grid;
 
-    grid-template-columns:
-        220px
-        minmax(0, 1fr);
+    grid-template-columns: 180px minmax(0, 1fr);
 
-    gap: var(--space-12);
+    gap: 70px;
 
-    padding-bottom: var(--space-12);
-
-    border-bottom:
-        1px solid
-        var(--color-border);
+    padding-bottom: 85px;
 }
 
-
-/* =========================================================
-   LABEL
-   ========================================================= */
 
 .why-choose__label {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: var(--space-3);
-
-    padding-top: 10px;
-}
-
-.why-choose__label-line {
-    width: 30px;
-    height: 2px;
-
-    margin-top: 7px;
-
-    flex-shrink: 0;
-
-    background: var(--color-primary);
-}
-
-.why-choose__label-main {
-    display: block;
+    padding-top: 15px;
 
     font-family: var(--font-body);
 
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
 
     font-weight: var(--font-weight-semibold);
 
@@ -87,68 +72,50 @@
     color: var(--color-primary);
 }
 
-.why-choose__label-year {
-    display: block;
-
-    margin-top: var(--space-2);
-
-    font-family: var(--font-body);
-
-    font-size: var(--font-size-xs);
-
-    font-weight: var(--font-weight-medium);
-
-    letter-spacing: 0.08em;
-
-    color: var(--color-text-muted);
-}
-
 
 /* =========================================================
    HEADING
    ========================================================= */
 
-.why-choose__heading h2 {
-    max-width: 900px;
+.why-choose__heading {
+    max-width: 1100px;
+}
 
+
+.why-choose__heading h2 {
     margin: 0;
 
     font-family: var(--font-heading);
 
     font-size: clamp(
-        4.2rem,
-        8vw,
-        8rem
+        4.5rem,
+        8.5vw,
+        9rem
     );
 
     font-weight: var(--font-weight-bold);
 
-    line-height: 0.84;
+    line-height: 0.82;
 
-    letter-spacing: -0.07em;
+    letter-spacing: -0.08em;
 
     color: var(--color-heading);
 }
+
 
 .why-choose__heading h2 span {
     color: var(--color-primary);
 }
 
 
-/* =========================================================
-   INTRO
-   ========================================================= */
-
 .why-choose__heading p {
     max-width: 680px;
 
-    margin: var(--space-8) 0 0;
-
-    padding-left: var(--space-5);
-
-    border-left:
-        3px solid
-        var(--color-primary);
+    margin:
+        42px
+        0
+        0
+        4px;
 
     font-family: var(--font-body);
 
@@ -161,293 +128,75 @@
 
 
 /* =========================================================
-   REASONS
+   MAIN CONTENT
    ========================================================= */
 
-.why-choose__reasons {
-    margin-top: var(--space-12);
-
-    border-top:
-        1px solid
-        var(--color-border);
-}
-
-
-/* =========================================================
-   REASON ROW
-   ========================================================= */
-
-.why-choose__reason {
-    position: relative;
-
+.why-choose__content {
     display: grid;
 
     grid-template-columns:
-        90px
-        minmax(300px, 0.8fr)
-        minmax(0, 1.2fr);
+        minmax(0, 0.95fr)
+        minmax(0, 1.35fr);
 
-    align-items: center;
+    gap: 18px;
 
-    gap: var(--space-10);
-
-    min-height: 135px;
-
-    padding:
-        var(--space-6)
-        var(--space-2);
-
-    border-bottom:
-        1px solid
-        var(--color-border);
-
-    transition:
-        background var(--transition-normal),
-        padding var(--transition-normal);
+    align-items: stretch;
 }
 
 
 /* =========================================================
-   HOVER
+   FEATURE CARD
    ========================================================= */
 
-.why-choose__reason:hover {
-    background: var(--color-surface);
-
-    padding-left: var(--space-5);
-}
-
-
-/* =========================================================
-   NUMBER
-   ========================================================= */
-
-.why-choose__number {
-    font-family: var(--font-heading);
-
-    font-size: var(--font-size-3xl);
-
-    font-weight: var(--font-weight-bold);
-
-    line-height: 1;
-
-    letter-spacing: -0.04em;
-
-    color: var(--color-primary);
-}
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.why-choose__reason-title {
-    font-family: var(--font-heading);
-
-    font-size: var(--font-size-2xl);
-
-    font-weight: var(--font-weight-bold);
-
-    line-height: 1.05;
-
-    letter-spacing: -0.03em;
-
-    color: var(--color-heading);
-
-    transition:
-        transform var(--transition-spring),
-        color var(--transition-normal);
-}
-
-.why-choose__reason:hover
-.why-choose__reason-title {
-    color: var(--color-primary);
-
-    transform: translateX(5px);
-}
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
-.why-choose__reason-text {
-    max-width: 560px;
-
-    margin: 0;
-
-    font-family: var(--font-body);
-
-    font-size: var(--font-size-base);
-
-    line-height: 1.65;
-
-    color: var(--color-text-muted);
-}
-
-
-/* =========================================================
-   ACTIVE RED LINE
-   ========================================================= */
-
-.why-choose__reason::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    width: 3px;
-
-    background: var(--color-primary);
-
-    transform: scaleY(0);
-
-    transform-origin: center;
-
-    transition:
-        transform var(--transition-spring);
-}
-
-.why-choose__reason:hover::before {
-    transform: scaleY(1);
-}
-
-
-/* =========================================================
-   SCROLL ANIMATION ENHANCEMENT
-   ========================================================= */
-
-.why-choose__reason[data-aos="fade-up"] {
-    opacity: 0;
-
-    transform:
-        translateY(45px);
-
-    transition-property:
-        opacity,
-        transform,
-        background,
-        padding;
-
-    transition-duration:
-        800ms,
-        800ms,
-        var(--transition-normal),
-        var(--transition-normal);
-
-    transition-timing-function:
-        cubic-bezier(0.22, 1, 0.36, 1),
-        cubic-bezier(0.22, 1, 0.36, 1),
-        ease,
-        ease;
-}
-
-.why-choose__reason[data-aos="fade-up"].aos-animate {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   ALTERNATING SCROLL ENTRANCE
-   ========================================================= */
-
-.why-choose__reason:nth-child(odd)[data-aos="fade-up"] {
-    transform:
-        translateY(45px)
-        translateX(-18px);
-}
-
-.why-choose__reason:nth-child(even)[data-aos="fade-up"] {
-    transform:
-        translateY(45px)
-        translateX(18px);
-}
-
-.why-choose__reason:nth-child(odd)[data-aos="fade-up"].aos-animate,
-.why-choose__reason:nth-child(even)[data-aos="fade-up"].aos-animate {
-    transform:
-        translateY(0)
-        translateX(0);
-}
-
-
-/* =========================================================
-   CTA
-   ========================================================= */
-
-.why-choose__cta {
+.why-choose__feature {
     position: relative;
 
     display: flex;
 
-    align-items: center;
+    flex-direction: column;
 
     justify-content: space-between;
 
-    gap: var(--space-8);
+    min-height: 600px;
 
-    margin-top: var(--space-8);
-
-    padding:
-        var(--space-6)
-        var(--space-8);
+    padding: 42px;
 
     background: var(--color-dark);
+
+    border-radius: var(--radius-md);
 
     overflow: hidden;
 }
 
 
-/* =========================================================
-   CTA GLOW
-   ========================================================= */
+.why-choose__feature-number {
+    font-family: var(--font-heading);
 
-.why-choose__cta::before {
-    content: "";
+    font-size: clamp(
+        5rem,
+        9vw,
+        9rem
+    );
 
-    position: absolute;
+    font-weight: var(--font-weight-bold);
 
-    width: 320px;
-    height: 320px;
+    line-height: 0.75;
 
-    right: -110px;
-    top: -160px;
+    letter-spacing: -0.09em;
 
-    border-radius: var(--radius-full);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(246, 36, 64, 0.22),
-            transparent 70%
-        );
-
-    animation:
-        why-choose-cta-glow
-        5s ease-in-out infinite;
+    color: var(--color-primary);
 }
 
 
-/* =========================================================
-   CTA COPY
-   ========================================================= */
-
-.why-choose__cta-copy {
-    position: relative;
-
-    z-index: 1;
+.why-choose__feature-body {
+    max-width: 460px;
 }
 
-.why-choose__cta-copy span {
+
+.why-choose__feature-kicker {
     display: block;
 
-    margin-bottom: var(--space-2);
+    margin-bottom: 20px;
 
     font-family: var(--font-body);
 
@@ -455,50 +204,259 @@
 
     font-weight: var(--font-weight-semibold);
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
 
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.5);
 }
 
-.why-choose__cta-copy strong {
-    display: block;
+
+.why-choose__feature-body h3 {
+    margin: 0;
 
     font-family: var(--font-heading);
 
-    font-size: var(--font-size-2xl);
+    font-size: clamp(
+        4rem,
+        7vw,
+        7rem
+    );
 
     font-weight: var(--font-weight-bold);
 
-    line-height: 1;
+    line-height: 0.78;
 
-    letter-spacing: -0.03em;
+    letter-spacing: -0.08em;
 
     color: var(--color-white);
 }
 
 
+.why-choose__feature-body p {
+    max-width: 420px;
+
+    margin: 30px 0 0;
+
+    font-family: var(--font-body);
+
+    font-size: var(--font-size-base);
+
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+
 /* =========================================================
-   CTA BUTTON
+   RIGHT SIDE LIST
    ========================================================= */
 
-.why-choose__cta-button {
-    position: relative;
+.why-choose__list {
+    display: grid;
 
-    z-index: 2;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
+    gap: 18px;
+}
+
+
+/* =========================================================
+   ITEM
+   ========================================================= */
+
+.why-choose__item {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 290px;
+
+    padding: 32px;
+
+    background: var(--color-surface);
+
+    border-radius: var(--radius-md);
+
+    transition:
+        transform var(--transition-spring),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+.why-choose__item:hover {
+    transform: translateY(-6px);
+
+    background: var(--color-background);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   ITEM NUMBER
+   ========================================================= */
+
+.why-choose__item-number {
+    display: block;
+
+    font-family: var(--font-heading);
+
+    font-size: 2.8rem;
+
+    font-weight: var(--font-weight-bold);
+
+    line-height: 0.8;
+
+    letter-spacing: -0.06em;
+
+    color: var(--color-primary);
+}
+
+
+/* =========================================================
+   ITEM CONTENT
+   ========================================================= */
+
+.why-choose__item-content {
+    margin-top: 35px;
+}
+
+
+.why-choose__item-content h3 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(
+        1.3rem,
+        1.7vw,
+        1.8rem
+    );
+
+    font-weight: var(--font-weight-bold);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.045em;
+
+    color: var(--color-heading);
+}
+
+
+.why-choose__item-content p {
+    max-width: 360px;
+
+    margin: 17px 0 0;
+
+    font-family: var(--font-body);
+
+    font-size: var(--font-size-sm);
+
+    line-height: 1.6;
+
+    color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+   ========================================================= */
+
+.why-choose__statement {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-top: 18px;
+
+    padding:
+        42px
+        45px;
+
+    background: var(--color-primary);
+
+    border-radius: var(--radius-md);
+}
+
+
+/* =========================================================
+   STATEMENT TEXT
+   ========================================================= */
+
+.why-choose__statement-text span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--font-body);
+
+    font-size: var(--font-size-xs);
+
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: 0.13em;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+.why-choose__statement-text h3 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        4rem
+    );
+
+    font-weight: var(--font-weight-bold);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.065em;
+
+    color: var(--color-white);
+}
+
+
+.why-choose__statement-text h3 em {
+    font-style: normal;
+
+    color: var(--color-dark);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.why-choose__button {
     display: inline-flex;
 
     align-items: center;
 
     justify-content: center;
 
-    min-height: var(--button-height);
+    min-width: 205px;
+
+    min-height: 58px;
 
     padding:
         0
-        var(--space-6);
+        28px;
 
-    background: var(--color-primary);
+    flex-shrink: 0;
+
+    background: var(--color-dark);
 
     border-radius: var(--radius-sm);
 
@@ -508,132 +466,86 @@
 
     font-weight: var(--font-weight-semibold);
 
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
 
     color: var(--color-white);
 
-    overflow: hidden;
+    text-decoration: none;
 
     transition:
         transform var(--transition-spring),
-        background var(--transition-normal),
-        box-shadow var(--transition-normal);
+        background var(--transition-normal);
+}
+
+
+.why-choose__button:hover {
+    transform: translateY(-3px);
+
+    background: var(--color-heading);
 }
 
 
 /* =========================================================
-   CTA SHINE
+   AOS
    ========================================================= */
 
-.why-choose__cta-button::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 65%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            100deg,
-            transparent,
-            rgba(255, 255, 255, 0.35),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    animation:
-        why-choose-cta-shine
-        3.5s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   CTA PULSE
-   ========================================================= */
-
-.why-choose__cta-button::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.25);
-
+.why-choose [data-aos="fade-up"] {
     opacity: 0;
 
-    animation:
-        why-choose-cta-pulse
-        2.8s ease-in-out infinite;
+    transform: translateY(35px);
+
+    transition-property:
+        opacity,
+        transform;
+
+    transition-timing-function:
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.why-choose [data-aos="fade-up"].aos-animate {
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 
 /* =========================================================
-   CTA HOVER
+   LARGE TABLET
    ========================================================= */
 
-.why-choose__cta-button:hover {
-    background: var(--color-primary-light);
+@media (max-width: 1100px) {
 
-    transform: translateY(-4px);
-
-    box-shadow: var(--shadow-md);
-}
-
-
-/* =========================================================
-   CTA ANIMATIONS
-   ========================================================= */
-
-@keyframes why-choose-cta-shine {
-
-    0% {
-        left: -120%;
+    .why-choose__container {
+        padding-top: 130px;
     }
 
-    35% {
-        left: 140%;
+
+    .why-choose__header {
+        grid-template-columns: 140px minmax(0, 1fr);
+
+        gap: 45px;
     }
 
-    100% {
-        left: 140%;
+
+    .why-choose__content {
+        grid-template-columns:
+            minmax(0, 0.9fr)
+            minmax(0, 1.1fr);
     }
 
-}
 
-@keyframes why-choose-cta-pulse {
+    .why-choose__feature {
+        min-height: 560px;
 
-    0%,
-    100% {
-        opacity: 0;
+        padding: 34px;
     }
 
-    50% {
-        opacity: 1;
-    }
 
-}
+    .why-choose__item {
+        min-height: 270px;
 
-@keyframes why-choose-cta-glow {
-
-    0%,
-    100% {
-        transform: scale(1);
-
-        opacity: 0.65;
-    }
-
-    50% {
-        transform: scale(1.15);
-
-        opacity: 1;
+        padding: 27px;
     }
 
 }
@@ -641,7 +553,6 @@
 
 /* =========================================================
    TABLET
-   601px — 900px
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -652,84 +563,58 @@
             var(--container-width)
         );
 
-        padding-block: var(--section-padding);
+        padding-top: 120px;
+
+        padding-bottom: var(--section-padding);
     }
 
 
     .why-choose__header {
-        grid-template-columns: 1fr;
+        display: block;
 
-        gap: var(--space-6);
+        padding-bottom: 55px;
+    }
+
+
+    .why-choose__label {
+        padding-top: 0;
+
+        margin-bottom: 25px;
     }
 
 
     .why-choose__heading h2 {
         font-size: clamp(
-            3.8rem,
-            10vw,
-            6.5rem
+            4rem,
+            11vw,
+            7rem
         );
     }
 
 
-    .why-choose__reason {
-        grid-template-columns:
-            70px
-            minmax(220px, 1fr)
-            minmax(0, 1fr);
-
-        gap: var(--space-6);
-
-        min-height: 125px;
-    }
-
-
-    .why-choose__reason-title {
-        font-size: var(--font-size-xl);
-    }
-
-}
-
-
-/* =========================================================
-   TABLET SPACING REFINEMENT
-   601px — 900px
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 900px) {
-
-    .why-choose__container {
-        padding-block: 72px;
-    }
-
-    .why-choose__header {
-        gap: 28px;
-
-        padding-bottom: 28px;
-    }
-
     .why-choose__heading p {
-        margin-top: 20px;
+        margin-top: 32px;
     }
 
-    .why-choose__reasons {
-        margin-top: 28px;
+
+    .why-choose__content {
+        grid-template-columns: 1fr;
     }
 
-    .why-choose__reason {
-        min-height: 112px;
 
-        padding-block: 20px;
-
-        gap: 24px;
+    .why-choose__feature {
+        min-height: 520px;
     }
 
-    .why-choose__cta {
-        margin-top: 28px;
 
-        padding:
-            22px
-            28px;
+    .why-choose__list {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .why-choose__statement {
+        padding: 35px;
     }
 
 }
@@ -747,34 +632,37 @@
             (var(--container-padding-mobile) * 2)
         );
 
-        padding-block: var(--section-padding-mobile);
+        padding-top: 100px;
+
+        padding-bottom: var(--section-padding-mobile);
     }
 
 
-    /* HEADER */
+    .why-choose__header {
+        padding-bottom: 42px;
+    }
+
 
     .why-choose__label {
-        padding-top: 0;
-    }
+        margin-bottom: 20px;
 
-    .why-choose__label-main {
         font-size: var(--font-size-xs);
     }
 
+
     .why-choose__heading h2 {
         font-size: clamp(
-            3rem,
+            3.2rem,
             15vw,
-            5rem
+            5.2rem
         );
 
-        line-height: 0.88;
+        line-height: 0.86;
     }
 
-    .why-choose__heading p {
-        margin-top: var(--space-5);
 
-        padding-left: var(--space-4);
+    .why-choose__heading p {
+        margin-top: 25px;
 
         font-size: var(--font-size-sm);
 
@@ -782,163 +670,108 @@
     }
 
 
-    /* REASONS */
-
-    .why-choose__reasons {
-        margin-top: var(--space-8);
-    }
-
-    .why-choose__reason,
-    .why-choose__reason:nth-child(odd)[data-aos="fade-up"],
-    .why-choose__reason:nth-child(even)[data-aos="fade-up"] {
-        grid-template-columns:
-            48px
-            minmax(0, 1fr);
-
-        align-items: start;
-
-        gap: var(--space-3);
-
-        min-height: 0;
-
-        padding:
-            var(--space-6)
-            0;
-
-        transform:
-            translateY(35px);
+    .why-choose__content {
+        gap: 10px;
     }
 
 
-    .why-choose__reason[data-aos="fade-up"].aos-animate,
-    .why-choose__reason:nth-child(odd)[data-aos="fade-up"].aos-animate,
-    .why-choose__reason:nth-child(even)[data-aos="fade-up"].aos-animate {
-        transform:
-            translateY(0);
+    .why-choose__feature {
+        min-height: 430px;
+
+        padding: 28px;
     }
 
 
-    .why-choose__number {
-        font-size: var(--font-size-xl);
+    .why-choose__feature-number {
+        font-size: 5rem;
     }
 
 
-    .why-choose__reason-title {
-        font-size: var(--font-size-xl);
-
-        line-height: 1.05;
+    .why-choose__feature-kicker {
+        margin-bottom: 15px;
     }
 
 
-    .why-choose__reason-text {
-        grid-column: 2;
+    .why-choose__feature-body h3 {
+        font-size: clamp(
+            3.6rem,
+            17vw,
+            5.5rem
+        );
+    }
 
-        margin-top: -4px;
 
-        font-size: var(--font-size-base);
+    .why-choose__feature-body p {
+        margin-top: 24px;
+
+        font-size: var(--font-size-sm);
 
         line-height: 1.6;
     }
 
 
-    /* CTA */
+    .why-choose__list {
+        grid-template-columns: 1fr;
 
-    .why-choose__cta {
-        align-items: stretch;
-
-        flex-direction: column;
-
-        gap: var(--space-5);
-
-        margin-top: var(--space-6);
-
-        padding: var(--space-6);
+        gap: 10px;
     }
 
 
-    .why-choose__cta-copy strong {
+    .why-choose__item {
+        min-height: 240px;
+
+        padding: 25px;
+    }
+
+
+    .why-choose__item-number {
+        font-size: 2.5rem;
+    }
+
+
+    .why-choose__item-content {
+        margin-top: 28px;
+    }
+
+
+    .why-choose__item-content h3 {
         font-size: var(--font-size-xl);
     }
 
 
-    .why-choose__cta-button {
+    .why-choose__item-content p {
+        margin-top: 14px;
+
+        font-size: var(--font-size-sm);
+    }
+
+
+    .why-choose__statement {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 28px;
+
+        margin-top: 10px;
+
+        padding: 28px;
+    }
+
+
+    .why-choose__statement-text h3 {
+        font-size: clamp(
+            1.8rem,
+            8vw,
+            2.8rem
+        );
+
+        line-height: 0.95;
+    }
+
+
+    .why-choose__button {
         width: 100%;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE SPACING REFINEMENT
-   481px — 600px
-   ========================================================= */
-
-@media (min-width: 481px) and (max-width: 600px) {
-
-    .why-choose__container {
-        padding-block: 58px;
-    }
-
-    .why-choose__header {
-        gap: 22px;
-
-        padding-bottom: 24px;
-    }
-
-    .why-choose__heading p {
-        margin-top: 18px;
-    }
-
-    .why-choose__reasons {
-        margin-top: 24px;
-    }
-
-    .why-choose__reason {
-        padding-block: 20px;
-    }
-
-    .why-choose__cta {
-        margin-top: 24px;
-
-        padding: 22px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE SPACING REFINEMENT
-   381px — 480px
-   ========================================================= */
-
-@media (min-width: 381px) and (max-width: 480px) {
-
-    .why-choose__container {
-        padding-block: 50px;
-    }
-
-    .why-choose__header {
-        gap: 18px;
-
-        padding-bottom: 20px;
-    }
-
-    .why-choose__heading p {
-        margin-top: 16px;
-    }
-
-    .why-choose__reasons {
-        margin-top: 20px;
-    }
-
-    .why-choose__reason {
-        padding-block: 18px;
-    }
-
-    .why-choose__cta {
-        margin-top: 20px;
-
-        padding: 20px;
     }
 
 }
@@ -951,12 +784,9 @@
 @media (max-width: 380px) {
 
     .why-choose__container {
-        width: calc(
-            100% -
-            (var(--container-padding-small) * 2)
-        );
+        padding-top: 90px;
 
-        padding-block: 44px;
+        padding-bottom: 44px;
     }
 
 
@@ -965,47 +795,32 @@
     }
 
 
-    .why-choose__reason-title {
-        font-size: var(--font-size-lg);
+    .why-choose__feature {
+        min-height: 390px;
+
+        padding: 23px;
     }
 
 
-    .why-choose__reason-text {
-        font-size: var(--font-size-sm);
+    .why-choose__feature-number {
+        font-size: 4rem;
     }
 
-}
 
-
-/* =========================================================
-   SMALL MOBILE SPACING REFINEMENT
-   380px AND BELOW
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .why-choose__header {
-        gap: 16px;
-
-        padding-bottom: 18px;
+    .why-choose__feature-body h3 {
+        font-size: 3.5rem;
     }
 
-    .why-choose__heading p {
-        margin-top: 14px;
+
+    .why-choose__item {
+        min-height: 220px;
+
+        padding: 22px;
     }
 
-    .why-choose__reasons {
-        margin-top: 18px;
-    }
 
-    .why-choose__reason {
-        padding-block: 16px;
-    }
-
-    .why-choose__cta {
-        margin-top: 18px;
-
-        padding: 18px;
+    .why-choose__statement {
+        padding: 23px;
     }
 
 }

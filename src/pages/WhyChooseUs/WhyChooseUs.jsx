@@ -1,30 +1,192 @@
+// import "./WhyChooseUs.css";
+
+// const reasons = [
+//     {
+//         number: "01",
+//         title: "20+ YEARS EXPERIENCE",
+//         text: "Deep expertise in industrial automation and control systems.",
+//     },
+//     {
+//         number: "02",
+//         title: "CUSTOM SOLUTIONS",
+//         text: "Automation engineered around your process and production needs.",
+//     },
+//     {
+//         number: "03",
+//         title: "MICRO TO TURNKEY",
+//         text: "From focused automation work to complete turnkey projects.",
+//     },
+//     {
+//         number: "04",
+//         title: "OPTIMIZED ENGINEERING",
+//         text: "Practical solutions balancing performance, reliability and cost.",
+//     },
+//     {
+//         number: "05",
+//         title: "RELIABLE SUPPORT",
+//         text: "Technical service and after-sales support when you need it.",
+//     },
+// ];
+
+// function WhyChooseUs() {
+//     return (
+//         <section
+//             className="why-choose"
+//             id="why-choose-us"
+//             aria-labelledby="why-choose-title"
+//         >
+//             <div className="why-choose__container">
+
+//                 {/* =====================================================
+//                     HEADER
+//                 ===================================================== */}
+
+//                 <header className="why-choose__header">
+
+//                     <div
+//                         className="why-choose__label"
+//                         data-aos="fade-right"
+//                         data-aos-duration="800"
+//                     >
+//                         <span className="why-choose__label-line"></span>
+
+//                         <div>
+//                             <span className="why-choose__label-main">
+//                                 WHY BITSOL
+//                             </span>
+
+//                             <span className="why-choose__label-year">
+//                                 EST. 2018
+//                             </span>
+//                         </div>
+//                     </div>
+
+
+//                     <div className="why-choose__heading">
+
+//                         <h2
+//                             id="why-choose-title"
+//                             data-aos="fade-up"
+//                             data-aos-duration="900"
+//                         >
+//                             BUILT FOR
+//                             <br />
+//                             <span>INDUSTRY.</span>
+//                         </h2>
+
+//                         <p
+//                             data-aos="fade-up"
+//                             data-aos-delay="150"
+//                             data-aos-duration="800"
+//                         >
+//                             Experience, engineering and support focused on
+//                             keeping your automation practical and reliable.
+//                         </p>
+
+//                     </div>
+
+//                 </header>
+
+
+//                 {/* =====================================================
+//                     REASONS
+//                 ===================================================== */}
+
+//                 <div className="why-choose__reasons">
+
+//                     {reasons.map((reason, index) => (
+//                         <article
+//                             className="why-choose__reason"
+//                             key={reason.number}
+//                             data-aos="fade-up"
+//                             data-aos-duration="800"
+//                             data-aos-delay={index * 100}
+//                         >
+
+//                             <div className="why-choose__number">
+//                                 {reason.number}
+//                             </div>
+
+//                             <div className="why-choose__reason-title">
+//                                 {reason.title}
+//                             </div>
+
+//                             <p className="why-choose__reason-text">
+//                                 {reason.text}
+//                             </p>
+
+//                         </article>
+//                     ))}
+
+//                 </div>
+
+
+//                 {/* =====================================================
+//                     CTA
+//                 ===================================================== */}
+
+//                 <div
+//                     className="why-choose__cta"
+//                     data-aos="fade-up"
+//                     data-aos-delay="500"
+//                     data-aos-duration="900"
+//                 >
+
+//                     <div className="why-choose__cta-copy">
+
+//                         <span>
+//                             HAVE AN AUTOMATION REQUIREMENT?
+//                         </span>
+
+//                         <strong>
+//                             LET'S BUILD THE RIGHT SOLUTION.
+//                         </strong>
+
+//                     </div>
+
+//                     <a
+//                         href="/contactus.html"
+//                         className="why-choose__cta-button"
+//                     >
+//                         <span className="why-choose__cta-button-text">
+//                             TALK TO OUR TEAM
+//                         </span>
+//                     </a>
+
+//                 </div>
+
+//             </div>
+//         </section>
+//     );
+// }
+
+// export default WhyChooseUs;
+
+
+
+
 import "./WhyChooseUs.css";
 
 const reasons = [
     {
-        number: "01",
-        title: "20+ YEARS EXPERIENCE",
-        text: "Deep expertise in industrial automation and control systems.",
-    },
-    {
         number: "02",
         title: "CUSTOM SOLUTIONS",
-        text: "Automation engineered around your process and production needs.",
+        text: "Automation engineered around your process, equipment and production requirements.",
     },
     {
         number: "03",
         title: "MICRO TO TURNKEY",
-        text: "From focused automation work to complete turnkey projects.",
+        text: "From focused automation upgrades to complete turnkey industrial projects.",
     },
     {
         number: "04",
         title: "OPTIMIZED ENGINEERING",
-        text: "Practical solutions balancing performance, reliability and cost.",
+        text: "Practical engineering focused on performance, reliability and cost.",
     },
     {
         number: "05",
         title: "RELIABLE SUPPORT",
-        text: "Technical service and after-sales support when you need it.",
+        text: "Technical service and after-sales support when your operation needs it.",
     },
 ];
 
@@ -41,24 +203,14 @@ function WhyChooseUs() {
                     HEADER
                 ===================================================== */}
 
-                <header className="why-choose__header">
+                <div className="why-choose__header">
 
                     <div
                         className="why-choose__label"
-                        data-aos="fade-right"
-                        data-aos-duration="800"
+                        data-aos="fade-up"
+                        data-aos-duration="700"
                     >
-                        <span className="why-choose__label-line"></span>
-
-                        <div>
-                            <span className="why-choose__label-main">
-                                WHY BITSOL
-                            </span>
-
-                            <span className="why-choose__label-year">
-                                EST. 2018
-                            </span>
-                        </div>
+                        WHY BITSOL
                     </div>
 
 
@@ -67,93 +219,141 @@ function WhyChooseUs() {
                         <h2
                             id="why-choose-title"
                             data-aos="fade-up"
+                            data-aos-delay="100"
                             data-aos-duration="900"
                         >
-                            BUILT FOR
+                            ENGINEERED
                             <br />
-                            <span>INDUSTRY.</span>
+                            <span>FOR INDUSTRY.</span>
                         </h2>
 
                         <p
                             data-aos="fade-up"
-                            data-aos-delay="150"
+                            data-aos-delay="200"
                             data-aos-duration="800"
                         >
-                            Experience, engineering and support focused on
-                            keeping your automation practical and reliable.
+                            We bring together experience, engineering and
+                            practical automation to build systems that perform
+                            in the environments where they actually matter.
                         </p>
 
                     </div>
 
-                </header>
-
-
-                {/* =====================================================
-                    REASONS
-                ===================================================== */}
-
-                <div className="why-choose__reasons">
-
-                    {reasons.map((reason, index) => (
-                        <article
-                            className="why-choose__reason"
-                            key={reason.number}
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-delay={index * 100}
-                        >
-
-                            <div className="why-choose__number">
-                                {reason.number}
-                            </div>
-
-                            <div className="why-choose__reason-title">
-                                {reason.title}
-                            </div>
-
-                            <p className="why-choose__reason-text">
-                                {reason.text}
-                            </p>
-
-                        </article>
-                    ))}
-
                 </div>
 
 
                 {/* =====================================================
-                    CTA
+                    MAIN CONTENT
                 ===================================================== */}
 
-                <div
-                    className="why-choose__cta"
-                    data-aos="fade-up"
-                    data-aos-delay="500"
-                    data-aos-duration="900"
-                >
+                <div className="why-choose__content">
 
-                    <div className="why-choose__cta-copy">
+                    {/* FEATURED EXPERIENCE */}
 
-                        <span>
-                            HAVE AN AUTOMATION REQUIREMENT?
-                        </span>
+                    <article
+                        className="why-choose__feature"
+                        data-aos="fade-up"
+                        data-aos-duration="900"
+                    >
 
-                        <strong>
-                            LET'S BUILD THE RIGHT SOLUTION.
-                        </strong>
+                        <div className="why-choose__feature-number">
+                            01
+                        </div>
+
+                        <div className="why-choose__feature-body">
+
+                            <span className="why-choose__feature-kicker">
+                                EXPERIENCE
+                            </span>
+
+                            <h3>
+                                20+
+                                <br />
+                                YEARS
+                            </h3>
+
+                            <p>
+                                Deep expertise in industrial automation,
+                                control systems and engineering solutions
+                                built around real production environments.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    {/* SUPPORTING REASONS */}
+
+                    <div className="why-choose__list">
+
+                        {reasons.map((reason, index) => (
+                            <article
+                                className="why-choose__item"
+                                key={reason.number}
+                                data-aos="fade-up"
+                                data-aos-delay={(index + 1) * 100}
+                                data-aos-duration="750"
+                            >
+
+                                <span className="why-choose__item-number">
+                                    {reason.number}
+                                </span>
+
+                                <div className="why-choose__item-content">
+
+                                    <h3>
+                                        {reason.title}
+                                    </h3>
+
+                                    <p>
+                                        {reason.text}
+                                    </p>
+
+                                </div>
+
+                            </article>
+                        ))}
 
                     </div>
 
+                </div>
+
+
+                {/* =====================================================
+                    BOTTOM STATEMENT
+                ===================================================== */}
+
+                {/* <div
+                    className="why-choose__statement"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="850"
+                >
+
+                    <div className="why-choose__statement-text">
+
+                        <span>
+                            BUILT AROUND YOUR REQUIREMENT
+                        </span>
+
+                        <h3>
+                            PRACTICAL AUTOMATION.
+                            <br />
+                            <em>REAL RESULTS.</em>
+                        </h3>
+
+                    </div>
+
+
                     <a
                         href="/contactus.html"
-                        className="why-choose__cta-button"
+                        className="why-choose__button"
                     >
-                        <span className="why-choose__cta-button-text">
-                            TALK TO OUR TEAM
-                        </span>
+                        TALK TO OUR TEAM
                     </a>
 
-                </div>
+                </div> */}
 
             </div>
         </section>
