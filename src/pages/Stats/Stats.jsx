@@ -3,13 +3,13 @@ import "./Stats.css";
 
 const stats = [
     {
-        number: 50,
+        number: 100,
         suffix: "+",
         label: "COMPLETED PROJECTS",
         text: "Automation and control projects delivered across industrial applications.",
     },
     {
-        number: 20,
+        number: 40,
         suffix: "+",
         label: "CLIENTS",
         text: "Businesses that trust Bitsol for industrial automation solutions.",
