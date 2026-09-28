@@ -17,7 +17,7 @@ import {
 
 import heroImage
     from "../../assets/images/bitsol-hero5.jpg";
-    
+
 
 import heroImageTwo
     from "../../assets/images/bitsol-hero2.png";
@@ -316,16 +316,16 @@ const Home = () => {
        Intro plays only once per browser session.
        ===================================================== */
 
-    const [introVisible, setIntroVisible] =
-        useState(() => {
+    // const [introVisible, setIntroVisible] =
+    //     useState(() => {
 
-            return (
-                sessionStorage.getItem(
-                    "bitsol-intro-seen"
-                ) !== "true"
-            );
+    //         return (
+    //             sessionStorage.getItem(
+    //                 "bitsol-intro-seen"
+    //             ) !== "true"
+    //         );
 
-        });
+    //     });
 
 
 
@@ -342,10 +342,10 @@ const Home = () => {
        HERO ANIMATION TIMING
        ===================================================== */
 
-    const animationDelay =
-        introVisible
-            ? 3
-            : 0;
+    // const animationDelay =
+    //     introVisible
+    //         ? 3
+    //         : 0;
 
 
 
@@ -362,34 +362,34 @@ const Home = () => {
        INTRO TIMER
        ===================================================== */
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if (!introVisible) {
-            return;
-        }
-
-
-        const timer =
-            window.setTimeout(() => {
-
-                sessionStorage.setItem(
-                    "bitsol-intro-seen",
-                    "true"
-                );
+    //     if (!introVisible) {
+    //         return;
+    //     }
 
 
-                setIntroVisible(false);
+    //     const timer =
+    //         window.setTimeout(() => {
 
-            }, 3000);
+    //             sessionStorage.setItem(
+    //                 "bitsol-intro-seen",
+    //                 "true"
+    //             );
 
 
-        return () => {
+    //             setIntroVisible(false);
 
-            window.clearTimeout(timer);
+    //         }, 3000);
 
-        };
 
-    }, [introVisible]);
+    //     return () => {
+
+    //         window.clearTimeout(timer);
+
+    //     };
+
+    // }, [introVisible]);
 
 
 
@@ -407,11 +407,25 @@ const Home = () => {
    to view the newly selected slide.
    ===================================================== */
 
-    useEffect(() => {
-        if (introVisible) {
-            return;
-        }
+    // useEffect(() => {
+    //     if (introVisible) {
+    //         return;
+    //     }
 
+    //     const timer = window.setTimeout(() => {
+    //         setActiveSlide(previous =>
+    //             (previous + 1) % heroScenes.length
+    //         );
+    //     }, HERO_INTERVAL);
+
+    //     return () => {
+    //         window.clearTimeout(timer);
+    //     };
+
+    // }, [activeSlide, introVisible]);
+
+
+    useEffect(() => {
         const timer = window.setTimeout(() => {
             setActiveSlide(previous =>
                 (previous + 1) % heroScenes.length
@@ -422,7 +436,7 @@ const Home = () => {
             window.clearTimeout(timer);
         };
 
-    }, [activeSlide, introVisible]);
+    }, [activeSlide]);
 
 
 
@@ -491,7 +505,7 @@ const Home = () => {
                 OPENING CINEMATIC SEQUENCE
                 ===================================================== */}
 
-            <AnimatePresence>
+            {/* <AnimatePresence>
 
                 {introVisible && (
 
@@ -517,7 +531,7 @@ const Home = () => {
                         <div className="home-intro__content">
 
 
-                            {/* BITSOL */}
+                    
 
                             <motion.div
                                 className="home-intro__brand"
@@ -546,7 +560,7 @@ const Home = () => {
 
 
 
-                            {/* ENGINEERING LINE */}
+              
 
                             <motion.div
                                 className="home-intro__line"
@@ -571,7 +585,7 @@ const Home = () => {
 
 
 
-                            {/* STATEMENT */}
+             
 
                             <motion.div
                                 className="home-intro__statement"
@@ -602,7 +616,7 @@ const Home = () => {
 
 
 
-                            {/* PROGRESS */}
+      
 
                             <motion.div
                                 className="home-intro__bar"
@@ -627,7 +641,7 @@ const Home = () => {
 
 
 
-                        {/* INTRO BACKGROUND */}
+       
 
                         <motion.div
                             className="home-intro__background"
@@ -661,7 +675,7 @@ const Home = () => {
 
                 )}
 
-            </AnimatePresence>
+            </AnimatePresence> */}
 
 
 
@@ -1318,8 +1332,9 @@ const Home = () => {
 
                     transition={{
                         duration: 0.8,
-                        delay:
-                            animationDelay + 1.5,
+                        delay: 1.5,
+                        // delay:
+                        //     animationDelay + 1.5,
                         ease:
                             cinematicEase
                     }}
