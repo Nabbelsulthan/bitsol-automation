@@ -1,0 +1,552 @@
+/* =========================================================
+   BITSOL AUTOMATION
+   Global Styles
+   ========================================================= */
+
+
+/* =========================================================
+   1. CSS RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   2. DOCUMENT ELEMENTS
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   3. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: var(--font-size-7xl);
+}
+
+h2 {
+    font-size: var(--font-size-6xl);
+}
+
+h3 {
+    font-size: var(--font-size-4xl);
+}
+
+h4 {
+    font-size: var(--font-size-3xl);
+}
+
+h5 {
+    font-size: var(--font-size-2xl);
+}
+
+h6 {
+    font-size: var(--font-size-xl);
+}
+
+p {
+    color: var(--color-text);
+    text-wrap: pretty;
+}
+
+strong,
+b {
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* =========================================================
+   4. SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+::-moz-selection {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+
+/* =========================================================
+   5. FOCUS
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   6. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-dark);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+
+/* =========================================================
+   7. GLOBAL CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(
+        calc(100% - (var(--container-padding) * 2)),
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   8. SECTION
+   ========================================================= */
+
+.section {
+    position: relative;
+    width: 100%;
+
+    /* Reduced from 100px */
+    padding-block: var(--section-padding);
+}
+
+.section--large {
+    /* Reduced from 140px */
+    padding-block: var(--section-padding-large);
+}
+
+.section--small {
+    /* Reduced from 70px */
+    padding-block: var(--section-padding-small);
+}
+
+
+/* =========================================================
+   9. COMMON LAYOUT
+   ========================================================= */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+}
+
+
+/* =========================================================
+   10. VISIBILITY
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block;
+}
+
+
+/* =========================================================
+   11. BUTTON / LINK BASE
+   ========================================================= */
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   12. FORM ELEMENTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    color: var(--color-text);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(246, 36, 64, 0.12);
+}
+
+
+/* =========================================================
+   13. DARK SECTION
+   ========================================================= */
+
+.dark-section {
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section h4,
+.dark-section h5,
+.dark-section h6 {
+    color: var(--color-white);
+}
+
+.dark-section p {
+    color: var(--color-text-light);
+}
+
+
+/* =========================================================
+   14. COLOR UTILITIES
+   ========================================================= */
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.bg-primary {
+    background: var(--color-primary);
+}
+
+.bg-dark {
+    background: var(--color-dark);
+}
+
+.bg-surface-dark {
+    background: var(--color-surface-dark);
+}
+
+.bg-white {
+    background: var(--color-white);
+}
+
+.bg-background {
+    background: var(--color-background);
+}
+
+
+/* =========================================================
+   15. TEXT ALIGNMENT
+   ========================================================= */
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/* =========================================================
+   16. IMAGE HELPERS
+   ========================================================= */
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contain-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   17. TRANSITIONS
+   ========================================================= */
+
+.transition {
+    transition: all var(--transition-normal);
+}
+
+.transition-fast {
+    transition: all var(--transition-fast);
+}
+
+
+/* =========================================================
+   18. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   19. TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    h1 {
+        font-size: var(--font-size-6xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-5xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+
+/* =========================================================
+   20. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    body {
+        font-size: var(--font-size-mobile);
+    }
+
+    .container {
+        width: min(
+            calc(100% - (var(--container-padding-mobile) * 2)),
+            var(--container-width)
+        );
+    }
+
+    .section {
+        /* Reduced from 70px */
+        padding-block: var(--section-padding-mobile);
+    }
+
+    .section--large {
+        /* Reduced from 90px */
+        padding-block: var(--section-padding-large-mobile);
+    }
+
+    .section--small {
+        /* Reduced from 50px */
+        padding-block: var(--section-padding-small-mobile);
+    }
+
+    h1 {
+        font-size: var(--font-size-5xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-4xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h4 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+
+/* =========================================================
+   21. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: min(
+            calc(100% - (var(--container-padding-small) * 2)),
+            var(--container-width)
+        );
+    }
+
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-2xl);
+    }
+}

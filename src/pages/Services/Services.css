@@ -1,0 +1,1650 @@
+/* =========================================================
+   BITSOL SERVICES
+   Premium / Clean / No Decorative Lines
+   ========================================================= */
+
+.services-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-background);
+    isolation: isolate;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.services-heading {
+    position: relative;
+    margin-bottom: var(--space-20);
+}
+
+.services-heading__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+
+    color: var(--color-primary);
+
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.services-heading__dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    box-shadow: var(--red-glow);
+}
+
+/* No decorative line */
+.services-heading__line {
+    display: none;
+}
+
+.services-heading__content {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(320px, 0.65fr);
+
+    gap: var(--space-20);
+    align-items: end;
+}
+
+.services-heading h2 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 0.88;
+    letter-spacing: -0.065em;
+}
+
+.services-heading h2 span {
+    color: var(--color-primary);
+}
+
+.services-heading__description {
+    max-width: 430px;
+    padding-bottom: var(--space-2);
+}
+
+.services-heading__description p {
+    margin: 0 0 var(--space-8);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+}
+
+.services-heading__technical {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.services-heading__technical span {
+    padding: 6px 10px;
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.1em;
+
+    /* No pills / borders */
+    background: rgba(17, 17, 17, 0.035);
+    border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
+
+.services-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.service-card {
+    position: relative;
+
+    min-height: 520px;
+    padding: var(--space-8);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    color: var(--color-white);
+
+    background: var(--color-dark);
+
+    border: none;
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-md);
+
+    isolation: isolate;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    will-change: transform, opacity;
+
+    transition:
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.service-card--active {
+    z-index: 50;
+}
+
+/* =========================================================
+   CARD IMAGE
+   ========================================================= */
+
+.service-card__image {
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transform: scale(1.02);
+
+    filter:
+        saturate(0.72)
+        contrast(1.04);
+
+    transition:
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.7s ease;
+}
+
+.service-card:hover .service-card__image {
+    transform: scale(1.06);
+
+    filter:
+        saturate(0.88)
+        contrast(1.07);
+}
+
+/* =========================================================
+   CARD IMAGE OVERLAY
+   ========================================================= */
+
+.service-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 8, 8, 0.22) 0%,
+            rgba(8, 8, 8, 0.34) 35%,
+            rgba(8, 8, 8, 0.82) 72%,
+            rgba(8, 8, 8, 0.96) 100%
+        );
+
+    transition: background var(--transition-normal);
+}
+
+.service-card:hover .service-card__overlay {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 8, 8, 0.18) 0%,
+            rgba(8, 8, 8, 0.30) 35%,
+            rgba(8, 8, 8, 0.78) 72%,
+            rgba(8, 8, 8, 0.94) 100%
+        );
+}
+
+/* =========================================================
+   CARD ICON
+   ========================================================= */
+
+.service-card__icon {
+    position: absolute;
+
+    top: var(--space-8);
+    left: var(--space-8);
+
+    z-index: 5;
+
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(17, 17, 17, 0.30);
+
+    border: none;
+    border-radius: var(--radius-lg);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform var(--transition-spring),
+        background var(--transition-normal);
+}
+
+.service-card:hover .service-card__icon {
+    transform: translateY(-4px);
+
+    background: rgba(246, 36, 64, 0.72);
+}
+
+.service-card__icon svg {
+    width: 44px;
+    height: 44px;
+
+    stroke: var(--color-white);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.service-card__body {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 430px;
+
+    margin-top: auto;
+    padding-top: 180px;
+}
+
+.service-card h3 {
+    margin: 0 0 var(--space-4);
+
+    color: var(--color-white);
+
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 2.3vw, 2.25rem);
+    font-weight: var(--font-weight-bold);
+
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+
+    text-shadow:
+        0 3px 18px rgba(0, 0, 0, 0.5);
+}
+
+.service-card__description {
+    max-width: 390px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   EXPLORE BUTTON
+   ========================================================= */
+
+.service-card__footer {
+    position: relative;
+    z-index: 5;
+
+    margin-top: var(--space-8);
+}
+
+.service-card__explore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: var(--button-height-small);
+
+    padding: 0 var(--space-6);
+
+    background: var(--color-primary);
+    color: var(--color-white);
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        background var(--transition-normal),
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.service-card__explore:hover {
+    background: var(--color-primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.service-card__explore:active {
+    transform: translateY(0);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.service-card__explore:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   BOTTOM STATEMENT
+   ========================================================= */
+
+.services-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: var(--space-20);
+}
+
+/* Completely removed */
+.services-bottom__line {
+    display: none;
+}
+
+.services-bottom p {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.services-bottom strong {
+    color: var(--color-primary);
+}
+
+/* =========================================================
+   SERVICE MODAL
+   ========================================================= */
+
+.service-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: var(--z-modal);
+
+    width: 100vw;
+    height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    perspective: 1400px;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   MODAL BACKDROP
+   ========================================================= */
+
+.service-modal__backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(246, 36, 64, 0.07),
+            transparent 38%
+        ),
+        rgba(17, 17, 17, 0.48);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    pointer-events: auto;
+}
+
+/* =========================================================
+   MODAL PANEL
+   ========================================================= */
+
+.service-modal__panel {
+    position: relative;
+    z-index: 2;
+
+    width: min(1120px, calc(100vw - 48px));
+    height: min(760px, calc(100dvh - 48px));
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-surface) 0%,
+            #ffffff 46%,
+            var(--color-background) 100%
+        );
+
+    border: none;
+    border-radius: var(--radius-2xl);
+
+    box-shadow:
+        0 40px 100px rgba(17, 17, 17, 0.22),
+        0 12px 32px rgba(17, 17, 17, 0.10);
+
+    pointer-events: auto;
+
+    isolation: isolate;
+}
+
+/* =========================================================
+   MODAL IMAGE AREA
+   ========================================================= */
+
+.service-modal__visual {
+    position: relative;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: var(--color-dark);
+}
+
+/*
+   The actual image uses CONTAIN so it is never cropped.
+
+   The pseudo-element inherits the same inline
+   background-image from .service-modal__image and uses
+   COVER + blur to fill the unused aspect-ratio space.
+*/
+
+.service-modal__image {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transform-origin: center;
+
+    animation: none;
+}
+
+/* Blurred full-bleed background */
+.service-modal__image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -30px;
+
+    z-index: -1;
+
+    background-image: inherit;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: blur(24px);
+
+    transform: scale(1.08);
+
+    opacity: 0.48;
+}
+
+/* Darken the blurred background slightly */
+.service-modal__image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        rgba(17, 17, 17, 0.18);
+}
+
+/* =========================================================
+   MODAL IMAGE OVERLAY
+   ========================================================= */
+
+.service-modal__image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 17, 17, 0.02),
+            rgba(17, 17, 17, 0.08) 55%,
+            rgba(17, 17, 17, 0.52) 100%
+        );
+}
+
+/* =========================================================
+   MODAL VISUAL LABEL
+   ========================================================= */
+
+.service-modal__visual-content {
+    position: absolute;
+
+    left: 32px;
+    bottom: 30px;
+
+    z-index: 3;
+}
+
+.service-modal__visual-content span {
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    color: var(--color-white);
+
+    background: rgba(17, 17, 17, 0.46);
+
+    border: none;
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-heading);
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.14em;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   MODAL CONTENT
+   ========================================================= */
+
+.service-modal__content {
+    position: relative;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(246, 36, 64, 0.075),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(255, 250, 243, 0.96)
+        );
+}
+
+.service-modal__content-scroll {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding:
+        70px
+        48px
+        100px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(107, 107, 107, 0.28)
+        transparent;
+}
+
+.service-modal__content-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.service-modal__content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.service-modal__content-scroll::-webkit-scrollbar-thumb {
+    background: rgba(107, 107, 107, 0.28);
+    border-radius: var(--radius-full);
+}
+
+/* =========================================================
+   MODAL INTRO
+   ========================================================= */
+
+.service-modal__intro {
+    max-width: 650px;
+}
+
+.service-modal__content h2 {
+    max-width: 650px;
+
+    margin: 0 0 var(--space-5);
+
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4.3vw, 4.6rem);
+    font-weight: var(--font-weight-bold);
+
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+}
+
+.service-modal__description {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    line-height: 1.65;
+}
+
+/* =========================================================
+   MODAL CLOSE
+   ========================================================= */
+
+.service-modal__close {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 30;
+
+    min-width: 86px;
+    height: var(--button-height-small);
+
+    padding: 0 var(--space-4);
+
+    background: rgba(255, 255, 255, 0.90);
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    color: var(--color-text);
+
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.12em;
+
+    box-shadow: var(--shadow-sm);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.service-modal__close:hover {
+    background: var(--color-dark);
+
+    color: var(--color-white);
+
+    transform: translateY(-1px);
+
+    box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   MODAL SECTION TITLE
+   ========================================================= */
+
+.service-modal__section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-5);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.18em;
+}
+
+/* Small dot instead of decorative line */
+.service-modal__section-title::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 auto;
+
+    border-radius: var(--radius-full);
+
+    background: var(--color-primary);
+
+    box-shadow: var(--red-glow);
+}
+
+/* =========================================================
+   MODAL CAPABILITY CARDS
+   ========================================================= */
+
+.service-modal__features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.service-modal__feature {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    min-height: 74px;
+
+    padding: 17px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(255, 250, 243, 0.82)
+        );
+
+    border: none;
+
+    border-radius: var(--radius-md);
+
+    box-shadow:
+        0 8px 24px rgba(17, 17, 17, 0.055);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        background var(--transition-normal);
+}
+
+.service-modal__feature:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            rgba(255, 250, 243, 0.96)
+        );
+
+    box-shadow:
+        0 14px 30px rgba(17, 17, 17, 0.09);
+}
+
+.service-modal__feature-dot {
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 auto;
+
+    margin-top: 7px;
+
+    border-radius: var(--radius-full);
+
+    background: var(--color-primary);
+}
+
+.service-modal__feature-name {
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+
+    line-height: 1.55;
+}
+
+/* =========================================================
+   MODAL NAVIGATION
+   ========================================================= */
+
+.service-modal__navigation {
+    position: absolute;
+
+    left: 42%;
+    right: 0;
+    bottom: 0;
+
+    z-index: 25;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    padding: 14px 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.78),
+            rgba(255, 250, 243, 0.98)
+        );
+
+    /* No separator line */
+    border-top: none;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.service-modal__nav-button {
+    min-height: var(--button-height-small);
+
+    padding: 0 var(--space-4);
+
+    background: var(--color-surface);
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    box-shadow: var(--shadow-sm);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.service-modal__nav-button:hover {
+    background: var(--color-dark);
+
+    color: var(--color-white);
+
+    transform: translateY(-1px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.service-modal__nav-button--primary {
+    background: var(--color-primary);
+
+    color: var(--color-white);
+}
+
+.service-modal__nav-button--primary:hover {
+    background: var(--color-primary-dark);
+
+    color: var(--color-white);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .services-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .services-heading__content {
+        gap: var(--space-12);
+    }
+
+    .service-card {
+        min-height: 500px;
+    }
+
+    .service-modal__panel {
+        width: min(
+            940px,
+            calc(100vw - 40px)
+        );
+
+        height: min(
+            720px,
+            calc(100dvh - 40px)
+        );
+
+        grid-template-columns: 40% 60%;
+    }
+
+    .service-modal__navigation {
+        left: 40%;
+    }
+
+    .service-modal__content-scroll {
+        padding:
+            62px
+            36px
+            100px;
+    }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .services-heading__content {
+        grid-template-columns: 1fr;
+
+        gap: var(--space-8);
+    }
+
+    .services-heading__description {
+        max-width: 620px;
+    }
+
+    .service-modal__panel {
+        width: min(
+            860px,
+            calc(100vw - 32px)
+        );
+
+        height: min(
+            720px,
+            calc(100dvh - 32px)
+        );
+
+        grid-template-columns: 38% 62%;
+    }
+
+    .service-modal__navigation {
+        left: 38%;
+    }
+
+    .service-modal__content-scroll {
+        padding:
+            58px
+            30px
+            96px;
+    }
+
+    .service-modal__content h2 {
+        font-size:
+            clamp(
+                2.2rem,
+                5vw,
+                3.8rem
+            );
+    }
+
+    .service-modal__features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .services-section {
+        padding-block:
+            var(--section-padding-mobile);
+    }
+
+    .services-heading h2 {
+        font-size:
+            clamp(
+                2.8rem,
+                14vw,
+                4.2rem
+            );
+    }
+
+    .services-heading__description p {
+        font-size: var(--font-size-base);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        min-height: 430px;
+
+        padding: var(--space-6);
+
+        border-radius: var(--radius-lg);
+    }
+
+    .service-card__icon {
+        top: var(--space-6);
+        left: var(--space-6);
+
+        width: 72px;
+        height: 72px;
+    }
+
+    .service-card__icon svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .service-card__body {
+        padding-top: 155px;
+    }
+
+    .service-card h3 {
+        font-size:
+            clamp(
+                1.55rem,
+                7vw,
+                2rem
+            );
+    }
+
+    .service-card__description {
+        max-width: 100%;
+
+        font-size: var(--font-size-sm);
+    }
+
+    .service-card__footer {
+        margin-top: var(--space-6);
+    }
+
+    /* =====================================================
+       MOBILE MODAL
+       ===================================================== */
+
+    .service-modal {
+        position: fixed;
+
+        inset: 0;
+
+        width: 100vw;
+        height: 100dvh;
+
+        padding: 12px;
+
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+    }
+
+    .service-modal__panel {
+        width: min(100%, 620px);
+
+        height:
+            min(
+                92dvh,
+                820px
+            );
+
+        max-height:
+            calc(
+                100dvh - 24px
+            );
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius:
+            var(--radius-xl);
+    }
+
+    /* Keep mobile image compact */
+    .service-modal__visual {
+        flex: 0 0 30%;
+
+        min-height: 170px;
+        max-height: 260px;
+    }
+
+    .service-modal__visual-content {
+        left: 20px;
+        bottom: 18px;
+    }
+
+    .service-modal__visual-content span {
+        font-size: 8px;
+
+        padding:
+            7px
+            9px;
+    }
+
+    .service-modal__content {
+        flex: 1 1 auto;
+
+        min-height: 0;
+    }
+
+    .service-modal__content-scroll {
+        height: 100%;
+
+        padding:
+            30px
+            20px
+            92px;
+    }
+
+    .service-modal__content h2 {
+        margin-bottom:
+            var(--space-4);
+
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3rem
+            );
+    }
+
+    .service-modal__description {
+        font-size:
+            var(--font-size-base);
+
+        line-height: 1.6;
+    }
+
+    .service-modal__section-title {
+        margin-top:
+            var(--space-8);
+
+        margin-bottom:
+            var(--space-4);
+    }
+
+    .service-modal__features {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .service-modal__feature {
+        min-height: 0;
+
+        padding:
+            14px;
+    }
+
+    .service-modal__feature-name {
+        font-size:
+            var(--font-size-sm);
+    }
+
+    .service-modal__close {
+        top: 12px;
+        right: 12px;
+
+        min-width: 72px;
+        height: 38px;
+
+        z-index: 40;
+    }
+
+    .service-modal__navigation {
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        padding:
+            10px 12px;
+
+        gap: 8px;
+    }
+
+    .service-modal__nav-button {
+        min-height: 40px;
+
+        padding:
+            0 10px;
+
+        font-size: 8px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .services-grid {
+        gap: 14px;
+    }
+
+    .service-card {
+        min-height: 410px;
+
+        padding: var(--space-5);
+    }
+
+    .service-card__icon {
+        top: var(--space-5);
+        left: var(--space-5);
+
+        width: 66px;
+        height: 66px;
+    }
+
+    .service-card__icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .service-card__body {
+        padding-top: 140px;
+    }
+
+    .service-card h3 {
+        font-size: 1.55rem;
+    }
+
+    .service-card__description {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    .service-modal {
+        padding: 8px;
+    }
+
+    .service-modal__panel {
+        width: 100%;
+
+        height:
+            calc(
+                100dvh - 16px
+            );
+
+        max-height:
+            calc(
+                100dvh - 16px
+            );
+
+        border-radius:
+            var(--radius-lg);
+    }
+
+    .service-modal__visual {
+        flex: 0 0 25%;
+
+        min-height: 135px;
+        max-height: 200px;
+    }
+
+    .service-modal__content-scroll {
+        padding:
+            24px
+            16px
+            86px;
+    }
+
+    .service-modal__content h2 {
+        font-size: 2.05rem;
+
+        letter-spacing:
+            -0.055em;
+    }
+
+    .service-modal__description {
+        font-size: 0.86rem;
+    }
+
+    .service-modal__feature {
+        padding: 13px;
+    }
+
+    .service-modal__feature-name {
+        font-size: 0.8rem;
+    }
+
+    .service-modal__close {
+        top: 10px;
+        right: 10px;
+
+        min-width: 68px;
+        height: 36px;
+    }
+
+    .service-modal__navigation {
+        padding:
+            9px 10px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .service-modal__image {
+        animation: none;
+    }
+
+    .service-card,
+    .service-card__image,
+    .service-card__icon,
+    .service-card__explore,
+    .service-modal__feature,
+    .service-modal__nav-button,
+    .service-modal__close {
+        transition: none;
+    }
+}
+
+
+
+
+
+.service-modal__visual {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #111111;
+}
+
+
+/* =========================================================
+   BACKGROUND COPY
+   ========================================================= */
+
+.service-modal__image-bg {
+    position: absolute;
+    inset: -30px;
+
+    z-index: 0;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: blur(20px);
+
+    transform: scale(1.08);
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   SHARP ACTUAL IMAGE
+   ========================================================= */
+
+.service-modal__image {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    filter: none;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.service-modal__image-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 17, 17, 0.02),
+            rgba(17, 17, 17, 0.04) 55%,
+            rgba(17, 17, 17, 0.45) 100%
+        );
+}
+
+
+/* =========================================================
+   FINAL MODAL IMAGE FIX
+   Sharp image + clean non-blurred background fill
+   ========================================================= */
+
+.service-modal__visual {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #111111;
+}
+
+/*
+   Background copy:
+   - NO blur
+   - slightly enlarged
+   - low opacity
+   - only used to fill the aspect-ratio space
+*/
+.service-modal__image-bg {
+    position: absolute;
+    inset: -24px;
+
+    z-index: 0;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: none !important;
+    -webkit-filter: none !important;
+
+    transform: scale(1.06);
+
+    opacity: 0.22;
+}
+
+/*
+   Actual image:
+   - always sharp
+   - complete image visible
+   - never cropped
+   - no filter
+*/
+.service-modal__image {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    filter: none !important;
+    -webkit-filter: none !important;
+
+    transform: none;
+}
+
+/* Remove the old blurred pseudo-background completely */
+.service-modal__image::before,
+.service-modal__image::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Very subtle readability overlay only.
+   This does NOT blur the image. */
+.service-modal__image-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 17, 17, 0) 0%,
+            rgba(17, 17, 17, 0.02) 55%,
+            rgba(17, 17, 17, 0.28) 100%
+        );
+}
+
+/* Keep the label above the image */
+.service-modal__visual-content {
+    z-index: 3;
+}
+
+/* =========================================================
+   MOBILE — KEEP IMAGE SHARP
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .service-modal__image-bg {
+        filter: none !important;
+        -webkit-filter: none !important;
+        opacity: 0.18;
+    }
+
+    .service-modal__image {
+        filter: none !important;
+        -webkit-filter: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-modal__image,
+    .service-modal__image-bg {
+        filter: none !important;
+        -webkit-filter: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+

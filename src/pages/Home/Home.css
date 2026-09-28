@@ -1,0 +1,2389 @@
+/* =========================================================
+   BITSOL HOME
+   PREMIUM CINEMATIC INDUSTRIAL HOMEPAGE
+   ========================================================= */
+
+
+/* =========================================================
+   HOME BASE
+   ========================================================= */
+
+.home {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 0;
+
+    overflow: visible;
+
+    background:
+        var(--color-background);
+}
+
+
+
+/* =========================================================
+   CINEMATIC INTRO
+   ========================================================= */
+
+.home-intro {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 70% 45%,
+            rgba(246, 36, 64, 0.08),
+            transparent 34%),
+        #0c0c0c;
+
+    color:
+        var(--color-white);
+}
+
+
+/* =========================================================
+   INTRO BACKGROUND
+   ========================================================= */
+
+.home-intro__background {
+    position: absolute;
+
+    inset: -5%;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    transform-origin:
+        center;
+}
+
+
+.home-intro__background::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(90deg,
+            rgba(8, 8, 8, 0.94) 0%,
+            rgba(8, 8, 8, 0.72) 42%,
+            rgba(8, 8, 8, 0.84) 100%);
+}
+
+
+.home-intro__background::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        radial-gradient(circle at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.82) 100%);
+}
+
+
+.home-intro__background img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position:
+        center center;
+
+    filter:
+        grayscale(0.7) contrast(1.12) brightness(0.68);
+
+    transform:
+        scale(1.02);
+}
+
+
+
+/* =========================================================
+   INTRO CONTENT
+   ========================================================= */
+
+.home-intro__content {
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(1100px,
+            calc(100% - 80px));
+
+    display: flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    transform:
+        translateY(-2%);
+}
+
+
+
+/* =========================================================
+   INTRO BRAND
+   ========================================================= */
+
+.home-intro__brand {
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(3rem,
+            7vw,
+            7rem);
+
+    font-weight:
+        700;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        -0.065em;
+
+    color:
+        var(--color-white);
+}
+
+
+
+/* =========================================================
+   INTRO LINE
+   ========================================================= */
+
+.home-intro__line {
+    width:
+        min(300px,
+            35vw);
+
+    height:
+        1px;
+
+    margin-top:
+        28px;
+
+    background:
+        linear-gradient(90deg,
+            var(--color-primary),
+            rgba(246, 36, 64, 0));
+}
+
+
+
+/* =========================================================
+   INTRO STATEMENT
+   ========================================================= */
+
+.home-intro__statement {
+    margin-top:
+        28px;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(1rem,
+            1.6vw,
+            1.45rem);
+
+    font-weight:
+        500;
+
+    line-height:
+        1.25;
+
+    letter-spacing:
+        0.22em;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.78);
+}
+
+
+
+/* =========================================================
+   INTRO BAR
+   ========================================================= */
+
+.home-intro__bar {
+    width:
+        min(180px,
+            25vw);
+
+    height:
+        2px;
+
+    margin-top:
+        36px;
+
+    background:
+        var(--color-primary);
+
+    transform-origin:
+        left center;
+
+    box-shadow:
+        0 0 18px rgba(246,
+            36,
+            64,
+            0.35);
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-hero {
+    position: relative;
+
+    width: 100%;
+
+    /*
+     * The hero is a fixed visual stage.
+     * Image dimensions cannot change page height.
+     */
+    min-height:
+        100svh;
+
+    height:
+        100svh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        #111111;
+
+    color:
+        var(--color-white);
+
+    isolation:
+        isolate;
+}
+
+
+
+/* =========================================================
+   HERO VISUAL FRAME
+   ========================================================= */
+
+.home-hero__visual {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   HERO SLIDE FRAME
+   ========================================================= */
+
+.home-hero__slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.home-hero__image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position:
+        center center;
+
+    /*
+     * Every source image gets the exact same
+     * rendering box.
+     */
+    max-width: none;
+
+    max-height: none;
+
+    filter:
+        contrast(1.08) brightness(0.72) saturate(0.78);
+
+    transform-origin:
+        84% 50%;
+
+    will-change:
+        transform;
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+}
+
+
+
+/* =========================================================
+   KEN BURNS RIGHT
+   PRESERVED ANIMISTA STYLE
+   ========================================================= */
+
+.kenburns-right {
+    -webkit-animation:
+        kenburns-right 7s ease-out both;
+
+    animation:
+        kenburns-right 7s ease-out both;
+}
+
+
+
+/* =========================================================
+   KEN BURNS RIGHT
+   ========================================================= */
+
+@-webkit-keyframes kenburns-right {
+
+    0% {
+
+        -webkit-transform:
+            scale(1) translate(0, 0);
+
+        transform:
+            scale(1) translate(0, 0);
+
+        -webkit-transform-origin:
+            84% 50%;
+
+        transform-origin:
+            84% 50%;
+    }
+
+
+    100% {
+
+        -webkit-transform:
+            scale(1.25) translateX(20px);
+
+        transform:
+            scale(1.25) translateX(20px);
+
+        -webkit-transform-origin:
+            right center;
+
+        transform-origin:
+            right center;
+    }
+}
+
+
+@keyframes kenburns-right {
+
+    0% {
+
+        transform:
+            scale(1) translate(0, 0);
+
+        transform-origin:
+            84% 50%;
+    }
+
+
+    100% {
+
+        transform:
+            scale(1.25) translateX(20px);
+
+        transform-origin:
+            right center;
+    }
+}
+
+
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.home-hero__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(90deg,
+            rgba(8, 8, 8, 0.9) 0%,
+            rgba(8, 8, 8, 0.76) 32%,
+            rgba(8, 8, 8, 0.36) 64%,
+            rgba(8, 8, 8, 0.55) 100%);
+}
+
+
+.home-hero__overlay::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(0deg,
+            rgba(5, 5, 5, 0.76) 0%,
+            transparent 35%,
+            transparent 70%,
+            rgba(5, 5, 5, 0.32) 100%);
+}
+
+
+
+/* =========================================================
+   HERO LIGHT SWEEP
+   ========================================================= */
+
+.home-hero__light {
+    position: absolute;
+
+    z-index: 2;
+
+    top:
+        -20%;
+
+    left:
+        -30%;
+
+    width:
+        25%;
+
+    height:
+        140%;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.035) 35%,
+            rgba(246, 36, 64, 0.08) 50%,
+            rgba(255, 255, 255, 0.035) 65%,
+            transparent 100%);
+
+    transform:
+        skewX(-12deg) rotate(2deg);
+
+    filter:
+        blur(8px);
+}
+
+
+
+/* =========================================================
+   HERO CONTAINER
+   ========================================================= */
+
+.home-hero__container {
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(1400px,
+            calc(100% - 100px));
+
+    height:
+        100%;
+
+    min-height:
+        100svh;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        130px 0 90px;
+}
+
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.home-hero__content {
+    width:
+        min(820px,
+            72%);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    will-change:
+        opacity,
+        transform;
+}
+
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.home-hero__eyebrow {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        25px;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.18em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.7);
+}
+
+
+.home-hero__eyebrow span {
+    width:
+        34px;
+
+    height:
+        1px;
+
+    flex-shrink:
+        0;
+
+    background:
+        var(--color-primary);
+
+    box-shadow:
+        0 0 10px rgba(246,
+            36,
+            64,
+            0.3);
+}
+
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.home-hero__title {
+    margin:
+        0;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(3.5rem,
+            7.5vw,
+            7.8rem);
+
+    font-weight:
+        700;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        -0.065em;
+
+    color:
+        var(--color-white);
+}
+
+
+.home-hero__title-line {
+    display:
+        block;
+
+    width:
+        fit-content;
+
+    max-width:
+        100%;
+
+    overflow:
+        hidden;
+
+    padding-bottom:
+        0.08em;
+}
+
+
+.home-hero__title-line>span {
+    display:
+        block;
+
+    will-change:
+        transform;
+}
+
+
+.home-hero__title-accent {
+    color:
+        var(--color-primary);
+
+    text-shadow:
+        0 0 30px rgba(246,
+            36,
+            64,
+            0.08);
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.home-hero__description {
+    max-width:
+        570px;
+
+    margin:
+        34px 0 0;
+
+    font-size:
+        clamp(0.95rem,
+            1.2vw,
+            1.08rem);
+
+    line-height:
+        1.75;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.7);
+}
+
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.home-hero__actions {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+    margin-top:
+        34px;
+}
+
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.home-hero__button {
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        52px;
+
+    padding:
+        0 27px;
+
+    border:
+        1px solid var(--color-primary);
+
+    border-radius:
+        8px;
+
+    background:
+        var(--color-primary);
+
+    color:
+        var(--color-white);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.08em;
+
+    cursor:
+        pointer;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.home-hero__button::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        80%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255,
+                255,
+                255,
+                0.22),
+            transparent);
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.65s ease;
+}
+
+
+.home-hero__button span {
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+
+.home-hero__button:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--color-primary-dark);
+
+    box-shadow:
+        0 12px 35px rgba(246,
+            36,
+            64,
+            0.22);
+}
+
+
+.home-hero__button:hover::before {
+    left:
+        140%;
+}
+
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.home-hero__link {
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        52px;
+
+    padding:
+        0 24px;
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            0.28);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(10,
+            10,
+            10,
+            0.42);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.9);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.12em;
+
+    cursor:
+        pointer;
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+
+    transition:
+        color 0.35s ease,
+        border-color 0.35s ease,
+        background-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.home-hero__link::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        80%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255,
+                255,
+                255,
+                0.08),
+            transparent);
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.7s ease;
+}
+
+
+.home-hero__link::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        20%;
+
+    right:
+        20%;
+
+    bottom:
+        0;
+
+    height:
+        1px;
+
+    background:
+        var(--color-primary);
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        center;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.home-hero__link:hover {
+    color:
+        var(--color-white);
+
+    border-color:
+        rgba(246,
+            36,
+            64,
+            0.7);
+
+    background:
+        rgba(15,
+            15,
+            15,
+            0.7);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,
+            0,
+            0,
+            0.22);
+}
+
+
+.home-hero__link:hover::before {
+    left:
+        140%;
+}
+
+
+.home-hero__link:hover::after {
+    transform:
+        scaleX(1);
+}
+
+
+
+/* =========================================================
+   SIDE TEXT
+   ========================================================= */
+
+.home-hero__side {
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        50%;
+
+    transform:
+        translateY(50%) rotate(90deg);
+
+    transform-origin:
+        right center;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+    white-space:
+        nowrap;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.24em;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.38);
+}
+
+
+.home-hero__side span {
+    position:
+        relative;
+}
+
+
+.home-hero__side span:not(:last-child)::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        -17px;
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--color-primary);
+}
+
+
+
+/* =========================================================
+   HERO CAROUSEL
+   ========================================================= */
+
+.home-hero__carousel {
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    left:
+        50%;
+
+    bottom:
+        72px;
+
+    transform:
+        translateX(-50%);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+    padding:
+        9px 14px;
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            0.14);
+
+    border-radius:
+        var(--radius-full);
+
+    background:
+        rgba(10,
+            10,
+            10,
+            0.32);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    pointer-events:
+        auto;
+}
+
+
+
+/* =========================================================
+   CAROUSEL COUNT
+   ========================================================= */
+
+.home-hero__carousel-count {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        0.68rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.08em;
+
+    white-space:
+        nowrap;
+}
+
+
+.home-hero__carousel-current {
+    color:
+        var(--color-primary);
+}
+
+
+.home-hero__carousel-divider {
+    color:
+        rgba(255,
+            255,
+            255,
+            0.28);
+}
+
+
+.home-hero__carousel-total {
+    color:
+        rgba(255,
+            255,
+            255,
+            0.42);
+}
+
+
+
+/* =========================================================
+   CAROUSEL DOTS
+   ========================================================= */
+
+.home-hero__carousel-dots {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+}
+
+
+.home-hero__carousel-dot {
+    position:
+        relative;
+
+    width:
+        28px;
+
+    height:
+        3px;
+
+    padding:
+        0;
+
+    border:
+        0;
+
+    border-radius:
+        var(--radius-full);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.18);
+
+    overflow:
+        hidden;
+
+    cursor:
+        pointer;
+
+    transition:
+        width var(--transition-normal),
+
+        background var(--transition-normal);
+}
+
+
+.home-hero__carousel-dot span {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
+
+    background:
+        var(--color-primary);
+}
+
+
+.home-hero__carousel-dot.is-active {
+    width:
+        52px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.18);
+}
+
+
+.home-hero__carousel-dot.is-active span {
+    animation:
+        heroCarouselProgress 6s linear forwards;
+}
+
+
+
+/* =========================================================
+   CAROUSEL PROGRESS
+   ========================================================= */
+
+@keyframes heroCarouselProgress {
+
+    0% {
+
+        transform:
+            scaleX(0);
+    }
+
+    100% {
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+
+/* =========================================================
+   HERO FOOT
+   ========================================================= */
+
+.home-hero__foot {
+    position:
+        absolute;
+
+    z-index:
+        6;
+
+    left:
+        50%;
+
+    bottom:
+        30px;
+
+    transform:
+        translateX(-50%);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    white-space:
+        nowrap;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.6rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.2em;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.42);
+}
+
+
+.home-hero__foot-line {
+    position:
+        relative;
+
+    width:
+        65px;
+
+    height:
+        1px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.18);
+}
+
+
+.home-hero__foot-line::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -100%;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    background:
+        var(--color-primary);
+
+    animation:
+        homeScrollLine 2.2s ease-in-out infinite;
+}
+
+
+
+/* =========================================================
+   SCROLL LINE ANIMATION
+   ========================================================= */
+
+@keyframes homeScrollLine {
+
+    0% {
+
+        transform:
+            translateX(0);
+    }
+
+
+    50% {
+
+        transform:
+            translateX(100%);
+    }
+
+
+    100% {
+
+        transform:
+            translateX(200%);
+    }
+}
+
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .home-hero__container {
+
+        width:
+            min(1200px,
+                calc(100% - 70px));
+    }
+
+
+    .home-hero__content {
+
+        width:
+            78%;
+    }
+
+
+    .home-hero__side {
+
+        right:
+            -10px;
+    }
+
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .home-intro__content {
+
+        width:
+            calc(100% - 60px);
+    }
+
+
+    /* -----------------------------------------
+       HERO
+       ----------------------------------------- */
+
+    .home-hero {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .home-hero__container {
+        min-height: 100%;
+        height: 100%;
+    }
+
+    /* .home-hero {
+
+        min-height:100 svh;
+       
+
+        height:100 svh;
+           
+    } */
+
+
+    /* .home-hero__container {
+
+        width:
+            calc(100% - 60px);
+
+        min-height:
+            calc(100svh - 76px);
+
+        height:
+            calc(100svh - 76px);
+
+        align-items:
+            center;
+
+        padding:
+            70px 0 65px;
+    } */
+
+
+    .home-hero__content {
+
+        width:
+            92%;
+
+        transform:
+            translateY(0);
+    }
+
+
+    .home-hero__title {
+
+        font-size:
+            clamp(3.2rem,
+                8.5vw,
+                5.8rem);
+
+        line-height:
+            0.9;
+    }
+
+
+    .home-hero__eyebrow {
+
+        margin-bottom:
+            19px;
+    }
+
+
+    .home-hero__description {
+
+        max-width:
+            500px;
+
+        margin-top:
+            27px;
+
+        line-height:
+            1.65;
+    }
+
+
+    .home-hero__actions {
+
+        gap:
+            18px;
+
+        margin-top:
+            27px;
+    }
+
+
+    .home-hero__button,
+    .home-hero__link {
+
+        min-height:
+            50px;
+    }
+
+
+    .home-hero__button {
+
+        padding:
+            0 23px;
+    }
+
+
+    .home-hero__link {
+
+        padding:
+            0 21px;
+    }
+
+
+    .home-hero__side {
+
+        display:
+            none;
+    }
+
+
+    .home-hero__carousel {
+
+        bottom:
+            62px;
+    }
+
+
+    .home-hero__foot {
+
+        bottom:
+            23px;
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------
+       INTRO
+       ----------------------------------------- */
+
+    .home-intro__content {
+
+        width:
+            calc(100% - 40px);
+    }
+
+
+    .home-intro__brand {
+
+        font-size:
+            clamp(3.2rem,
+                16vw,
+                5rem);
+    }
+
+
+    .home-intro__line {
+
+        width:
+            170px;
+
+        margin-top:
+            22px;
+    }
+
+
+    .home-intro__statement {
+
+        margin-top:
+            22px;
+
+        font-size:
+            0.78rem;
+
+        letter-spacing:
+            0.17em;
+    }
+
+
+    .home-intro__bar {
+
+        width:
+            120px;
+
+        margin-top:
+            28px;
+    }
+
+
+
+    /* -----------------------------------------
+       HERO
+       ----------------------------------------- */
+
+    /* .home-hero {
+
+        min-height:100svh;
+            
+
+        height:
+            calc(100svh - 70px);
+    } */
+
+
+    .home-hero {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .home-hero__container {
+        min-height: 100%;
+        height: 100%;
+    }
+
+    .home-hero__image {
+
+        object-position:
+            62% center;
+
+        filter:
+            contrast(1.08) brightness(0.62) saturate(0.72);
+    }
+
+
+    .home-hero__overlay {
+
+        background:
+            linear-gradient(90deg,
+                rgba(8, 8, 8, 0.88) 0%,
+                rgba(8, 8, 8, 0.68) 65%,
+                rgba(8, 8, 8, 0.62) 100%);
+    }
+
+
+
+    /* -----------------------------------------
+       CONTAINER
+       ----------------------------------------- */
+
+    /* .home-hero__container {
+
+        width:
+            calc(100% - 40px);
+
+        min-height:
+            calc(100svh - 70px);
+
+        height:
+            calc(100svh - 70px);
+
+        align-items:
+            center;
+
+        padding:
+            65px 0;
+    } */
+
+
+    .home-hero__content {
+
+        width:
+            100%;
+
+        transform:
+            translateY(0);
+    }
+
+
+
+    /* -----------------------------------------
+       EYEBROW
+       ----------------------------------------- */
+
+    .home-hero__eyebrow {
+
+        margin-bottom:
+            18px;
+
+        font-size:
+            0.62rem;
+
+        letter-spacing:
+            0.14em;
+    }
+
+
+    .home-hero__eyebrow span {
+
+        width:
+            24px;
+    }
+
+
+
+    /* -----------------------------------------
+       TITLE
+       ----------------------------------------- */
+
+    .home-hero__title {
+
+        font-size:
+            clamp(2.8rem,
+                13.5vw,
+                4.8rem);
+
+        line-height:
+            0.9;
+
+        letter-spacing:
+            -0.065em;
+    }
+
+
+    .home-hero__title-line {
+
+        padding-bottom:
+            0.06em;
+    }
+
+
+
+    /* -----------------------------------------
+       DESCRIPTION
+       ----------------------------------------- */
+
+    .home-hero__description {
+
+        max-width:
+            430px;
+
+        margin-top:
+            24px;
+
+        font-size:
+            0.88rem;
+
+        line-height:
+            1.6;
+    }
+
+
+
+    /* -----------------------------------------
+       ACTIONS
+       ----------------------------------------- */
+
+    .home-hero__actions {
+
+        gap:
+            16px;
+
+        margin-top:
+            24px;
+    }
+
+
+    .home-hero__button,
+    .home-hero__link {
+
+        min-height:
+            48px;
+    }
+
+
+    .home-hero__button {
+
+        padding:
+            0 20px;
+
+        font-size:
+            0.65rem;
+    }
+
+
+    .home-hero__link {
+
+        padding:
+            0 20px;
+
+        font-size:
+            0.64rem;
+    }
+
+
+
+    /* -----------------------------------------
+       CAROUSEL
+       ----------------------------------------- */
+
+    .home-hero__carousel {
+
+        bottom:
+            49px;
+
+        gap:
+            14px;
+
+        padding:
+            7px 10px;
+    }
+
+
+    .home-hero__carousel-count {
+
+        font-size:
+            0.58rem;
+    }
+
+
+    .home-hero__carousel-dot {
+
+        width:
+            18px;
+
+        height:
+            2px;
+    }
+
+
+    .home-hero__carousel-dot.is-active {
+
+        width:
+            38px;
+    }
+
+
+
+    /* -----------------------------------------
+       SCROLL
+       ----------------------------------------- */
+
+    .home-hero__foot {
+
+        bottom:
+            20px;
+
+        font-size:
+            0.53rem;
+    }
+
+
+    .home-hero__foot-line {
+
+        width:
+            45px;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .home-intro__background img {
+
+        object-position:
+            62% center;
+    }
+
+
+    .home-hero__image {
+
+        object-position:
+            66% center;
+    }
+
+
+
+    /* -----------------------------------------
+       HERO SIZE
+       ----------------------------------------- */
+
+    /* .home-hero {
+
+        min-height:
+            calc(100svh - 64px);
+
+        height:
+            calc(100svh - 64px);
+    } */
+
+
+    .home-hero {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .home-hero__container {
+        min-height: 100%;
+        height: 100%;
+    }
+
+    /* -----------------------------------------
+       CONTAINER
+       ----------------------------------------- */
+
+    /* .home-hero__container {
+
+        width:
+            calc(100% - 32px);
+
+        min-height:
+            calc(100svh - 64px);
+
+        height:
+            calc(100svh - 64px);
+
+        padding:
+            55px 0 58px;
+    } */
+
+
+    .home-hero__content {
+
+        transform:
+            translateY(0);
+    }
+
+
+
+    /* -----------------------------------------
+       EYEBROW
+       ----------------------------------------- */
+
+    .home-hero__eyebrow {
+
+        margin-bottom:
+            16px;
+
+        font-size:
+            0.59rem;
+
+        letter-spacing:
+            0.13em;
+    }
+
+
+    .home-hero__eyebrow span {
+
+        width:
+            22px;
+    }
+
+
+
+    /* -----------------------------------------
+       TITLE
+       ----------------------------------------- */
+
+    .home-hero__title {
+
+        font-size:
+            clamp(2.6rem,
+                13.8vw,
+                4.2rem);
+
+        line-height:
+            0.9;
+    }
+
+
+
+    /* -----------------------------------------
+       DESCRIPTION
+       ----------------------------------------- */
+
+    .home-hero__description {
+
+        margin-top:
+            21px;
+
+        font-size:
+            0.83rem;
+
+        line-height:
+            1.58;
+
+        max-width:
+            350px;
+    }
+
+
+
+    /* -----------------------------------------
+       BUTTONS
+       ----------------------------------------- */
+
+    .home-hero__actions {
+
+        width:
+            100%;
+
+        flex-wrap:
+            nowrap;
+
+        gap:
+            12px;
+
+        margin-top:
+            21px;
+    }
+
+
+    .home-hero__button,
+    .home-hero__link {
+
+        flex:
+            1;
+
+        min-width:
+            0;
+
+        min-height:
+            47px;
+
+        padding:
+            0 12px;
+
+        white-space:
+            nowrap;
+    }
+
+
+    .home-hero__button {
+
+        font-size:
+            0.59rem;
+    }
+
+
+    .home-hero__link {
+
+        font-size:
+            0.59rem;
+    }
+
+
+
+    /* -----------------------------------------
+       CAROUSEL
+       ----------------------------------------- */
+
+    .home-hero__carousel {
+
+        bottom:
+            43px;
+    }
+
+
+
+    /* -----------------------------------------
+       SCROLL
+       ----------------------------------------- */
+
+    .home-hero__foot {
+
+        bottom:
+            17px;
+    }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .home-hero__container {
+
+        padding:
+            48px 0 55px;
+    }
+
+
+    .home-hero__title {
+
+        font-size:
+            2.55rem;
+    }
+
+
+    .home-hero__description {
+
+        margin-top:
+            19px;
+
+        font-size:
+            0.8rem;
+    }
+
+
+    .home-hero__actions {
+
+        gap:
+            9px;
+
+        margin-top:
+            19px;
+    }
+
+
+    .home-hero__button,
+    .home-hero__link {
+
+        min-height:
+            45px;
+
+        padding:
+            0 9px;
+
+        font-size:
+            0.55rem;
+    }
+
+
+    .home-hero__carousel {
+
+        bottom:
+            40px;
+    }
+
+
+    .home-hero__foot {
+
+        display:
+            none;
+    }
+
+}
+
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-intro__background,
+    .home-intro__bar,
+    .home-hero__light,
+    .home-hero__image,
+    .kenburns-right,
+    .home-hero__title-line>span {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+    }
+
+
+    .home-hero__carousel-dot.is-active span {
+
+        animation:
+            none !important;
+    }
+
+
+    .home-hero__foot-line::after {
+
+        animation:
+            none !important;
+    }
+
+}
