@@ -71,15 +71,10 @@
     transform: scale(1.025);
 
     animation:
-        productsHeroVideoReveal
-        1.4s
-        cubic-bezier(
-            0.22,
+        productsHeroVideoReveal 1.4s cubic-bezier(0.22,
             1,
             0.36,
-            1
-        )
-        both;
+            1) both;
 }
 
 
@@ -103,8 +98,7 @@
 
     background:
 
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
 
             rgba(17, 17, 17, 0.94) 0%,
 
@@ -116,11 +110,9 @@
 
             rgba(17, 17, 17, 0.22) 80%,
 
-            rgba(17, 17, 17, 0.30) 100%
-        ),
+            rgba(17, 17, 17, 0.30) 100%),
 
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
 
             rgba(17, 17, 17, 0.32) 0%,
 
@@ -128,8 +120,7 @@
 
             transparent 65%,
 
-            rgba(17, 17, 17, 0.78) 100%
-        );
+            rgba(17, 17, 17, 0.78) 100%);
 }
 
 
@@ -143,10 +134,8 @@
 
     z-index: 10;
 
-    width: min(
-        calc(100% - (var(--container-padding) * 2)),
-        var(--container-width)
-    );
+    width: min(calc(100% - (var(--container-padding) * 2)),
+            var(--container-width));
 
     height: 100%;
 
@@ -196,12 +185,10 @@
 
     margin-bottom: var(--space-6);
 
-    color: rgba(
-        255,
-        255,
-        255,
-        0.78
-    );
+    color: rgba(255,
+            255,
+            255,
+            0.78);
 
     font-family: var(--font-body);
 
@@ -218,16 +205,10 @@
     opacity: 0;
 
     animation:
-        productsHeroFadeUp
-        0.9s
-        0.15s
-        cubic-bezier(
-            0.22,
+        productsHeroFadeUp 0.9s 0.15s cubic-bezier(0.22,
             1,
             0.36,
-            1
-        )
-        forwards;
+            1) forwards;
 }
 
 
@@ -261,11 +242,9 @@
 
     font-family: var(--font-heading);
 
-    font-size: clamp(
-        4.5rem,
-        7vw,
-        7.2rem
-    );
+    font-size: clamp(4.5rem,
+            7vw,
+            7.2rem);
 
     font-weight: var(--font-weight-bold);
 
@@ -290,15 +269,10 @@
     transform: translateY(45px);
 
     animation:
-        productsHeroHeadingReveal
-        1s
-        cubic-bezier(
-            0.22,
+        productsHeroHeadingReveal 1s cubic-bezier(0.22,
             1,
             0.36,
-            1
-        )
-        forwards;
+            1) forwards;
 }
 
 
@@ -338,12 +312,10 @@
 
     margin-bottom: 0;
 
-    color: rgba(
-        255,
-        255,
-        255,
-        0.78
-    );
+    color: rgba(255,
+            255,
+            255,
+            0.78);
 
     font-family: var(--font-body);
 
@@ -356,16 +328,10 @@
     opacity: 0;
 
     animation:
-        productsHeroFadeUp
-        0.9s
-        0.62s
-        cubic-bezier(
-            0.22,
+        productsHeroFadeUp 0.9s 0.62s cubic-bezier(0.22,
             1,
             0.36,
-            1
-        )
-        forwards;
+            1) forwards;
 }
 
 
@@ -386,16 +352,10 @@
     opacity: 0;
 
     animation:
-        productsHeroFadeUp
-        0.9s
-        0.74s
-        cubic-bezier(
-            0.22,
+        productsHeroFadeUp 0.9s 0.74s cubic-bezier(0.22,
             1,
             0.36,
-            1
-        )
-        forwards;
+            1) forwards;
 }
 
 
@@ -420,9 +380,7 @@
     border-radius: var(--radius-sm);
 
     border:
-        var(--border-width)
-        solid
-        transparent;
+        var(--border-width) solid transparent;
 
     font-family: var(--font-body);
 
@@ -489,22 +447,18 @@
 
 .products-hero__link--secondary {
 
-    background: rgba(
-        255,
-        255,
-        255,
-        0.06
-    );
+    background: rgba(255,
+            255,
+            255,
+            0.06);
 
     color: var(--color-white);
 
     border-color:
-        rgba(
+        rgba(255,
             255,
             255,
-            255,
-            0.30
-        );
+            0.30);
 
     backdrop-filter: blur(10px);
 
@@ -514,20 +468,16 @@
 
 .products-hero__link--secondary:hover {
 
-    background: rgba(
-        255,
-        255,
-        255,
-        0.12
-    );
+    background: rgba(255,
+            255,
+            255,
+            0.12);
 
     border-color:
-        rgba(
+        rgba(255,
             255,
             255,
-            255,
-            0.58
-        );
+            0.58);
 
     color: var(--color-white);
 
@@ -570,28 +520,18 @@
     padding-top: var(--space-5);
 
     border-top:
-        var(--border-width)
-        solid
-        rgba(
+        var(--border-width) solid rgba(255,
             255,
             255,
-            255,
-            0.18
-        );
+            0.18);
 
     opacity: 0;
 
     animation:
-        productsHeroFadeUp
-        0.9s
-        0.88s
-        cubic-bezier(
-            0.22,
+        productsHeroFadeUp 0.9s 0.88s cubic-bezier(0.22,
             1,
             0.36,
-            1
-        )
-        forwards;
+            1) forwards;
 }
 
 
@@ -607,12 +547,10 @@
 
     gap: var(--space-3);
 
-    color: rgba(
-        255,
-        255,
-        255,
-        0.62
-    );
+    color: rgba(255,
+            255,
+            255,
+            0.62);
 
     font-family: var(--font-body);
 
@@ -646,12 +584,10 @@
 
 .products-hero__scroll {
 
-    color: rgba(
-        255,
-        255,
-        255,
-        0.48
-    );
+    color: rgba(255,
+            255,
+            255,
+            0.48);
 
     font-family: var(--font-body);
 
@@ -739,11 +675,9 @@
 
     .products-hero__heading {
 
-        font-size: clamp(
-            4rem,
-            7.4vw,
-            6rem
-        );
+        font-size: clamp(4rem,
+                7.4vw,
+                6rem);
     }
 
 
@@ -784,20 +718,16 @@
 
     .products-hero__container {
 
-        width: min(
-            calc(100% - 48px),
-            var(--container-width)
-        );
+        width: min(calc(100% - 48px),
+                var(--container-width));
     }
 
 
     .products-hero__heading {
 
-        font-size: clamp(
-            3.7rem,
-            7.8vw,
-            5.5rem
-        );
+        font-size: clamp(3.7rem,
+                7.8vw,
+                5.5rem);
     }
 
 
@@ -824,7 +754,7 @@
    16. MOBILE
    ========================================================= */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
     .products-hero {
 
@@ -963,14 +893,14 @@
 
         display: none;
     }
-}
+} */
 
 
 /* =========================================================
    17. SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 
     .products-hero {
 
@@ -1051,14 +981,14 @@
 
         padding-inline: var(--space-4);
     }
-}
+} */
 
 
 /* =========================================================
    18. VERY SMALL DEVICES
    ========================================================= */
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
 
     .products-hero {
 
@@ -1082,18 +1012,14 @@
 
         font-size: 9px;
     }
-}
+} */
 
 
 /* =========================================================
    19. LANDSCAPE MOBILE
    ========================================================= */
 
-@media (
-    max-width: 900px
-) and (
-    orientation: landscape
-) {
+@media (max-width: 900px) and (orientation: landscape) {
 
     .products-hero {
 
@@ -1119,11 +1045,9 @@
 
     .products-hero__heading {
 
-        font-size: clamp(
-            2.8rem,
-            7vw,
-            4.5rem
-        );
+        font-size: clamp(2.8rem,
+                7vw,
+                4.5rem);
     }
 
 
@@ -1175,5 +1099,316 @@
         opacity: 1;
 
         transform: none;
+    }
+}
+
+
+
+
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .products-hero {
+        height: auto;
+        min-height: calc(100svh - var(--navbar-height));
+
+        display: flex;
+        align-items: stretch;
+
+        overflow: hidden;
+    }
+
+
+    /* ---------------------------------------------------------
+       VIDEO
+       --------------------------------------------------------- */
+
+    .products-hero__video {
+        object-position: 62% center;
+        transform: scale(1.06);
+    }
+
+
+    /* ---------------------------------------------------------
+       MOBILE OVERLAY
+       --------------------------------------------------------- */
+
+    .products-hero__overlay {
+        background:
+            linear-gradient(180deg,
+                rgba(17, 17, 17, 0.48) 0%,
+                rgba(17, 17, 17, 0.68) 42%,
+                rgba(17, 17, 17, 0.94) 100%);
+    }
+
+
+    /* ---------------------------------------------------------
+       CONTAINER
+       --------------------------------------------------------- */
+
+    .products-hero__container {
+        width: min(calc(100% - (var(--container-padding-mobile) * 2)),
+                var(--container-width));
+
+        min-height: calc(100svh - var(--navbar-height));
+
+        height: auto;
+
+        margin-inline: auto;
+
+        padding-top: 64px;
+        padding-bottom: 42px;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: flex-end;
+    }
+
+
+    /* ---------------------------------------------------------
+       CONTENT
+       --------------------------------------------------------- */
+
+    .products-hero__content {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 0;
+        margin-bottom: 0;
+
+        padding-top: 0;
+    }
+
+
+    /* ---------------------------------------------------------
+       EYEBROW
+       --------------------------------------------------------- */
+
+    .products-hero__eyebrow {
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+
+        font-size: 9px;
+        line-height: 1.2;
+
+        letter-spacing: 0.13em;
+    }
+
+
+    .products-hero__eyebrow-line {
+        width: 24px;
+        height: 2px;
+    }
+
+
+    /* ---------------------------------------------------------
+       HEADING
+       --------------------------------------------------------- */
+
+    .products-hero__heading {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(3.15rem,
+                13vw,
+                4.8rem);
+
+        line-height: 0.88;
+
+        letter-spacing: -0.065em;
+    }
+
+
+    .products-hero__heading span {
+        display: block;
+
+        white-space: normal;
+    }
+
+
+    /* ---------------------------------------------------------
+       DESCRIPTION
+       --------------------------------------------------------- */
+
+    .products-hero__description {
+        width: 100%;
+        max-width: 360px;
+
+        margin-top: 22px;
+
+        font-size: 0.98rem;
+
+        line-height: 1.58;
+    }
+
+
+    /* ---------------------------------------------------------
+       ACTIONS
+       --------------------------------------------------------- */
+
+    .products-hero__actions {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-top: 24px;
+    }
+
+
+    /* ---------------------------------------------------------
+       BUTTONS
+       --------------------------------------------------------- */
+
+    .products-hero__link {
+        width: 100%;
+
+        min-height: 52px;
+
+        padding-inline: 20px;
+
+        border-radius: 10px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    /* ---------------------------------------------------------
+       HIDE DESKTOP BOTTOM BAR
+       --------------------------------------------------------- */
+
+    .products-hero__bottom {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   17. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .products-hero {
+        min-height: calc(100svh - var(--navbar-height));
+    }
+
+
+    .products-hero__video {
+        object-position: 64% center;
+        transform: scale(1.08);
+    }
+
+
+    .products-hero__container {
+        width: min(calc(100% - (var(--container-padding-small) * 2)),
+                var(--container-width));
+
+        min-height: calc(100svh - var(--navbar-height));
+
+        padding-top: 52px;
+        padding-bottom: 28px;
+    }
+
+
+    .products-hero__eyebrow {
+        margin-bottom: 16px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    .products-hero__heading {
+        font-size: clamp(2.85rem,
+                14vw,
+                4.1rem);
+
+        line-height: 0.89;
+
+        letter-spacing: -0.065em;
+    }
+
+
+    .products-hero__description {
+        max-width: 330px;
+
+        margin-top: 18px;
+
+        font-size: var(--font-size-mobile);
+
+        line-height: 1.58;
+    }
+
+
+    .products-hero__actions {
+        margin-top: 20px;
+
+        gap: 9px;
+    }
+
+
+    .products-hero__link {
+        min-height: 50px;
+
+        border-radius: 9px;
+
+        padding-inline: 16px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   18. VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .products-hero__container {
+        padding-top: 44px;
+        padding-bottom: 24px;
+    }
+
+
+    .products-hero__heading {
+        font-size: 2.65rem;
+
+        line-height: 0.9;
+    }
+
+
+    .products-hero__description {
+        max-width: 300px;
+
+        margin-top: 16px;
+
+        font-size: 0.875rem;
+    }
+
+
+    .products-hero__actions {
+        margin-top: 18px;
+    }
+
+
+    .products-hero__link {
+        min-height: 48px;
+
+        font-size: 8.5px;
     }
 }
