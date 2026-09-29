@@ -650,22 +650,45 @@ export default async function handler(req, res) {
                                         align="right"
                                     >
 
+                                        // <a
+                                        //     href="mailto:${escapeHtml(cleanEmail)}"
+                                        //     style="
+                                        //         display:inline-block;
+                                        //         padding:13px 20px;
+                                        //         background:#F62440;
+                                        //         color:#FFFFFF;
+                                        //         text-decoration:none;
+                                        //         font-size:12px;
+                                        //         font-weight:700;
+                                        //         letter-spacing:0.5px;
+                                        //         text-transform:uppercase;
+                                        //     "
+                                        // >
+                                        //     Reply to Enquiry
+                                        // </a>
+
+
+
                                         <a
-                                            href="mailto:${escapeHtml(cleanEmail)}"
-                                            style="
-                                                display:inline-block;
-                                                padding:13px 20px;
-                                                background:#F62440;
-                                                color:#FFFFFF;
-                                                text-decoration:none;
-                                                font-size:12px;
-                                                font-weight:700;
-                                                letter-spacing:0.5px;
-                                                text-transform:uppercase;
-                                            "
-                                        >
-                                            Reply to Enquiry
-                                        </a>
+    href="mailto:${escapeHtml(cleanEmail)}?subject=${encodeURIComponent(
+                    `Re: New Website Enquiry - ${cleanRequirement}`
+                )}&body=${encodeURIComponent(
+                    `Hi ${cleanName},\n\nThank you for contacting Bitsol Automation.\n\nRegards,\nBitsol Automation`
+                )}"
+    style="
+        display:inline-block;
+        padding:13px 20px;
+        background:#F62440;
+        color:#FFFFFF;
+        text-decoration:none;
+        font-size:12px;
+        font-weight:700;
+        letter-spacing:0.5px;
+        text-transform:uppercase;
+    "
+>
+    Reply to Enquiry
+</a>
 
                                     </td>
 
