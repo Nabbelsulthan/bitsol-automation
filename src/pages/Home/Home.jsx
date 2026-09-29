@@ -22,6 +22,9 @@ import heroImage
 import heroImageTwo
     from "../../assets/images/bitsol-hero2.png";
 
+    // import heroImageTwo
+    // from "../../assets/images/hero-image6.png";
+
 import heroImageThree
     from "../../assets/images/bitsol-hero4.png";
 

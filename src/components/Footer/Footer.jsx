@@ -197,7 +197,7 @@ function Footer() {
 
 
                         <a
-                            href="mailto:bitsolx@gmail.com"
+                            href="mailto:raam@bitsol.in"
                             className="footer__contact-link"
                         >
                             {/* bitsolx@gmail.com */}
@@ -208,13 +208,13 @@ function Footer() {
 
 
                         <a
-                            href="mailto:bitsolx@gmail.com"
+                            href="mailto:bitsol@bitsol.in"
                             className="footer__contact-link"
                         >
                             {/* bitsolx@gmail.com */}
 
                             bitsol@bitsol.in
-                            
+
                         </a>
 
 

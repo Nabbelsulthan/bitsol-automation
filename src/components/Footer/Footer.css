@@ -1145,3 +1145,524 @@
     }
 
 }
+
+
+
+
+/* =========================================================
+   BITSOL FOOTER — COMPACT RESPONSIVE OVERRIDE
+   ========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .footer {
+        min-height: 0;
+    }
+
+
+    .footer__container {
+        padding-top: 55px;
+        padding-bottom: 0;
+    }
+
+
+    .footer__main {
+        gap: 45px;
+    }
+
+
+    .footer__brand {
+        max-width: 310px;
+        padding: 8px 0 12px;
+    }
+
+
+    .footer__logo {
+        width: 175px;
+    }
+
+
+    .footer__brand p {
+        max-width: 290px;
+
+        margin-top: 17px;
+
+        font-size: 0.82rem;
+
+        line-height: 1.55;
+    }
+
+
+    .footer__est {
+        margin-top: 17px;
+
+        font-size: 0.60rem;
+    }
+
+
+    .footer__heading {
+        margin-bottom: 17px;
+
+        font-size: 0.62rem;
+    }
+
+
+    .footer__links {
+        gap: 10px;
+    }
+
+
+    .footer__links a {
+        font-size: 0.76rem;
+    }
+
+
+    .footer__contact {
+        gap: 8px;
+    }
+
+
+    .footer__address p {
+        font-size: 0.78rem;
+
+        line-height: 1.5;
+    }
+
+
+    .footer__contact-link {
+        font-size: 0.78rem;
+    }
+
+
+    .footer__contact-button {
+        min-height: 44px;
+
+        margin-top: 10px;
+
+        padding:
+            0 20px;
+
+        border-radius: 6px;
+
+        font-size: 0.62rem;
+    }
+
+
+    .footer__divider {
+        margin-top: 45px;
+    }
+
+
+    .footer__bottom {
+        min-height: 60px;
+
+        gap: 20px;
+    }
+
+
+    .footer__bottom p,
+    .footer__bottom-links a,
+    .footer__location {
+        font-size: 0.58rem;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .footer {
+        min-height: 0;
+    }
+
+
+    .footer__container {
+        padding-top: 50px;
+    }
+
+
+    .footer__main {
+        gap: 30px;
+    }
+
+
+    .footer__brand {
+        max-width: 290px;
+
+        padding:
+            5px 0 10px;
+    }
+
+
+    .footer__logo {
+        width: 165px;
+    }
+
+
+    .footer__brand p {
+        margin-top: 16px;
+
+        font-size: 0.78rem;
+
+        line-height: 1.55;
+    }
+
+
+    .footer__est {
+        margin-top: 16px;
+
+        font-size: 0.58rem;
+    }
+
+
+    .footer__heading {
+        margin-bottom: 16px;
+
+        font-size: 0.61rem;
+    }
+
+
+    .footer__links {
+        gap: 9px;
+    }
+
+
+    .footer__links a {
+        font-size: 0.74rem;
+    }
+
+
+    .footer__contact {
+        gap: 8px;
+    }
+
+
+    .footer__address p {
+        font-size: 0.76rem;
+
+        line-height: 1.5;
+    }
+
+
+    .footer__contact-link {
+        font-size: 0.76rem;
+    }
+
+
+    .footer__contact-button {
+        min-height: 42px;
+
+        margin-top: 8px;
+
+        padding:
+            0 18px;
+
+        font-size: 0.60rem;
+    }
+
+
+    .footer__divider {
+        margin-top: 40px;
+    }
+
+
+    .footer__bottom {
+        min-height: 58px;
+
+        gap: 18px;
+    }
+
+
+    .footer__bottom p,
+    .footer__bottom-links a,
+    .footer__location {
+        font-size: 0.56rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        min-height: 0;
+
+        overflow: hidden;
+    }
+
+
+    .footer__container {
+        width:
+            calc(
+                100% -
+                (var(--container-padding-mobile) * 2)
+            );
+
+        padding-top: 42px;
+    }
+
+
+    .footer__main {
+        grid-template-columns: 1fr;
+
+        gap: 27px;
+    }
+
+
+    /* ---------------------------------------------------------
+       BRAND
+       --------------------------------------------------------- */
+
+    .footer__brand {
+        max-width: 100%;
+
+        padding:
+            0 0 5px;
+    }
+
+
+    .footer__logo {
+        width: 145px;
+    }
+
+
+    .footer__brand p {
+        max-width: 310px;
+
+        margin-top: 14px;
+
+        font-size: 0.78rem;
+
+        line-height: 1.55;
+    }
+
+
+    .footer__est {
+        margin-top: 14px;
+
+        font-size: 0.55rem;
+
+        letter-spacing: 0.11em;
+    }
+
+
+    /* ---------------------------------------------------------
+       COLUMNS
+       --------------------------------------------------------- */
+
+    .footer__column {
+        width: 100%;
+    }
+
+
+    .footer__heading {
+        margin-bottom: 13px;
+
+        font-size: 0.60rem;
+
+        letter-spacing: 0.11em;
+    }
+
+
+    .footer__links {
+        gap: 9px;
+    }
+
+
+    .footer__links a {
+        font-size: 0.75rem;
+
+        line-height: 1.2;
+    }
+
+
+    /* ---------------------------------------------------------
+       CONTACT
+       --------------------------------------------------------- */
+
+    .footer__contact {
+        gap: 8px;
+    }
+
+
+    .footer__address p {
+        font-size: 0.76rem;
+
+        line-height: 1.5;
+    }
+
+
+    .footer__contact-link {
+        font-size: 0.76rem;
+    }
+
+
+    .footer__contact-button {
+        width: auto;
+
+        min-height: 44px;
+
+        margin-top: 8px;
+
+        padding:
+            0 20px;
+
+        border-radius: 6px;
+
+        font-size: 0.61rem;
+    }
+
+
+    /* ---------------------------------------------------------
+       BACKGROUND IMAGE
+       --------------------------------------------------------- */
+
+    .footer__visual {
+        height: 42%;
+    }
+
+
+    /* ---------------------------------------------------------
+       DIVIDER
+       --------------------------------------------------------- */
+
+    .footer__divider {
+        margin-top: 32px;
+    }
+
+
+    /* ---------------------------------------------------------
+       BOTTOM
+       --------------------------------------------------------- */
+
+    .footer__bottom {
+        grid-template-columns: 1fr;
+
+        min-height: 0;
+
+        align-items: flex-start;
+
+        gap: 9px;
+
+        padding:
+            18px 0 22px;
+    }
+
+
+    .footer__bottom p,
+    .footer__bottom-links a,
+    .footer__location {
+        font-size: 0.56rem;
+    }
+
+
+    .footer__bottom-links {
+        justify-content: flex-start;
+    }
+
+
+    .footer__location {
+        display: block;
+
+        justify-self: start;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .footer__container {
+        padding-top: 36px;
+    }
+
+
+    .footer__main {
+        gap: 23px;
+    }
+
+
+    .footer__logo {
+        width: 130px;
+    }
+
+
+    .footer__brand p {
+        margin-top: 12px;
+
+        font-size: 0.73rem;
+
+        line-height: 1.5;
+    }
+
+
+    .footer__est {
+        margin-top: 12px;
+
+        font-size: 0.51rem;
+    }
+
+
+    .footer__heading {
+        margin-bottom: 11px;
+
+        font-size: 0.57rem;
+    }
+
+
+    .footer__links {
+        gap: 8px;
+    }
+
+
+    .footer__links a {
+        font-size: 0.70rem;
+    }
+
+
+    .footer__address p,
+    .footer__contact-link {
+        font-size: 0.71rem;
+    }
+
+
+    .footer__contact-button {
+        min-height: 42px;
+
+        padding:
+            0 17px;
+
+        font-size: 0.57rem;
+    }
+
+
+    .footer__divider {
+        margin-top: 27px;
+    }
+
+
+    .footer__bottom {
+        gap: 7px;
+
+        padding:
+            16px 0 19px;
+    }
+
+}
