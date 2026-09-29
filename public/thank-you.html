@@ -1,663 +1,1192 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+
+    <meta charset="UTF-8">
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
-    />
+    >
 
     <meta
         name="robots"
-        content="noindex, follow"
-    />
-
-    <meta
-        name="theme-color"
-        content="#0b0d0c"
-    />
+        content="noindex, nofollow"
+    >
 
     <title>Thank You | Bitsol Automation</title>
 
     <meta
         name="description"
-        content="Thank you for contacting Bitsol Automation. Your enquiry has been prepared for WhatsApp."
-    />
+        content="Thank you for contacting Bitsol Automation. Our engineering team will review your enquiry and get back to you."
+    >
 
     <link
         rel="icon"
         type="image/png"
         href="/favicon.png"
-    />
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
+
+        /* =========================================================
+           BITSOL THANK YOU
+           Uses the existing Bitsol Global Theme
+           ========================================================= */
+
         :root {
-            --bg: #0a0c0b;
-            --bg-soft: #101311;
-            --text: #f4f5f2;
-            --muted: #9ca39e;
-            --line: rgba(255, 255, 255, 0.10);
-            --accent: #b7d62f;
-            --accent-dark: #8da900;
+
+            /* =====================================================
+               EXISTING BITSOL COLORS
+               ===================================================== */
+
+            --color-primary: #F62440;
+            --color-primary-dark: #D91E38;
+            --color-primary-light: #FF5A6F;
+
+            --color-background: #FFFAF3;
+            --color-surface: #FFFFFF;
+
+            --color-dark: #111111;
+            --color-surface-dark: #1A1A1A;
+            --color-dark-soft: #242424;
+
+            --color-white: #FFFFFF;
+            --color-black: #000000;
+
+            --color-text: #222222;
+            --color-heading: #111111;
+            --color-text-light: #F5F5F5;
+            --color-text-muted: #6B6B6B;
+
+            --color-border: #E8E3DE;
+            --color-border-dark: #333333;
+
+            /* =====================================================
+               EXISTING BITSOL TYPOGRAPHY
+               ===================================================== */
+
+            --font-heading:
+                "Space Grotesk",
+                sans-serif;
+
+            --font-body:
+                "Inter",
+                sans-serif;
+
+            /* =====================================================
+               EXISTING BITSOL RADIUS
+               ===================================================== */
+
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 18px;
+            --radius-2xl: 28px;
+            --radius-full: 9999px;
+
+            /* =====================================================
+               EXISTING BITSOL SHADOWS
+               ===================================================== */
+
+            --shadow-sm:
+                0 2px 8px rgba(17, 17, 17, 0.06);
+
+            --shadow-md:
+                0 8px 24px rgba(17, 17, 17, 0.08);
+
+            --shadow-lg:
+                0 16px 40px rgba(17, 17, 17, 0.12);
+
+            --shadow-xl:
+                0 24px 60px rgba(17, 17, 17, 0.16);
+
+            /* =====================================================
+               EXISTING BITSOL TRANSITIONS
+               ===================================================== */
+
+            --transition-fast:
+                150ms ease;
+
+            --transition-normal:
+                300ms ease;
+
+            --transition-slow:
+                500ms ease;
+
+            --transition-spring:
+                450ms cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        * {
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+
         html {
+            width: 100%;
             min-height: 100%;
-            background: var(--bg);
         }
 
+
         body {
+            width: 100%;
+            min-width: 320px;
             min-height: 100vh;
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-            background:
-                radial-gradient(
-                    circle at 50% 35%,
-                    rgba(183, 214, 47, 0.08),
-                    transparent 34%
-                ),
-                linear-gradient(
-                    180deg,
-                    #080a09 0%,
-                    #0b0e0c 55%,
-                    #080a09 100%
-                );
-            color: var(--text);
+
+            background: var(--color-background);
+            color: var(--color-text);
+
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
             overflow-x: hidden;
         }
+
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
+
+        button {
+            font: inherit;
+            border: 0;
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           PAGE
+           ========================================================= */
+
         .thankyou-page {
             min-height: 100vh;
-            position: relative;
             display: flex;
             flex-direction: column;
+
+            background: var(--color-background);
         }
 
-        /* =========================================
-           BACKGROUND
-        ========================================= */
 
-        .thankyou-page::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent 0%,
-                    rgba(255, 255, 255, 0.025) 50%,
-                    transparent 100%
-                );
-
-            pointer-events: none;
-        }
-
-        .thankyou-grid {
-            position: absolute;
-            inset: 0;
-
-            background-image:
-                linear-gradient(
-                    rgba(255, 255, 255, 0.025) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, 0.025) 1px,
-                    transparent 1px
-                );
-
-            background-size: 70px 70px;
-
-            mask-image:
-                linear-gradient(
-                    to bottom,
-                    transparent,
-                    black 20%,
-                    black 75%,
-                    transparent
-                );
-
-            pointer-events: none;
-        }
-
-        /* =========================================
+        /* =========================================================
            HEADER
-        ========================================= */
+           ========================================================= */
 
         .thankyou-header {
-            position: relative;
-            z-index: 2;
-
             width: 100%;
-            padding: 30px 5vw;
+            height: 80px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            border-bottom: 1px solid var(--line);
+            padding: 0 5vw;
+
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+
+            position: relative;
+            z-index: 10;
         }
+
 
         .thankyou-logo {
             display: inline-flex;
             align-items: center;
         }
 
+
         .thankyou-logo img {
-            width: 170px;
+            width: 138px;
             height: auto;
             display: block;
         }
 
-        .thankyou-header-label {
-            font-size: 0.65rem;
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--color-dark);
+
+            font-family: var(--font-heading);
+            font-size: 13px;
             font-weight: 700;
-            letter-spacing: 0.18em;
-            color: #858b86;
+
             text-transform: uppercase;
+            letter-spacing: 0.06em;
+
+            transition:
+                color var(--transition-fast),
+                transform var(--transition-fast);
         }
 
-        /* =========================================
+
+        .back-home:hover {
+            color: var(--color-primary);
+            transform: translateX(-3px);
+        }
+
+
+        .back-home-arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+
+        /* =========================================================
            MAIN
-        ========================================= */
+           ========================================================= */
 
         .thankyou-main {
-            position: relative;
-            z-index: 2;
-
             flex: 1;
 
-            width: min(920px, 90%);
-
-            margin: 0 auto;
-
             display: flex;
             align-items: center;
-            justify-content: center;
 
-            padding: 90px 0 100px;
+            padding:
+                70px
+                5vw
+                80px;
         }
+
+
+        .thankyou-container {
+            width: min(1180px, 100%);
+            margin-inline: auto;
+
+            display: grid;
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(360px, 0.85fr);
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        /* =========================================================
+           LEFT CONTENT
+           ========================================================= */
 
         .thankyou-content {
-            width: 100%;
-            text-align: center;
+            position: relative;
         }
 
-        .thankyou-icon {
-            width: 82px;
-            height: 82px;
 
-            margin: 0 auto 34px;
-
+        .thankyou-eyebrow {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 14px;
 
-            border: 1px solid rgba(183, 214, 47, 0.45);
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(183, 214, 47, 0.16),
-                    rgba(183, 214, 47, 0.03)
-                );
-
-            color: var(--accent);
-
-            box-shadow:
-                0 0 0 10px rgba(183, 214, 47, 0.025),
-                0 0 60px rgba(183, 214, 47, 0.08);
+            margin-bottom: 26px;
         }
 
-        .thankyou-icon svg {
-            width: 31px;
-            height: 31px;
+
+        .thankyou-eyebrow-number {
+            color: var(--color-primary);
+
+            font-family: var(--font-heading);
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
         }
 
-        .thankyou-kicker {
-            margin-bottom: 20px;
 
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.24em;
+        .thankyou-eyebrow-line {
+            width: 38px;
+            height: 1px;
 
-            color: var(--accent);
+            background: var(--color-primary);
+        }
 
+
+        .thankyou-eyebrow-text {
+            color: var(--color-text-muted);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.14em;
             text-transform: uppercase;
         }
+
 
         .thankyou-title {
-            max-width: 850px;
-            margin: 0 auto;
+            max-width: 720px;
 
-            font-size: clamp(3.2rem, 7vw, 6.7rem);
-            line-height: 0.92;
-            letter-spacing: -0.055em;
-            font-weight: 800;
+            color: var(--color-heading);
 
-            text-transform: uppercase;
+            font-family: var(--font-heading);
+            font-size: clamp(4rem, 7vw, 7.5rem);
+            font-weight: 700;
+
+            line-height: 0.88;
+            letter-spacing: -0.065em;
         }
+
 
         .thankyou-title span {
             display: block;
-            color: var(--accent);
+            color: var(--color-primary);
         }
+
 
         .thankyou-description {
-            max-width: 590px;
+            max-width: 570px;
 
-            margin: 32px auto 0;
+            margin-top: 34px;
 
-            font-size: 1rem;
+            color: var(--color-text-muted);
+
+            font-size: 17px;
             line-height: 1.75;
-
-            color: var(--muted);
         }
 
-        /* =========================================
-           WHATSAPP STATUS
-        ========================================= */
 
-        .thankyou-status {
-            width: min(580px, 100%);
+        /* =========================================================
+           CONFIRMATION MESSAGE
+           ========================================================= */
 
-            margin: 44px auto 0;
-            padding: 20px 22px;
-
+        .confirmation-message {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 16px;
 
-            text-align: left;
+            margin-top: 38px;
+            padding-top: 28px;
 
-            border: 1px solid var(--line);
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255, 255, 255, 0.045),
-                    rgba(255, 255, 255, 0.015)
-                );
+            border-top: 1px solid var(--color-border);
         }
 
-        .thankyou-status-icon {
-            flex: 0 0 auto;
 
-            width: 43px;
-            height: 43px;
+        .confirmation-icon {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 50%;
+            background: var(--color-primary);
+            color: var(--color-white);
 
-            background: rgba(183, 214, 47, 0.10);
-            color: var(--accent);
+            border-radius: var(--radius-full);
+
+            font-size: 23px;
+            font-weight: 700;
+
+            box-shadow: var(--shadow-md);
         }
 
-        .thankyou-status-icon svg {
-            width: 21px;
-            height: 21px;
-        }
 
-        .thankyou-status strong {
+        .confirmation-text strong {
             display: block;
 
-            margin-bottom: 4px;
+            color: var(--color-heading);
 
-            font-size: 0.73rem;
-            letter-spacing: 0.12em;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
 
+            letter-spacing: 0.03em;
             text-transform: uppercase;
         }
 
-        .thankyou-status p {
-            font-size: 0.82rem;
+
+        .confirmation-text span {
+            display: block;
+
+            margin-top: 5px;
+
+            color: var(--color-text-muted);
+
+            font-size: 14px;
             line-height: 1.5;
-            color: var(--muted);
         }
 
-        /* =========================================
-           ACTIONS
-        ========================================= */
 
-        .thankyou-actions {
-            margin-top: 38px;
+        /* =========================================================
+           RIGHT CARD
+           ========================================================= */
+
+        .thankyou-card {
+            position: relative;
+
+            background: var(--color-white);
+
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-2xl);
+
+            padding: 42px;
+
+            box-shadow: var(--shadow-xl);
+
+            overflow: hidden;
+        }
+
+
+        .thankyou-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background: var(--color-primary);
+        }
+
+
+        .card-label {
+            color: var(--color-text-muted);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+
+        .card-title {
+            margin-top: 16px;
+
+            color: var(--color-heading);
+
+            font-family: var(--font-heading);
+            font-size: 30px;
+            font-weight: 700;
+
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+        }
+
+
+        .card-text {
+            margin-top: 15px;
+
+            color: var(--color-text-muted);
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           COUNTDOWN
+           ========================================================= */
+
+        .countdown-area {
+            margin-top: 34px;
+
+            padding: 24px;
+
+            background: var(--color-background);
+
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+        }
+
+
+        .countdown-label {
+            color: var(--color-text-muted);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+
+        .countdown-number {
+            margin-top: 5px;
 
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-
-            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
         }
 
-        .thankyou-button {
-            min-height: 52px;
 
-            padding: 0 27px;
+        #countdown {
+            color: var(--color-primary);
+
+            font-family: var(--font-heading);
+            font-size: 54px;
+            font-weight: 700;
+
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+
+
+        .countdown-seconds {
+            color: var(--color-text-muted);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           PROGRESS BAR
+           ========================================================= */
+
+        .progress-track {
+            width: 100%;
+            height: 4px;
+
+            margin-top: 18px;
+
+            background: var(--color-border);
+
+            border-radius: var(--radius-full);
+
+            overflow: hidden;
+        }
+
+
+        .progress-bar {
+            width: 100%;
+            height: 100%;
+
+            background: var(--color-primary);
+
+            transform-origin: left center;
+
+            animation:
+                countdown-progress 10s linear forwards;
+        }
+
+
+        @keyframes countdown-progress {
+
+            from {
+                transform: scaleX(1);
+            }
+
+            to {
+                transform: scaleX(0);
+            }
+        }
+
+
+        /* =========================================================
+           HOME BUTTON
+           ========================================================= */
+
+        .home-button {
+            width: 100%;
+            min-height: 54px;
+
+            margin-top: 22px;
 
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
 
-            border-radius: 7px;
+            background: var(--color-primary);
+            color: var(--color-white);
 
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.13em;
+            border-radius: var(--radius-sm);
 
+            font-family: var(--font-heading);
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 0.05em;
             text-transform: uppercase;
 
             transition:
-                transform 180ms ease,
-                background 180ms ease,
-                border-color 180ms ease;
+                background var(--transition-fast),
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast);
         }
 
-        .thankyou-button--primary {
-            background: var(--accent);
-            color: #10120d;
-            border: 1px solid var(--accent);
-        }
 
-        .thankyou-button--secondary {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-        }
+        .home-button:hover {
+            background: var(--color-primary-dark);
 
-        .thankyou-button:hover {
             transform: translateY(-2px);
+
+            box-shadow:
+                var(--shadow-md);
         }
 
-        .thankyou-button--primary:hover {
-            background: #c9e84a;
+
+        .home-button:active {
+            transform: translateY(0);
         }
 
-        .thankyou-button--secondary:hover {
-            border-color: rgba(255, 255, 255, 0.32);
+
+        /* =========================================================
+           ENGINEERING NOTE
+           ========================================================= */
+
+        .engineering-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-top: 24px;
+
+            color: var(--color-text-muted);
+
+            font-size: 12px;
+            line-height: 1.5;
         }
 
-        /* =========================================
+
+        .engineering-dot {
+            width: 7px;
+            height: 7px;
+            flex: 0 0 7px;
+
+            background: var(--color-primary);
+
+            border-radius: var(--radius-full);
+        }
+
+
+        /* =========================================================
            FOOTER
-        ========================================= */
+           ========================================================= */
 
         .thankyou-footer {
-            position: relative;
-            z-index: 2;
-
             width: 100%;
 
-            padding: 22px 5vw;
+            padding:
+                20px
+                5vw;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
 
-            border-top: 1px solid var(--line);
+            border-top: 1px solid var(--color-border);
 
-            color: #6f7671;
+            background: var(--color-background);
+        }
 
-            font-size: 0.62rem;
-            letter-spacing: 0.12em;
+
+        .footer-copy {
+            color: var(--color-text-muted);
+
+            font-size: 11px;
+            font-weight: 500;
+
+            letter-spacing: 0.04em;
+        }
+
+
+        .footer-brand {
+            color: var(--color-dark);
+
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
-        /* =========================================
-           MOBILE
-        ========================================= */
 
-        @media (max-width: 700px) {
+        .footer-brand span {
+            color: var(--color-primary);
+        }
 
-            .thankyou-header {
-                padding: 22px 22px;
+
+        /* =========================================================
+           TABLET
+           ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .thankyou-container {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+                max-width: 760px;
             }
 
-            .thankyou-logo img {
-                width: 145px;
-            }
-
-            .thankyou-header-label {
-                display: none;
-            }
-
-            .thankyou-main {
-                width: 88%;
-                padding: 70px 0 80px;
-            }
-
-            .thankyou-icon {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 28px;
-            }
-
-            .thankyou-icon svg {
-                width: 27px;
-                height: 27px;
-            }
-
-            .thankyou-kicker {
-                font-size: 0.58rem;
-                margin-bottom: 16px;
-            }
 
             .thankyou-title {
-                font-size: clamp(2.7rem, 14vw, 4.8rem);
-                line-height: 0.94;
+                font-size: clamp(4rem, 10vw, 6rem);
             }
 
+
+            .thankyou-card {
+                max-width: 600px;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 768px) {
+
+            .thankyou-header {
+                height: 72px;
+
+                padding:
+                    0
+                    var(--container-padding-mobile);
+            }
+
+
+            .thankyou-logo img {
+                width: 112px;
+            }
+
+
+            .back-home {
+                font-size: 11px;
+            }
+
+
+            .thankyou-main {
+                padding:
+                    55px
+                    var(--container-padding-mobile)
+                    60px;
+            }
+
+
+            .thankyou-container {
+                gap: 42px;
+            }
+
+
+            .thankyou-title {
+                font-size: clamp(3.5rem, 17vw, 5rem);
+                line-height: 0.9;
+            }
+
+
             .thankyou-description {
-                margin-top: 25px;
-                font-size: 0.88rem;
+                margin-top: 26px;
+
+                font-size: 15px;
                 line-height: 1.7;
             }
 
-            .thankyou-status {
-                margin-top: 32px;
-                padding: 17px;
+
+            .confirmation-message {
+                margin-top: 30px;
+                padding-top: 22px;
             }
 
-            .thankyou-status p {
-                font-size: 0.76rem;
+
+            .thankyou-card {
+                padding: 30px 24px;
+
+                border-radius: var(--radius-xl);
             }
 
-            .thankyou-actions {
-                margin-top: 28px;
-                flex-direction: column;
+
+            .card-title {
+                font-size: 27px;
             }
 
-            .thankyou-button {
-                width: 100%;
-                min-height: 50px;
+
+            #countdown {
+                font-size: 48px;
             }
+
 
             .thankyou-footer {
-                padding: 18px 22px;
+                padding:
+                    18px
+                    var(--container-padding-mobile);
+
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
             }
+
         }
 
+
+        /* =========================================================
+           SMALL MOBILE
+           ========================================================= */
+
+        @media (max-width: 480px) {
+
+            .thankyou-header {
+                padding:
+                    0
+                    var(--container-padding-small);
+            }
+
+
+            .thankyou-main {
+                padding:
+                    45px
+                    var(--container-padding-small)
+                    50px;
+            }
+
+
+            .thankyou-eyebrow {
+                gap: 9px;
+            }
+
+
+            .thankyou-eyebrow-text {
+                font-size: 10px;
+            }
+
+
+            .thankyou-title {
+                font-size: 3.35rem;
+            }
+
+
+            .thankyou-card {
+                padding: 27px 20px;
+            }
+
+
+            .countdown-area {
+                padding: 20px;
+            }
+
+
+            .home-button {
+                min-height: 52px;
+            }
+
+
+            .thankyou-footer {
+                padding:
+                    18px
+                    var(--container-padding-small);
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+           ========================================================= */
+
         @media (prefers-reduced-motion: reduce) {
-            .thankyou-button {
+
+            .progress-bar {
+                animation: none;
+            }
+
+            .back-home,
+            .home-button {
                 transition: none;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
     <div class="thankyou-page">
 
-        <div class="thankyou-grid"></div>
 
-        <!-- HEADER -->
+        <!-- =====================================================
+             HEADER
+             ===================================================== -->
 
         <header class="thankyou-header">
 
             <a
                 href="/index.html"
                 class="thankyou-logo"
-                aria-label="Bitsol Automation Home"
+                aria-label="Bitsol Automation home"
             >
+
                 <img
-                    src="/favicon.png"
+                    src="/og-image.png"
                     alt="Bitsol Automation"
-                />
+                >
+
             </a>
 
-            <span class="thankyou-header-label">
-                Industrial Automation · Hosur
-            </span>
+
+            <a
+                href="/index.html"
+                class="back-home"
+            >
+
+
+                <span>Back to Home</span>
+
+            </a>
 
         </header>
 
 
-        <!-- MAIN -->
+        <!-- =====================================================
+             MAIN
+             ===================================================== -->
 
         <main class="thankyou-main">
 
-            <div class="thankyou-content">
-
-                <div class="thankyou-icon" aria-hidden="true">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path d="M20 6 9 17l-5-5"></path>
-                    </svg>
-
-                </div>
+            <div class="thankyou-container">
 
 
-                <p class="thankyou-kicker">
-                    Enquiry Prepared
-                </p>
+                <!-- =================================================
+                     LEFT
+                     ================================================= -->
+
+                <section class="thankyou-content">
 
 
-                <h1 class="thankyou-title">
-                    Thank
-                    <span>You.</span>
-                </h1>
+                    <div class="thankyou-eyebrow">
 
 
-                <p class="thankyou-description">
-                    Your enquiry has been prepared with your project
-                    details. WhatsApp should have opened so you can
-                    send the enquiry directly to the Bitsol Automation team.
-                </p>
+                        <span class="thankyou-eyebrow-line"></span>
 
-
-                <div class="thankyou-status">
-
-                    <div
-                        class="thankyou-status-icon"
-                        aria-hidden="true"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
-                            <path d="M8 10h8"></path>
-                            <path d="M8 14h5"></path>
-                        </svg>
+                        <span class="thankyou-eyebrow-text">
+                            Project Enquiry
+                        </span>
 
                     </div>
 
-                    <div>
 
-                        <strong>
-                            WhatsApp Enquiry
-                        </strong>
+                    <h1 class="thankyou-title">
 
-                        <p>
-                            Your name, company, contact details and
-                            project requirement have been prepared
-                            automatically.
-                        </p>
+                        THANK
+                        <span>YOU.</span>
+
+                    </h1>
+
+
+                    <p class="thankyou-description">
+
+                        Your project details have been received by
+                        the Bitsol engineering team. We appreciate
+                        you taking the time to tell us about what
+                        you're building.
+
+                    </p>
+
+
+                    <div class="confirmation-message">
+
+        
+
+                        <div class="confirmation-text">
+
+                            <strong>
+                                Enquiry Received
+                            </strong>
+
+                            <span>
+                                Our team will review your requirement
+                                and get back to you.
+                            </span>
+
+                        </div>
 
                     </div>
 
-                </div>
+                </section>
 
 
-                <div class="thankyou-actions">
+                <!-- =================================================
+                     RIGHT CARD
+                     ================================================= -->
 
-                    <a
-                        href="https://wa.me/917826800765"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="thankyou-button thankyou-button--primary"
-                    >
-                        Open WhatsApp
-                    </a>
+                <aside class="thankyou-card">
+
+
+                    <div class="card-label">
+                        NEXT STEP
+                    </div>
+
+
+                    <h2 class="card-title">
+                        Let's take your
+                        project forward.
+                    </h2>
+
+
+                    <p class="card-text">
+
+                        Your enquiry has been sent directly to our
+                        engineering team. You can return to the
+                        Bitsol website while we review your
+                        requirement.
+
+                    </p>
+
+
+                    <!-- Countdown -->
+
+                    <div class="countdown-area">
+
+                        <div class="countdown-label">
+                            Returning to Bitsol Home
+                        </div>
+
+
+                        <div class="countdown-number">
+
+                            <span id="countdown">
+                                10
+                            </span>
+
+                            <span class="countdown-seconds">
+                                seconds
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-track">
+
+                            <div class="progress-bar"></div>
+
+                        </div>
+
+                    </div>
+
 
                     <a
                         href="/index.html"
-                        class="thankyou-button thankyou-button--secondary"
+                        class="home-button"
                     >
-                        Back To Home
+
+                        Return to Home
+
+                        <span>
+                            →
+                        </span>
+
                     </a>
 
-                </div>
+
+                    <div class="engineering-note">
+
+                        <span class="engineering-dot"></span>
+
+                        <span>
+                            Bitsol Automation · Industrial Automation
+                            &amp; Engineering
+                        </span>
+
+                    </div>
+
+                </aside>
 
             </div>
 
         </main>
 
 
-        <!-- FOOTER -->
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
 
         <footer class="thankyou-footer">
 
-            <span>
-                © 2026 Bitsol Automation
+            <span class="footer-copy">
+                © 2026 Bitsol Automation. All rights reserved.
             </span>
 
-            <span>
-                Hosur · India
+            <span class="footer-brand">
+                Built for <span>Industry.</span>
             </span>
 
         </footer>
 
     </div>
+
+
+    <!-- =========================================================
+         COUNTDOWN / REDIRECT
+         ========================================================= -->
+
+    <script>
+
+        (function () {
+
+            const countdownElement =
+                document.getElementById("countdown");
+
+            const redirectUrl =
+                "/index.html";
+
+            let seconds = 10;
+
+
+            const timer = setInterval(function () {
+
+                seconds -= 1;
+
+
+                if (countdownElement) {
+                    countdownElement.textContent = seconds;
+                }
+
+
+                if (seconds <= 0) {
+
+                    clearInterval(timer);
+
+                    window.location.href = redirectUrl;
+
+                }
+
+            }, 1000);
+
+        })();
+
+    </script>
 
 </body>
 
