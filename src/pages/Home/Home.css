@@ -1759,6 +1759,89 @@
 }
 
 
+/* =========================================================
+   DESKTOP ONLY — SYSTEM SLIDES 2 & 3
+   Do NOT affect tablet or mobile
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    /* -----------------------------------------
+       SLIDE 2
+       PLC & SCADA INTEGRATION
+       ----------------------------------------- */
+
+    .home-hero__image--system-2 {
+
+        width: 100%;
+        height: calc(100% - 90px);
+
+        top: 90px;
+        bottom: auto;
+
+        object-fit: contain;
+        object-position: center center;
+
+        filter: none;
+
+        background: #eef2f3;
+
+        transform: none !important;
+        animation: none !important;
+
+        transform-origin: center center;
+        will-change: auto;
+    }
+
+
+    /* -----------------------------------------
+       SLIDE 3
+       INDUSTRIAL PROCESS CONTROL
+       ----------------------------------------- */
+
+    .home-hero__image--system-3 {
+
+        width: 100%;
+        height: calc(100% - 90px);
+
+        top: 90px;
+        bottom: auto;
+
+        object-fit: contain;
+        object-position: center center;
+
+        filter: none;
+
+        background: #eef2f3;
+
+        transform: none !important;
+        animation: none !important;
+
+        transform-origin: center center;
+        will-change: auto;
+    }
+
+
+    /* -----------------------------------------
+       DESKTOP HERO CONTENT
+       Keep text/buttons inside safe area
+       ----------------------------------------- */
+
+    .home-hero--system .home-hero__container {
+
+        height: calc(100svh - 90px);
+
+        min-height: calc(100svh - 90px);
+
+        margin-top: 90px;
+
+        padding-top: 35px;
+        padding-bottom: 90px;
+
+        box-sizing: border-box;
+    }
+}
+
 
 /* =========================================================
    TABLET
