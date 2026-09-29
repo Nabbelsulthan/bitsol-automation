@@ -1,0 +1,1212 @@
+/* =========================================================
+   BITSOL — AUTOMATION SOLUTIONS
+   DESKTOP
+   Continuous Elliptical Service Explorer
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.solutions-desktop {
+    position: relative;
+
+    height: 230vh;
+
+    background:
+        var(--color-background);
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   STICKY VIEW
+   ========================================================= */
+
+.solutions-desktop__sticky {
+    position: sticky;
+
+    top: 0;
+
+    height: 100svh;
+
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.solutions-desktop__container {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.solutions-desktop__header {
+    position: relative;
+
+    z-index: 50;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.solutions-desktop__label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--font-size-sm);
+
+    font-weight:
+        var(--font-weight-600);
+
+    letter-spacing:
+        0.16em;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+.solutions-desktop__label-line {
+    width: 38px;
+
+    height: 2px;
+
+    background:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   HEADING ROW
+   ========================================================= */
+
+.solutions-desktop__heading-row {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content:
+        space-between;
+
+    gap: 50px;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.solutions-desktop__heading-row h2 {
+    margin: 0;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5.2rem
+        );
+
+    line-height:
+        0.88;
+
+    letter-spacing:
+        -0.055em;
+
+    font-weight:
+        var(--font-weight-700);
+
+    color:
+        var(--color-heading);
+}
+
+
+.solutions-desktop__heading-row h2 span {
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.solutions-desktop__heading-row p {
+    width:
+        min(
+            360px,
+            30%
+        );
+
+    margin:
+        0 0 5px;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--font-size-base);
+
+    line-height:
+        1.7;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+/* =========================================================
+   VIEWPORT
+   ========================================================= */
+
+.solutions-desktop__viewport {
+    position: relative;
+
+    height: 510px;
+
+    width: 100%;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   ORBIT
+   ========================================================= */
+
+.solutions-desktop__orbit {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width:
+        min(
+            1100px,
+            calc(100% - 100px)
+        );
+
+    height:
+        470px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    perspective:
+        1400px;
+
+    overflow:
+        visible;
+}
+
+
+/* =========================================================
+   ELLIPSE
+   ========================================================= */
+
+.solutions-desktop__ellipse {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   OUTER ELLIPSE
+   ========================================================= */
+
+.solutions-desktop__ellipse--outer {
+    width:
+        880px;
+
+    height:
+        370px;
+
+    max-width:
+        100%;
+
+    border:
+        1px solid
+        rgba(
+            17,
+            17,
+            17,
+            0.10
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(-4deg);
+}
+
+
+/* =========================================================
+   INNER ELLIPSE
+   ========================================================= */
+
+.solutions-desktop__ellipse--inner {
+    width:
+        650px;
+
+    height:
+        250px;
+
+    max-width:
+        78%;
+
+    border:
+        1px dashed
+        rgba(
+            17,
+            17,
+            17,
+            0.07
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(-4deg);
+}
+
+
+/* =========================================================
+   CARDS LAYER
+   ========================================================= */
+
+.solutions-desktop__cards {
+    position: absolute;
+
+    inset: 0;
+
+    transform-style:
+        preserve-3d;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   ORBIT CARD
+   ========================================================= */
+
+.solutions-desktop-orbit-card {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width:
+        620px;
+
+    min-height:
+        310px;
+
+    height:
+        auto;
+
+    margin-left:
+        -310px;
+
+    margin-top:
+        -155px;
+
+    box-sizing:
+        border-box;
+
+    transform-origin:
+        center center;
+
+    transform-style:
+        preserve-3d;
+
+    will-change:
+        transform,
+        opacity;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   MINI CARD
+   ========================================================= */
+
+.solutions-desktop-orbit-card__mini {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    padding:
+        22px;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            17,
+            17,
+            17,
+            0.08
+        );
+
+    overflow:
+        hidden;
+}
+
+
+.solutions-desktop-orbit-card__mini::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(
+                17,
+                17,
+                17,
+                0.035
+            )
+            1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(
+                17,
+                17,
+                17,
+                0.035
+            )
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        26px 26px;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   MINI NUMBER
+   ========================================================= */
+
+.solutions-desktop-orbit-card__mini-number {
+    position: relative;
+
+    z-index:
+        2;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        13px;
+
+    font-weight:
+        var(--font-weight-700);
+
+    letter-spacing:
+        0.12em;
+
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   MINI ICON
+   ========================================================= */
+
+.solutions-desktop-orbit-card__mini-icon {
+    position: relative;
+
+    z-index:
+        2;
+
+    width:
+        54px;
+
+    height:
+        54px;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--color-background);
+}
+
+
+.solutions-desktop-orbit-card__mini-icon svg {
+    width:
+        25px;
+
+    height:
+        25px;
+
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   MINI TITLE
+   ========================================================= */
+
+.solutions-desktop-orbit-card__mini-title {
+    position: relative;
+
+    z-index:
+        2;
+
+    max-width:
+        190px;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        17px;
+
+    line-height:
+        1.05;
+
+    font-weight:
+        var(--font-weight-700);
+
+    letter-spacing:
+        -0.025em;
+
+    color:
+        var(--color-heading);
+
+    overflow-wrap:
+        break-word;
+}
+
+
+/* =========================================================
+   FULL ACTIVE CARD
+   ========================================================= */
+
+.solutions-desktop-orbit-card__full {
+    position: relative;
+
+    width:
+        100%;
+
+    min-height:
+        310px;
+
+    height:
+        auto;
+
+    display: flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    padding:
+        32px 38px;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius-xl);
+
+    background:
+        var(--color-surface);
+
+    box-shadow:
+        0 28px 80px
+        rgba(
+            17,
+            17,
+            17,
+            0.12
+        );
+
+    overflow:
+        hidden;
+
+    box-sizing:
+        border-box;
+}
+
+
+/* =========================================================
+   CARD GRID
+   ========================================================= */
+
+.solutions-desktop-orbit-card__full::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(
+                17,
+                17,
+                17,
+                0.025
+            )
+            1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(
+                17,
+                17,
+                17,
+                0.025
+            )
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        32px 32px;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   CARD GLOW
+   ========================================================= */
+
+.solutions-desktop-orbit-card__full::after {
+    content: "";
+
+    position: absolute;
+
+    width:
+        260px;
+
+    height:
+        260px;
+
+    right:
+        -130px;
+
+    bottom:
+        -150px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--color-primary);
+
+    opacity:
+        0.06;
+
+    filter:
+        blur(45px);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.solutions-desktop-orbit-card__top {
+    position: relative;
+
+    z-index:
+        2;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.solutions-desktop-orbit-card__number {
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        var(--font-size-base);
+
+    font-weight:
+        var(--font-weight-700);
+
+    letter-spacing:
+        0.08em;
+
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   CARD COUNT
+   ========================================================= */
+
+.solutions-desktop-orbit-card__count {
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--font-size-xs);
+
+    font-weight:
+        var(--font-weight-600);
+
+    letter-spacing:
+        0.14em;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.solutions-desktop-orbit-card__body {
+    position: relative;
+
+    z-index:
+        2;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    gap:
+        38px;
+
+    min-width:
+        0;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.solutions-desktop-orbit-card__icon {
+    position: relative;
+
+    flex:
+        0 0 120px;
+
+    width:
+        120px;
+
+    height:
+        120px;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--color-background);
+}
+
+
+.solutions-desktop-orbit-card__icon::before {
+    content: "";
+
+    position: absolute;
+
+    width:
+        92px;
+
+    height:
+        92px;
+
+    border:
+        1px dashed
+        var(--color-border);
+
+    border-radius:
+        var(--radius-md);
+}
+
+
+.solutions-desktop-orbit-card__icon svg {
+    position: relative;
+
+    z-index:
+        2;
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.solutions-desktop-orbit-card__content {
+    max-width:
+        440px;
+
+    min-width:
+        0;
+
+    flex:
+        1 1 auto;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.solutions-desktop-orbit-card__eyebrow {
+    display:
+        block;
+
+    margin-bottom:
+        12px;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--font-size-xs);
+
+    font-weight:
+        var(--font-weight-600);
+
+    letter-spacing:
+        0.16em;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.solutions-desktop-orbit-card__content h3 {
+    margin:
+        0;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(
+            2rem,
+            3.2vw,
+            3.35rem
+        );
+
+    line-height:
+        0.98;
+
+    letter-spacing:
+        -0.045em;
+
+    font-weight:
+        var(--font-weight-700);
+
+    color:
+        var(--color-heading);
+
+    overflow-wrap:
+        break-word;
+
+    word-break:
+        normal;
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.solutions-desktop-orbit-card__tags {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+    margin-top:
+        20px;
+}
+
+
+.solutions-desktop-orbit-card__tags span {
+    padding:
+        6px 10px;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--radius-sm);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        9px;
+
+    font-weight:
+        var(--font-weight-600);
+
+    letter-spacing:
+        0.12em;
+
+    color:
+        var(--color-text-muted);
+
+    background:
+        var(--color-background);
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+   ========================================================= */
+
+.solutions-desktop-orbit-card__bottom {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding-top:
+        15px;
+
+    margin-top:
+        20px;
+
+    border-top:
+        1px solid
+        var(--color-border);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        9px;
+
+    font-weight:
+        var(--font-weight-600);
+
+    letter-spacing:
+        0.16em;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+/* =========================================================
+   DESKTOP PROGRESS
+   ========================================================= */
+
+.solutions-desktop__progress {
+    position:
+        absolute;
+
+    right:
+        4px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    z-index:
+        50;
+}
+
+
+/* =========================================================
+   CURRENT NUMBER
+   ========================================================= */
+
+.solutions-desktop__progress-current {
+    display:
+        flex;
+
+    align-items:
+        baseline;
+
+    gap:
+        3px;
+}
+
+
+.solutions-desktop__progress-current span {
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        17px;
+
+    font-weight:
+        var(--font-weight-700);
+
+    color:
+        var(--color-primary);
+}
+
+
+.solutions-desktop__progress-current small {
+    font-family:
+        var(--font-body);
+
+    font-size:
+        8px;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+/* =========================================================
+   PROGRESS TRACK
+   ========================================================= */
+
+.solutions-desktop__progress-track {
+    position:
+        relative;
+
+    width:
+        2px;
+
+    height:
+        145px;
+
+    background:
+        var(--color-border);
+
+    overflow:
+        hidden;
+}
+
+
+/* =========================================================
+   PROGRESS FILL
+   ========================================================= */
+
+.solutions-desktop__progress-fill {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        var(--color-primary);
+
+    transform-origin:
+        top;
+}
+
+
+/* =========================================================
+   PROGRESS LABEL
+   ========================================================= */
+
+.solutions-desktop__progress-label {
+    writing-mode:
+        vertical-rl;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        8px;
+
+    font-weight:
+        var(--font-weight-600);
+
+    letter-spacing:
+        0.16em;
+
+    color:
+        var(--color-text-muted);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .solutions-desktop-orbit-card {
+        will-change:
+            auto;
+    }
+
+}

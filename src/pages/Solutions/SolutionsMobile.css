@@ -1,0 +1,1387 @@
+/* =========================================================
+   MOBILE SOLUTIONS
+   ========================================================= */
+
+.solutions-mobile {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100svh;
+
+    background:
+        #faf7f2;
+
+    color:
+        var(--color-text-dark, #111111);
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.solutions-mobile__container {
+    position: relative;
+
+    width:
+        min(
+            calc(100% - 34px),
+            520px
+        );
+
+    min-height: 100svh;
+
+    margin: 0 auto;
+
+    padding:
+        58px 0 34px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    box-sizing:
+        border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.solutions-mobile__header {
+    position: relative;
+
+    z-index: 5;
+
+    flex:
+        0 0 auto;
+}
+
+
+.solutions-mobile__label {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        var(--color-text-muted, #777777);
+}
+
+
+.solutions-mobile__label span:first-child {
+    width:
+        26px;
+
+    height:
+        1px;
+
+    background:
+        var(--color-primary, #ef233c);
+
+    flex:
+        0 0 auto;
+}
+
+
+.solutions-mobile__header h2 {
+    margin:
+        0;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(
+            2.65rem,
+            13vw,
+            4.4rem
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        0.88;
+
+    letter-spacing:
+        -0.065em;
+
+    color:
+        #111111;
+}
+
+
+.solutions-mobile__header h2 span {
+    color:
+        var(--color-primary, #ef233c);
+}
+
+
+.solutions-mobile__header p {
+    max-width:
+        330px;
+
+    margin:
+        17px 0 0;
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.82rem;
+
+    line-height:
+        1.58;
+
+    color:
+        #6f6f6f;
+}
+
+
+/* =========================================================
+   STAGE
+   ========================================================= */
+
+.solutions-mobile__stage {
+    position: relative;
+
+    flex:
+        1 1 auto;
+
+    min-height:
+        430px;
+
+    margin-top:
+        20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    overflow:
+        visible;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.solutions-mobile__grid {
+    position: absolute;
+
+    left:
+        -30%;
+
+    right:
+        -30%;
+
+    top:
+        5%;
+
+    bottom:
+        4%;
+
+    z-index:
+        -2;
+
+    opacity:
+        0.55;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 20, 20, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(20, 20, 20, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        28px 28px;
+
+    transform:
+        perspective(500px)
+        rotateX(58deg)
+        scale(1.35);
+
+    transform-origin:
+        center bottom;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+   ========================================================= */
+
+.solutions-mobile__circle {
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(
+            20,
+            20,
+            20,
+            0.07
+        );
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+}
+
+
+.solutions-mobile__circle--one {
+    width:
+        430px;
+
+    height:
+        430px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+}
+
+
+.solutions-mobile__circle--two {
+    width:
+        300px;
+
+    height:
+        300px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-style:
+        dashed;
+
+    opacity:
+        0.65;
+}
+
+
+/* =========================================================
+   CARD WRAPPER
+   ========================================================= */
+
+.solutions-mobile__card-wrap {
+    position: relative;
+
+    z-index:
+        5;
+
+    width:
+        100%;
+
+    touch-action:
+        pan-y;
+
+    outline:
+        none;
+
+    user-select:
+        none;
+
+    -webkit-user-select:
+        none;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.solutions-mobile__card {
+    position: relative;
+
+    width:
+        100%;
+
+    min-height:
+        285px;
+
+    padding:
+        21px;
+
+    box-sizing:
+        border-box;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.88
+        );
+
+    border:
+        1px solid
+        rgba(
+            20,
+            20,
+            20,
+            0.10
+        );
+
+    border-radius:
+        24px;
+
+    box-shadow:
+        0 24px 70px
+        rgba(
+            20,
+            20,
+            20,
+            0.10
+        );
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    overflow:
+        hidden;
+
+    animation:
+        mobileCardIn
+        0.42s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        both;
+}
+
+
+.solutions-mobile__card::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    right:
+        0;
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                239,
+                35,
+                60,
+                0.10
+            ) 0%,
+            rgba(
+                239,
+                35,
+                60,
+                0
+            ) 70%
+        );
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.solutions-mobile__card-top {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+}
+
+
+.solutions-mobile__number {
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        2.3rem;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.06em;
+
+    color:
+        var(--color-primary, #ef233c);
+}
+
+
+.solutions-mobile__count {
+    font-family:
+        var(--font-body);
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.12em;
+
+    color:
+        #8a8a8a;
+}
+
+
+/* =========================================================
+   CARD MAIN
+   ========================================================= */
+
+.solutions-mobile__card-main {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        17px;
+
+    margin:
+        25px 0;
+}
+
+
+.solutions-mobile__icon {
+    position:
+        relative;
+
+    flex:
+        0 0 70px;
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #fff;
+
+    border:
+        1px solid
+        rgba(
+            20,
+            20,
+            20,
+            0.10
+        );
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            20,
+            20,
+            20,
+            0.07
+        );
+
+    color:
+        var(--color-primary, #ef233c);
+
+    font-size:
+        27px;
+}
+
+
+.solutions-mobile__icon::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        7px;
+
+    border:
+        1px dashed
+        rgba(
+            239,
+            35,
+            60,
+            0.20
+        );
+
+    border-radius:
+        12px;
+
+    pointer-events:
+        none;
+}
+
+
+.solutions-mobile__content {
+    min-width:
+        0;
+}
+
+
+.solutions-mobile__eyebrow {
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        0.52rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        #999999;
+}
+
+
+.solutions-mobile__content h3 {
+    margin:
+        0;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        clamp(
+            1.45rem,
+            7vw,
+            2rem
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -0.045em;
+
+    color:
+        #161616;
+
+    overflow-wrap:
+        break-word;
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.solutions-mobile__tags {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        5px;
+
+    margin-top:
+        13px;
+}
+
+
+.solutions-mobile__tags span {
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(
+            20,
+            20,
+            20,
+            0.10
+        );
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    font-size:
+        0.48rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.08em;
+
+    color:
+        #777777;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+   ========================================================= */
+
+.solutions-mobile__card-bottom {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding-top:
+        13px;
+
+    border-top:
+        1px solid
+        rgba(
+            20,
+            20,
+            20,
+            0.08
+        );
+
+    font-size:
+        0.53rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.13em;
+
+    color:
+        #8b8b8b;
+}
+
+
+.solutions-mobile__arrow {
+    width:
+        31px;
+
+    height:
+        31px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(
+            239,
+            35,
+            60,
+            0.25
+        );
+
+    border-radius:
+        50%;
+
+    color:
+        var(--color-primary, #ef233c);
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.solutions-mobile__controls {
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    margin-top:
+        17px;
+}
+
+
+.solutions-mobile__controls > button {
+    width:
+        36px;
+
+    height:
+        36px;
+
+    flex:
+        0 0 36px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(
+            20,
+            20,
+            20,
+            0.12
+        );
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    color:
+        #222222;
+
+    cursor:
+        pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.solutions-mobile__controls > button:not(:disabled):active {
+    transform:
+        scale(0.92);
+}
+
+
+.solutions-mobile__controls > button:disabled {
+    opacity:
+        0.28;
+
+    cursor:
+        default;
+}
+
+
+/* =========================================================
+   DOTS
+   ========================================================= */
+
+.solutions-mobile__dots {
+    min-width:
+        0;
+
+    flex:
+        1;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        4px;
+
+    overflow:
+        hidden;
+}
+
+
+.solutions-mobile__dot {
+    width:
+        5px;
+
+    height:
+        5px;
+
+    flex:
+        0 0 5px;
+
+    padding:
+        0;
+
+    border:
+        0;
+
+    border-radius:
+        999px;
+
+    background:
+        #d7d3ce;
+
+    cursor:
+        pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.solutions-mobile__dot.is-active {
+    width:
+        20px;
+
+    flex-basis:
+        20px;
+
+    background:
+        var(--color-primary, #ef233c);
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.solutions-mobile__progress {
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    margin-top:
+        18px;
+}
+
+
+.solutions-mobile__progress-count {
+    display:
+        flex;
+
+    align-items:
+        baseline;
+
+    gap:
+        3px;
+
+    white-space:
+        nowrap;
+}
+
+
+.solutions-mobile__progress-count strong {
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    color:
+        var(--color-primary, #ef233c);
+}
+
+
+.solutions-mobile__progress-count span {
+    font-size:
+        0.58rem;
+
+    color:
+        #888888;
+}
+
+
+.solutions-mobile__progress-track {
+    position:
+        relative;
+
+    height:
+        2px;
+
+    background:
+        #dedbd7;
+
+    overflow:
+        hidden;
+}
+
+
+.solutions-mobile__progress-track span {
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    bottom:
+        0;
+
+    background:
+        var(--color-primary, #ef233c);
+
+    transition:
+        width 0.35s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+.solutions-mobile__swipe {
+    font-size:
+        0.52rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.14em;
+
+    color:
+        #858585;
+}
+
+
+/* =========================================================
+   CARD ENTRANCE
+   ========================================================= */
+
+@keyframes mobileCardIn {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateX(24px)
+            scale(0.985);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .solutions-mobile__container {
+        width:
+            calc(100% - 28px);
+
+        padding-top:
+            48px;
+
+        padding-bottom:
+            28px;
+    }
+
+
+    .solutions-mobile__header h2 {
+        font-size:
+            2.45rem;
+    }
+
+
+    .solutions-mobile__header p {
+        margin-top:
+            14px;
+
+        font-size:
+            0.78rem;
+    }
+
+
+    .solutions-mobile__stage {
+        min-height:
+            405px;
+
+        margin-top:
+            14px;
+    }
+
+
+    .solutions-mobile__card {
+        min-height:
+            270px;
+
+        padding:
+            18px;
+
+        border-radius:
+            21px;
+    }
+
+
+    .solutions-mobile__card-main {
+        gap:
+            13px;
+
+        margin:
+            21px 0;
+    }
+
+
+    .solutions-mobile__icon {
+        flex-basis:
+            60px;
+
+        width:
+            60px;
+
+        height:
+            60px;
+
+        font-size:
+            23px;
+    }
+
+
+    .solutions-mobile__content h3 {
+        font-size:
+            1.3rem;
+    }
+
+
+    .solutions-mobile__tags span {
+        font-size:
+            0.44rem;
+
+        padding:
+            4px 7px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .solutions-mobile__card {
+        animation:
+            none;
+    }
+
+    .solutions-mobile__dot,
+    .solutions-mobile__progress-track span,
+    .solutions-mobile__controls > button {
+        transition:
+            none;
+    }
+
+}
+
+
+/* =========================================================
+   NEXT SOLUTION PREVIEW
+   ========================================================= */
+
+.solutions-mobile__next-preview {
+    position: relative;
+    z-index: 8;
+
+    width: 100%;
+
+    margin-top: 13px;
+    padding: 10px 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    box-sizing: border-box;
+
+    border-top: 1px solid rgba(20, 20, 20, 0.08);
+    border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+
+    color: #777777;
+
+    overflow: hidden;
+}
+
+
+.solutions-mobile__next-preview span {
+    flex: 0 0 auto;
+
+    font-size: 0.48rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    color: var(
+        --color-primary,
+        #ef233c
+    );
+}
+
+
+.solutions-mobile__next-preview strong {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-family:
+        var(--font-body);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: -0.01em;
+
+    color: #303030;
+}
+
+
+.solutions-mobile__next-preview svg {
+    flex: 0 0 auto;
+
+    font-size: 10px;
+
+    color: var(
+        --color-primary,
+        #ef233c
+    );
+}
+
+
+/* =========================================================
+   IMPROVED SWIPE INDICATOR
+   ========================================================= */
+
+.solutions-mobile__swipe {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .solutions-mobile__next-preview {
+        margin-top: 10px;
+        padding: 9px 11px;
+    }
+
+    .solutions-mobile__next-preview strong {
+        font-size: 0.62rem;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+}

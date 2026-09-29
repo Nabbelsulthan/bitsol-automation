@@ -246,12 +246,21 @@ const Navbar = () => {
                     aria-label="Bitsol Automation Home"
                 >
 
-                    <img
+                    {/* <img
                         src={logo}
                         alt="Bitsol Automation"
                         className="navbar__logo"
+                        
                       
-                    />
+                    /> */}
+
+                    <a href="/index.html" aria-label="Bitsol Automation Home">
+                        <img
+                            src={logo}
+                            alt="Bitsol Automation"
+                            className="navbar__logo"
+                        />
+                    </a>
 
                 </button>
 
