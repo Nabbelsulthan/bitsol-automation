@@ -877,7 +877,7 @@ const Contact = () => {
                 PREMIUM PROJECT ENQUIRY
             ================================================= */}
 
-            <section className="contact-enquiry">
+            <section id="contact-quote" className="contact-enquiry" >
 
                 <div className="container">
 

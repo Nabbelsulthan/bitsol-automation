@@ -1665,15 +1665,12 @@
 
 
 
-/* =========================================================
-   DESKTOP — SLIDE 2 ONLY
-   bitsol-hero1.png
 
-   Keep complete diagram visible
-   and clear of the navigation.
-   ========================================================= */
 
-.home-hero__image--system-2 {
+/* slide 6 zoom in and out  */
+
+
+.home-hero__image--system-6 {
 
     width: 100%;
 
@@ -1691,13 +1688,32 @@
 
     background: #eef2f3;
 
-    transform: none !important;
-
-    animation: none !important;
-
     transform-origin: center center;
 
-    will-change: auto;
+    will-change: transform;
+
+    animation: systemTwoZoomOut 6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* =========================================================
+   LAST SLIDE — CINEMATIC ZOOM OUT
+   bitsol-hero1.png
+
+   Starts zoomed in and gradually reveals
+   the complete SCADA / PLC diagram over 6 seconds.
+   ========================================================= */
+
+@keyframes systemTwoZoomOut {
+
+    0% {
+        transform: scale(1.65);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
 }
 
 /* =========================================================
@@ -1771,7 +1787,8 @@
        PLC & SCADA INTEGRATION
        ----------------------------------------- */
 
-    .home-hero__image--system-2 {
+
+    .home-hero__image--system-6 {
 
         width: 100%;
         height: calc(100% - 90px);
@@ -1786,13 +1803,10 @@
 
         background: #eef2f3;
 
-        transform: none !important;
-        animation: none !important;
-
         transform-origin: center center;
-        will-change: auto;
-    }
 
+        will-change: transform;
+    }
 
     /* -----------------------------------------
        SLIDE 3
@@ -2001,10 +2015,6 @@
    SMALL TABLET / MOBILE
    ========================================================= */
 
-/* =========================================================
-   SMALL TABLET / MOBILE
-   ========================================================= */
-
 @media (max-width: 768px) {
 
     /* -----------------------------------------
@@ -2115,10 +2125,17 @@
 
         background: #eef2f3;
 
-        animation: none !important;
+        animation: systemVisualReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 
         transform-origin: center center;
 
+        will-change: transform, opacity;
+    }
+
+    /* Keep slide 6 on its dedicated cinematic zoom animation. */
+    .home-hero__image--system-6 {
+        animation: systemTwoZoomOut 6s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+        transform-origin: center center;
         will-change: transform;
     }
 
@@ -2132,8 +2149,7 @@
 
     .home-hero__image--system-1 {
 
-        transform:
-            translate3d(3%, -2%, 0) scale(1.22) !important;
+        transform: none;
     }
 
     /* -----------------------------------------
@@ -2142,8 +2158,7 @@
        ----------------------------------------- */
     .home-hero__image--system-2 {
 
-        transform:
-            translate3d(2%, -2%, 0) scale(1.22) !important;
+        transform: none;
     }
 
 
@@ -2153,8 +2168,7 @@
        ----------------------------------------- */
     .home-hero__image--system-3 {
 
-        transform:
-            translate3d(3%, -2%, 0) scale(1.22) !important;
+        transform: none;
     }
 
 
@@ -2417,7 +2431,7 @@
         width: 100%;
         height: 100%;
 
-        object-fit: fill;
+        object-fit: contain;
 
         object-position: center center;
 
@@ -2425,13 +2439,26 @@
 
         background: #eef2f3;
 
-        animation: none !important;
-
-        transform: none !important;
+        animation: systemVisualReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 
         transform-origin: center center;
 
-        will-change: auto;
+        will-change: transform, opacity;
+    }
+
+    /* Slide 6 must keep the desktop zoom-out sequence on phones. */
+    .home-hero__image--system-6 {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: auto;
+        object-fit: contain;
+        object-position: center center;
+        filter: none;
+        background: #eef2f3;
+        animation: systemTwoZoomOut 6s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+        transform-origin: center center;
+        will-change: transform;
     }
 
 
@@ -2441,8 +2468,7 @@
 
     .home-hero__image--system-1 {
 
-        transform:
-            translate3d(3%, -2%, 0) scale(1.25) !important;
+        transform: none;
     }
 
     /* -----------------------------------------
@@ -2454,8 +2480,7 @@
 
     .home-hero__image--system-2 {
 
-        transform:
-            translate3d(2%, -2%, 0) scale(1.25) !important;
+        transform: none;
     }
 
 
@@ -2465,8 +2490,7 @@
 
     .home-hero__image--system-3 {
 
-        transform:
-            translate3d(3%, -2%, 0) scale(1.25) !important;
+        transform: none;
     }
 
 
@@ -2654,11 +2678,6 @@
    VERY SMALL MOBILE
    ========================================================= */
 
-
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 360px) {
 
     .home-hero__container {
@@ -2745,6 +2764,48 @@
 }
 
 
+
+/* =========================================================
+   RESPONSIVE SYSTEM HERO — VIEWPORT FILL
+   Slides 1, 2 and 6 fill the complete tablet/mobile viewport.
+   Existing Framer Motion + Ken Burns / zoom animations are preserved.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .home-hero__image--system-1,
+    .home-hero__image--system-2 {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center center;
+        filter: none;
+        background: #eef2f3;
+        transform-origin: 84% 50%;
+        will-change: transform, opacity;
+        animation: kenburns-right 7s ease-out both !important;
+    }
+
+    .home-hero__image--system-6 {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center center;
+        filter: none;
+        background: #eef2f3;
+        transform-origin: center center;
+        will-change: transform;
+        animation: systemTwoZoomOut 6s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+    }
+}
 
 /* =========================================================
    ACCESSIBILITY
@@ -2907,3 +2968,6 @@
     }
 
 }
+
+
+

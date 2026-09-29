@@ -160,9 +160,8 @@ const Navbar = () => {
 
     return (
         <header
-            className={`navbar ${
-                scrolled ? "navbar--scrolled" : ""
-            } ${menuOpen ? "navbar--menu-open" : ""}`}
+            className={`navbar ${scrolled ? "navbar--scrolled" : ""
+                } ${menuOpen ? "navbar--menu-open" : ""}`}
         >
             {/* ==================================================
                 NAVBAR
@@ -199,11 +198,10 @@ const Navbar = () => {
                             <button
                                 key={item.path}
                                 type="button"
-                                className={`navbar__link ${
-                                    isActive
-                                        ? "navbar__link--active"
-                                        : ""
-                                }`}
+                                className={`navbar__link ${isActive
+                                    ? "navbar__link--active"
+                                    : ""
+                                    }`}
                                 onClick={() =>
                                     navigateTo(item.path)
                                 }
@@ -232,11 +230,10 @@ const Navbar = () => {
 
                 <button
                     type="button"
-                    className={`navbar__menu-button ${
-                        menuOpen
-                            ? "navbar__menu-button--open"
-                            : ""
-                    }`}
+                    className={`navbar__menu-button ${menuOpen
+                        ? "navbar__menu-button--open"
+                        : ""
+                        }`}
                     onClick={toggleMenu}
                     aria-label={
                         menuOpen
@@ -245,7 +242,7 @@ const Navbar = () => {
                     }
                     aria-expanded={menuOpen}
                 >
-              
+
 
                     <span className="navbar__menu-icon">
                         <span />
@@ -331,11 +328,10 @@ const Navbar = () => {
                                             return (
                                                 <motion.div
                                                     key={item.path}
-                                                    className={`navbar__mobile-row ${
-                                                        isActive
-                                                            ? "navbar__mobile-row--active"
-                                                            : ""
-                                                    }`}
+                                                    className={`navbar__mobile-row ${isActive
+                                                        ? "navbar__mobile-row--active"
+                                                        : ""
+                                                        }`}
                                                     variants={
                                                         itemVariants
                                                     }
@@ -370,11 +366,10 @@ const Navbar = () => {
                                                         </span>
 
                                                         <span
-                                                            className={`navbar__mobile-status ${
-                                                                isActive
-                                                                    ? "navbar__mobile-status--active"
-                                                                    : ""
-                                                            }`}
+                                                            className={`navbar__mobile-status ${isActive
+                                                                ? "navbar__mobile-status--active"
+                                                                : ""
+                                                                }`}
                                                         />
                                                     </button>
                                                 </motion.div>
@@ -403,6 +398,18 @@ const Navbar = () => {
 
                                       
                                         </button>
+                                        {/* <button
+                                            type="button"
+                                            className="navbar__mobile-quote"
+                                            onClick={() => {
+                                                console.log("QUOTE BUTTON CLICKED");
+                                            }}
+                                        >
+                                            <span>REQUEST A QUOTE</span>
+                                        </button> */}
+
+
+
                                     </motion.div>
                                 </motion.nav>
 

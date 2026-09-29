@@ -20,10 +20,7 @@ import heroImage
 
 
 import heroImageTwo
-    from "../../assets/images/bitsol-hero2.png";
-
-    // import heroImageTwo
-    // from "../../assets/images/hero-image6.png";
+    from "../../assets/images/bitsol-hero6.png";
 
 import heroImageThree
     from "../../assets/images/bitsol-hero4.png";
@@ -67,37 +64,84 @@ import "./Home.css";
    HERO SCENES
    ========================================================= */
 
+
 const heroScenes = [
 
     {
         id: 1,
-
         image: heroImageSystemOne,
-
         isSystemVisual: true,
 
-        eyebrow:
-            "SCADA & HMI SYSTEMS",
+        eyebrow: "SCADA & HMI SYSTEMS",
 
-        titleLine1:
-            "WE VISUALIZE",
-
-        titleLine2:
-            "THE PROCESS",
-
-        titleAccent:
-            "IN REAL TIME.",
+        titleLine1: "WE VISUALIZE",
+        titleLine2: "THE PROCESS",
+        titleAccent: "IN REAL TIME.",
 
         description:
             "Operator HMI and SCADA interfaces designed to make complex industrial processes easier to monitor and control.",
-
-
     },
-
-
 
     {
         id: 2,
+        image: heroImageSystemThree,
+        isSystemVisual: true,
+
+        eyebrow: "INDUSTRIAL PROCESS CONTROL",
+
+        titleLine1: "WE SIMPLIFY",
+        titleLine2: "INDUSTRIAL",
+        titleAccent: "PROCESSES.",
+
+        description:
+            "Clear visualization for equipment, operations and production.",
+    },
+
+    {
+        id: 3,
+        image: heroImage,
+
+        eyebrow: "INDUSTRIAL AUTOMATION",
+
+        titleLine1: "WE ENGINEER",
+        titleLine2: "HOW INDUSTRY",
+        titleAccent: "MOVES.",
+
+        description:
+            "Automation, control and industrial technology solutions engineered for modern production.",
+    },
+
+    {
+        id: 4,
+        image: heroImageTwo,
+
+        eyebrow: "CONTROL & ELECTRICAL SYSTEMS",
+
+        titleLine1: "WE BUILD",
+        titleLine2: "THE SYSTEMS",
+        titleAccent: "BEHIND PRODUCTION.",
+
+        description:
+            "Control panels, PLC systems and machine automation engineered around the way your plant actually works.",
+    },
+
+    {
+        id: 5,
+        image: heroImageThree,
+
+        eyebrow: "SMART INDUSTRIAL TECHNOLOGY",
+
+        titleLine1: "WE CONNECT",
+        titleLine2: "INDUSTRY",
+        titleAccent: "TO INTELLIGENCE.",
+
+        description:
+            "Connected industrial systems that bring machines, control and operational data together.",
+    },
+
+    // LAST SLIDE
+    {
+        id: 6,
         image: heroImageSystemTwo,
         isSystemVisual: true,
 
@@ -108,104 +152,8 @@ const heroScenes = [
         titleAccent: "CONTROL TO SCADA.",
 
         description:
-            "PLC, field devices and SCADA systems connected in one clear industrial control environment."
+            "PLC, field devices and SCADA systems connected in one clear industrial control environment.",
     },
-
-    {
-        id: 3,
-
-        image: heroImageSystemThree,
-
-        isSystemVisual: true,
-
-        eyebrow:
-            "INDUSTRIAL PROCESS CONTROL",
-
-        titleLine1:
-            "WE SIMPLIFY",
-
-        titleLine2:
-            "INDUSTRIAL",
-
-        titleAccent:
-            "PROCESSES.",
-
-        description:
-            "Clear visualization for equipment, operations and production.",
-
-
-    },
-
-    {
-        id: 4,
-
-        image: heroImage,
-
-        eyebrow:
-            "INDUSTRIAL AUTOMATION",
-
-        titleLine1:
-            "WE ENGINEER",
-
-        titleLine2:
-            "HOW INDUSTRY",
-
-        titleAccent:
-            "MOVES.",
-
-        description:
-            "Automation, control and industrial technology solutions engineered for modern production.",
-
-
-    },
-
-
-    {
-        id: 5,
-
-        image: heroImageTwo,
-
-        eyebrow:
-            "CONTROL & ELECTRICAL SYSTEMS",
-
-        titleLine1:
-            "WE BUILD",
-
-        titleLine2:
-            "THE SYSTEMS",
-
-        titleAccent:
-            "BEHIND PRODUCTION.",
-
-        description:
-            "Control panels, PLC systems and machine automation engineered around the way your plant actually works.",
-
-
-    },
-
-
-    {
-        id: 6,
-
-        image: heroImageThree,
-
-        eyebrow:
-            "SMART INDUSTRIAL TECHNOLOGY",
-
-        titleLine1:
-            "WE CONNECT",
-
-        titleLine2:
-            "INDUSTRY",
-
-        titleAccent:
-            "TO INTELLIGENCE.",
-
-        description:
-            "Connected industrial systems that bring machines, control and operational data together.",
-
-
-    }
 
 ];
 
