@@ -2106,14 +2106,173 @@ const Contact = () => {
        SUBMIT
        ===================================================== */
 
-    const handleSubmit = async (event) => {
+    //     const handleSubmit = async (event) => {
 
+    //         event.preventDefault();
+
+    //         const nextErrors = validateForm();
+
+    //         if (Object.keys(nextErrors).length > 0) {
+
+    //             setErrors(nextErrors);
+
+    //             const firstErrorField =
+    //                 Object.keys(nextErrors)[0];
+
+    //             if (
+    //                 firstErrorField === "name" ||
+    //                 firstErrorField === "company" ||
+    //                 firstErrorField === "email" ||
+    //                 firstErrorField === "phone"
+    //             ) {
+    //                 setActiveStep(1);
+    //             } else if (firstErrorField === "requirement") {
+    //                 setActiveStep(2);
+    //             } else if (firstErrorField === "message") {
+    //                 setActiveStep(3);
+    //             }
+
+    //             const target =
+    //                 formRef.current?.querySelector(
+    //                     `[name="${firstErrorField}"]`
+    //                 );
+
+    //             target?.focus();
+
+    //             return;
+    //         }
+
+    //         setIsSubmitting(true);
+    //         setErrors({});
+
+    //         const cleanName = form.name.trim();
+    //         const cleanCompany = form.company.trim();
+    //         const cleanEmail = form.email.trim();
+    //         const cleanPhone = form.phone.trim();
+    //         const cleanRequirement = form.requirement.trim();
+    //         const cleanMessage = form.message.trim();
+
+    //         try {
+
+    //             /* =================================================
+    //                1. SEND ENQUIRY THROUGH RESEND
+    //                ================================================= */
+
+    //             const response = await fetch(
+    //                 "/api/send-email",
+    //                 {
+    //                     method: "POST",
+    //                     headers: {
+    //                         "Content-Type": "application/json",
+    //                     },
+    //                     body: JSON.stringify({
+    //                         name: cleanName,
+    //                         company: cleanCompany,
+    //                         email: cleanEmail,
+    //                         phone: cleanPhone,
+    //                         requirement: cleanRequirement,
+    //                         message: cleanMessage,
+    //                     }),
+    //                 }
+    //             );
+
+    //             const result = await response.json();
+
+    //             if (!response.ok || !result.success) {
+    //                 throw new Error(
+    //                     result.message ||
+    //                     "Unable to send enquiry."
+    //                 );
+    //             }
+
+    //             /* =================================================
+    //                2. PREPARE WHATSAPP MESSAGE
+    //                ================================================= */
+
+    //             const whatsappMessage = `Hello Bitsol Automation,
+
+    // I would like to discuss an automation requirement.
+
+    // Name: ${cleanName}
+    // Company: ${cleanCompany || "Not provided"}
+    // Email: ${cleanEmail}
+    // Phone: ${cleanPhone}
+
+    // Requirement:
+    // ${cleanRequirement}
+
+    // Project Details:
+    // ${cleanMessage}`;
+
+    //             const whatsappUrl =
+    //                 `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    //                     whatsappMessage
+    //                 )}`;
+
+    //             /* =================================================
+    //                3. OPEN WHATSAPP
+    //                ================================================= */
+
+    //             window.open(
+    //                 whatsappUrl,
+    //                 "_blank",
+    //                 "noopener,noreferrer"
+    //             );
+
+    //             /* =================================================
+    //                4. RESET FORM
+    //                ================================================= */
+
+    //             setSubmitted(true);
+
+    //             setForm({
+    //                 name: "",
+    //                 company: "",
+    //                 email: "",
+    //                 phone: "",
+    //                 requirement: "",
+    //                 message: "",
+    //             });
+
+    //             setErrors({});
+    //             setActiveStep(1);
+    //             setIsSubmitting(false);
+
+    //             /* =================================================
+    //                5. GO TO THANK YOU PAGE
+    //                ================================================= */
+
+    //             window.location.href = "/thank-you.html";
+
+    //         } catch (error) {
+
+    //             console.error(
+    //                 "Contact form submission error:",
+    //                 error
+    //             );
+
+    //             setIsSubmitting(false);
+
+    //             setErrors({
+    //                 submit:
+    //                     "We couldn't send your enquiry right now. Please try again or contact us directly on WhatsApp.",
+    //             });
+    //         }
+    //     };
+
+
+
+
+    /* =====================================================
+       SUBMIT
+       ===================================================== */
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const nextErrors = validateForm();
 
         if (Object.keys(nextErrors).length > 0) {
-
             setErrors(nextErrors);
 
             const firstErrorField =
@@ -2153,28 +2312,30 @@ const Contact = () => {
         const cleanMessage = form.message.trim();
 
         try {
-
             /* =================================================
-               1. SEND ENQUIRY THROUGH RESEND
+               SEND ENQUIRY THROUGH RESEND
+    
+               The API sends the enquiry to:
+               1. raam@bitsol.in
+               2. bitsol@bitsol.in
                ================================================= */
 
-            const response = await fetch(
-                "/api/send-email",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        name: cleanName,
-                        company: cleanCompany,
-                        email: cleanEmail,
-                        phone: cleanPhone,
-                        requirement: cleanRequirement,
-                        message: cleanMessage,
-                    }),
-                }
-            );
+            const response = await fetch("/api/send-email", {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                },
+
+                body: JSON.stringify({
+                    name: cleanName,
+                    company: cleanCompany,
+                    email: cleanEmail,
+                    phone: cleanPhone,
+                    requirement: cleanRequirement,
+                    message: cleanMessage,
+                }),
+            });
 
             const result = await response.json();
 
@@ -2186,41 +2347,10 @@ const Contact = () => {
             }
 
             /* =================================================
-               2. PREPARE WHATSAPP MESSAGE
-               ================================================= */
-
-            const whatsappMessage = `Hello Bitsol Automation,
-
-I would like to discuss an automation requirement.
-
-Name: ${cleanName}
-Company: ${cleanCompany || "Not provided"}
-Email: ${cleanEmail}
-Phone: ${cleanPhone}
-
-Requirement:
-${cleanRequirement}
-
-Project Details:
-${cleanMessage}`;
-
-            const whatsappUrl =
-                `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                    whatsappMessage
-                )}`;
-
-            /* =================================================
-               3. OPEN WHATSAPP
-               ================================================= */
-
-            window.open(
-                whatsappUrl,
-                "_blank",
-                "noopener,noreferrer"
-            );
-
-            /* =================================================
-               4. RESET FORM
+               EMAIL SENT SUCCESSFULLY
+    
+               No WhatsApp.
+               No WhatsApp window.
                ================================================= */
 
             setSubmitted(true);
@@ -2239,13 +2369,12 @@ ${cleanMessage}`;
             setIsSubmitting(false);
 
             /* =================================================
-               5. GO TO THANK YOU PAGE
+               GO TO THANK YOU PAGE
                ================================================= */
 
             window.location.href = "/thank-you.html";
 
         } catch (error) {
-
             console.error(
                 "Contact form submission error:",
                 error
@@ -2255,21 +2384,17 @@ ${cleanMessage}`;
 
             setErrors({
                 submit:
-                    "We couldn't send your enquiry right now. Please try again or contact us directly on WhatsApp.",
+                    "We couldn't send your enquiry right now. Please try again.",
             });
         }
     };
-
-
     /* =====================================================
        FIELD CLASS
        ===================================================== */
 
     const fieldClass = (field) =>
-        `premium-field ${
-            errors[field] ? "has-error" : ""
-        } ${
-            form[field] ? "has-value" : ""
+        `premium-field ${errors[field] ? "has-error" : ""
+        } ${form[field] ? "has-value" : ""
         }`;
 
 
@@ -2577,11 +2702,10 @@ ${cleanMessage}`;
                             <div className="premium-form-intro__steps">
 
                                 <div
-                                    className={`premium-step ${
-                                        activeStep === 1
+                                    className={`premium-step ${activeStep === 1
                                             ? "is-active"
                                             : ""
-                                    }`}
+                                        }`}
                                 >
 
                                     <span>
@@ -2602,11 +2726,10 @@ ${cleanMessage}`;
 
 
                                 <div
-                                    className={`premium-step ${
-                                        activeStep === 2
+                                    className={`premium-step ${activeStep === 2
                                             ? "is-active"
                                             : ""
-                                    }`}
+                                        }`}
                                 >
 
                                     <span>
@@ -2627,11 +2750,10 @@ ${cleanMessage}`;
 
 
                                 <div
-                                    className={`premium-step ${
-                                        activeStep === 3
+                                    className={`premium-step ${activeStep === 3
                                             ? "is-active"
                                             : ""
-                                    }`}
+                                        }`}
                                 >
 
                                     <span>
@@ -2919,11 +3041,10 @@ ${cleanMessage}`;
                             ===================================== */}
 
                             <fieldset
-                                className={`premium-form__block premium-requirement ${
-                                    errors.requirement
+                                className={`premium-form__block premium-requirement ${errors.requirement
                                         ? "has-error"
                                         : ""
-                                }`}
+                                    }`}
                             >
 
                                 <div className="premium-form__block-head">
@@ -2954,7 +3075,7 @@ ${cleanMessage}`;
                                                 key={requirement}
                                                 className={
                                                     form.requirement ===
-                                                    requirement
+                                                        requirement
                                                         ? "premium-requirement-card is-selected"
                                                         : "premium-requirement-card"
                                                 }
@@ -3021,11 +3142,10 @@ ${cleanMessage}`;
                             ===================================== */}
 
                             <div
-                                className={`premium-form__block premium-message ${
-                                    errors.message
+                                className={`premium-form__block premium-message ${errors.message
                                         ? "has-error"
                                         : ""
-                                }`}
+                                    }`}
                             >
 
                                 <div className="premium-form__block-head">
