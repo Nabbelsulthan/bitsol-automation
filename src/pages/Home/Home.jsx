@@ -1140,7 +1140,7 @@ const Home = () => {
                         SIDE TEXT
                         ================================================= */}
 
-                    <AnimatePresence
+                    {/* <AnimatePresence
                         mode="wait"
                     >
 
@@ -1172,7 +1172,7 @@ const Home = () => {
                             }}
                         >
 
-                            {
+                       //     {
                                 currentScene
                                     .sideLabels
                                     .map(
@@ -1192,7 +1192,7 @@ const Home = () => {
 
                         </motion.div>
 
-                    </AnimatePresence>
+                    </AnimatePresence> */}
 
                 </div>
 
