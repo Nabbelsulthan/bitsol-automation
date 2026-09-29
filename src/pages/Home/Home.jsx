@@ -126,6 +126,35 @@ const heroScenes = [
     },
 
 
+    // {
+    //     id: 3,
+
+    //     image: heroImageSystemThree,
+
+    //     isSystemVisual: true,
+
+    //     eyebrow:
+    //         "INDUSTRIAL PROCESS CONTROL",
+
+    //     titleLine1:
+    //         "WE MAKE",
+
+    //     titleLine2:
+    //         "COMPLEX PROCESSES",
+
+    //     titleAccent:
+    //         "EASIER TO CONTROL.",
+
+    //     description:
+    //         "Process visualization that gives operators a clear view of equipment, operating conditions and production status.",
+
+    //     sideLabels: [
+    //         "MIMIC",
+    //         "PROCESS",
+    //         "MONITORING"
+    //     ]
+    // },
+
     {
         id: 3,
 
@@ -137,16 +166,16 @@ const heroScenes = [
             "INDUSTRIAL PROCESS CONTROL",
 
         titleLine1:
-            "WE MAKE",
+            "WE SIMPLIFY",
 
         titleLine2:
-            "COMPLEX PROCESSES",
+            "INDUSTRIAL",
 
         titleAccent:
-            "EASIER TO CONTROL.",
+            "PROCESSES.",
 
         description:
-            "Process visualization that gives operators a clear view of equipment, operating conditions and production status.",
+            "Clear visualization for equipment, operations and production.",
 
         sideLabels: [
             "MIMIC",
@@ -154,7 +183,6 @@ const heroScenes = [
             "MONITORING"
         ]
     },
-
 
     {
         id: 4,
