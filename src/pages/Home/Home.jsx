@@ -88,11 +88,7 @@ const heroScenes = [
         description:
             "Operator HMI and SCADA interfaces designed to make complex industrial processes easier to monitor and control.",
 
-        sideLabels: [
-            "HMI",
-            "SCADA",
-            "PROCESS CONTROL"
-        ]
+  
     },
 
 
@@ -118,11 +114,7 @@ const heroScenes = [
         description:
             "PLC, field devices, networks and supervisory systems brought together into one clear industrial control environment.",
 
-        sideLabels: [
-            "PLC",
-            "NETWORKS",
-            "SCADA"
-        ]
+ 
     },
 
 
@@ -177,11 +169,7 @@ const heroScenes = [
         description:
             "Clear visualization for equipment, operations and production.",
 
-        sideLabels: [
-            "MIMIC",
-            "PROCESS",
-            "MONITORING"
-        ]
+
     },
 
     {
@@ -204,11 +192,7 @@ const heroScenes = [
         description:
             "Automation, control and industrial technology solutions engineered for modern production.",
 
-        sideLabels: [
-            "AUTOMATION",
-            "CONTROL",
-            "ENGINEERING"
-        ]
+     
     },
 
 
@@ -232,11 +216,7 @@ const heroScenes = [
         description:
             "Control panels, PLC systems and machine automation engineered around the way your plant actually works.",
 
-        sideLabels: [
-            "PLC",
-            "CONTROL PANELS",
-            "MACHINES"
-        ]
+
     },
 
 
@@ -260,11 +240,7 @@ const heroScenes = [
         description:
             "Connected industrial systems that bring machines, control and operational data together.",
 
-        sideLabels: [
-            "DATA",
-            "DIGITAL",
-            "INTELLIGENCE"
-        ]
+
     }
 
 ];
