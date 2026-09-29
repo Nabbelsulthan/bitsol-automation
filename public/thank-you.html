@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+        name="robots"
+        content="noindex, follow"
+    />
+
+    <meta
+        name="theme-color"
+        content="#0b0d0c"
+    />
+
+    <title>Thank You | Bitsol Automation</title>
+
+    <meta
+        name="description"
+        content="Thank you for contacting Bitsol Automation. Your enquiry has been prepared for WhatsApp."
+    />
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="/favicon.png"
+    />
+
+    <style>
+        :root {
+            --bg: #0a0c0b;
+            --bg-soft: #101311;
+            --text: #f4f5f2;
+            --muted: #9ca39e;
+            --line: rgba(255, 255, 255, 0.10);
+            --accent: #b7d62f;
+            --accent-dark: #8da900;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            min-height: 100%;
+            background: var(--bg);
+        }
+
+        body {
+            min-height: 100vh;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(183, 214, 47, 0.08),
+                    transparent 34%
+                ),
+                linear-gradient(
+                    180deg,
+                    #080a09 0%,
+                    #0b0e0c 55%,
+                    #080a09 100%
+                );
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .thankyou-page {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================================
+           BACKGROUND
+        ========================================= */
+
+        .thankyou-page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.025) 50%,
+                    transparent 100%
+                );
+
+            pointer-events: none;
+        }
+
+        .thankyou-grid {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    black 20%,
+                    black 75%,
+                    transparent
+                );
+
+            pointer-events: none;
+        }
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .thankyou-header {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            padding: 30px 5vw;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .thankyou-logo {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .thankyou-logo img {
+            width: 170px;
+            height: auto;
+            display: block;
+        }
+
+        .thankyou-header-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: #858b86;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .thankyou-main {
+            position: relative;
+            z-index: 2;
+
+            flex: 1;
+
+            width: min(920px, 90%);
+
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 90px 0 100px;
+        }
+
+        .thankyou-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .thankyou-icon {
+            width: 82px;
+            height: 82px;
+
+            margin: 0 auto 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(183, 214, 47, 0.45);
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(183, 214, 47, 0.16),
+                    rgba(183, 214, 47, 0.03)
+                );
+
+            color: var(--accent);
+
+            box-shadow:
+                0 0 0 10px rgba(183, 214, 47, 0.025),
+                0 0 60px rgba(183, 214, 47, 0.08);
+        }
+
+        .thankyou-icon svg {
+            width: 31px;
+            height: 31px;
+        }
+
+        .thankyou-kicker {
+            margin-bottom: 20px;
+
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.24em;
+
+            color: var(--accent);
+
+            text-transform: uppercase;
+        }
+
+        .thankyou-title {
+            max-width: 850px;
+            margin: 0 auto;
+
+            font-size: clamp(3.2rem, 7vw, 6.7rem);
+            line-height: 0.92;
+            letter-spacing: -0.055em;
+            font-weight: 800;
+
+            text-transform: uppercase;
+        }
+
+        .thankyou-title span {
+            display: block;
+            color: var(--accent);
+        }
+
+        .thankyou-description {
+            max-width: 590px;
+
+            margin: 32px auto 0;
+
+            font-size: 1rem;
+            line-height: 1.75;
+
+            color: var(--muted);
+        }
+
+        /* =========================================
+           WHATSAPP STATUS
+        ========================================= */
+
+        .thankyou-status {
+            width: min(580px, 100%);
+
+            margin: 44px auto 0;
+            padding: 20px 22px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            text-align: left;
+
+            border: 1px solid var(--line);
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.045),
+                    rgba(255, 255, 255, 0.015)
+                );
+        }
+
+        .thankyou-status-icon {
+            flex: 0 0 auto;
+
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(183, 214, 47, 0.10);
+            color: var(--accent);
+        }
+
+        .thankyou-status-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .thankyou-status strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            font-size: 0.73rem;
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+        .thankyou-status p {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--muted);
+        }
+
+        /* =========================================
+           ACTIONS
+        ========================================= */
+
+        .thankyou-actions {
+            margin-top: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .thankyou-button {
+            min-height: 52px;
+
+            padding: 0 27px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 7px;
+
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+
+            text-transform: uppercase;
+
+            transition:
+                transform 180ms ease,
+                background 180ms ease,
+                border-color 180ms ease;
+        }
+
+        .thankyou-button--primary {
+            background: var(--accent);
+            color: #10120d;
+            border: 1px solid var(--accent);
+        }
+
+        .thankyou-button--secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .thankyou-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .thankyou-button--primary:hover {
+            background: #c9e84a;
+        }
+
+        .thankyou-button--secondary:hover {
+            border-color: rgba(255, 255, 255, 0.32);
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .thankyou-footer {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+
+            padding: 22px 5vw;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            border-top: 1px solid var(--line);
+
+            color: #6f7671;
+
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .thankyou-header {
+                padding: 22px 22px;
+            }
+
+            .thankyou-logo img {
+                width: 145px;
+            }
+
+            .thankyou-header-label {
+                display: none;
+            }
+
+            .thankyou-main {
+                width: 88%;
+                padding: 70px 0 80px;
+            }
+
+            .thankyou-icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 28px;
+            }
+
+            .thankyou-icon svg {
+                width: 27px;
+                height: 27px;
+            }
+
+            .thankyou-kicker {
+                font-size: 0.58rem;
+                margin-bottom: 16px;
+            }
+
+            .thankyou-title {
+                font-size: clamp(2.7rem, 14vw, 4.8rem);
+                line-height: 0.94;
+            }
+
+            .thankyou-description {
+                margin-top: 25px;
+                font-size: 0.88rem;
+                line-height: 1.7;
+            }
+
+            .thankyou-status {
+                margin-top: 32px;
+                padding: 17px;
+            }
+
+            .thankyou-status p {
+                font-size: 0.76rem;
+            }
+
+            .thankyou-actions {
+                margin-top: 28px;
+                flex-direction: column;
+            }
+
+            .thankyou-button {
+                width: 100%;
+                min-height: 50px;
+            }
+
+            .thankyou-footer {
+                padding: 18px 22px;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .thankyou-button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="thankyou-page">
+
+        <div class="thankyou-grid"></div>
+
+        <!-- HEADER -->
+
+        <header class="thankyou-header">
+
+            <a
+                href="/index.html"
+                class="thankyou-logo"
+                aria-label="Bitsol Automation Home"
+            >
+                <img
+                    src="/favicon.png"
+                    alt="Bitsol Automation"
+                />
+            </a>
+
+            <span class="thankyou-header-label">
+                Industrial Automation · Hosur
+            </span>
+
+        </header>
+
+
+        <!-- MAIN -->
+
+        <main class="thankyou-main">
+
+            <div class="thankyou-content">
+
+                <div class="thankyou-icon" aria-hidden="true">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+
+                </div>
+
+
+                <p class="thankyou-kicker">
+                    Enquiry Prepared
+                </p>
+
+
+                <h1 class="thankyou-title">
+                    Thank
+                    <span>You.</span>
+                </h1>
+
+
+                <p class="thankyou-description">
+                    Your enquiry has been prepared with your project
+                    details. WhatsApp should have opened so you can
+                    send the enquiry directly to the Bitsol Automation team.
+                </p>
+
+
+                <div class="thankyou-status">
+
+                    <div
+                        class="thankyou-status-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+                            <path d="M8 10h8"></path>
+                            <path d="M8 14h5"></path>
+                        </svg>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            WhatsApp Enquiry
+                        </strong>
+
+                        <p>
+                            Your name, company, contact details and
+                            project requirement have been prepared
+                            automatically.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="thankyou-actions">
+
+                    <a
+                        href="https://wa.me/917826800765"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="thankyou-button thankyou-button--primary"
+                    >
+                        Open WhatsApp
+                    </a>
+
+                    <a
+                        href="/index.html"
+                        class="thankyou-button thankyou-button--secondary"
+                    >
+                        Back To Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="thankyou-footer">
+
+            <span>
+                © 2026 Bitsol Automation
+            </span>
+
+            <span>
+                Hosur · India
+            </span>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
