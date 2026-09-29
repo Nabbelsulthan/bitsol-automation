@@ -2104,3 +2104,17 @@
         bottom: 0;
     }
 }
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .solutions__sticky,
+    .solutions__viewport,
+    .solutions__orbit {
+        overflow-x: clip;
+    }
+
+}

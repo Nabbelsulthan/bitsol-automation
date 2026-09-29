@@ -88,64 +88,25 @@ const heroScenes = [
         description:
             "Operator HMI and SCADA interfaces designed to make complex industrial processes easier to monitor and control.",
 
-  
+
     },
+
 
 
     {
         id: 2,
-
         image: heroImageSystemTwo,
-
         isSystemVisual: true,
 
-        eyebrow:
-            "PLC & SCADA INTEGRATION",
+        eyebrow: "PLC & SCADA INTEGRATION",
 
-        titleLine1:
-            "WE CONNECT",
-
-        titleLine2:
-            "THE PLANT",
-
-        titleAccent:
-            "FROM CONTROL TO SCADA.",
+        titleLine1: "WE CONNECT",
+        titleLine2: "THE PLANT",
+        titleAccent: "CONTROL TO SCADA.",
 
         description:
-            "PLC, field devices, networks and supervisory systems brought together into one clear industrial control environment.",
-
- 
+            "PLC, field devices and SCADA systems connected in one clear industrial control environment."
     },
-
-
-    // {
-    //     id: 3,
-
-    //     image: heroImageSystemThree,
-
-    //     isSystemVisual: true,
-
-    //     eyebrow:
-    //         "INDUSTRIAL PROCESS CONTROL",
-
-    //     titleLine1:
-    //         "WE MAKE",
-
-    //     titleLine2:
-    //         "COMPLEX PROCESSES",
-
-    //     titleAccent:
-    //         "EASIER TO CONTROL.",
-
-    //     description:
-    //         "Process visualization that gives operators a clear view of equipment, operating conditions and production status.",
-
-    //     sideLabels: [
-    //         "MIMIC",
-    //         "PROCESS",
-    //         "MONITORING"
-    //     ]
-    // },
 
     {
         id: 3,
@@ -192,7 +153,7 @@ const heroScenes = [
         description:
             "Automation, control and industrial technology solutions engineered for modern production.",
 
-     
+
     },
 
 
@@ -314,22 +275,6 @@ const Home = () => {
 
 
 
-    /* =====================================================
-       INTRO STATE
-
-       Intro plays only once per browser session.
-       ===================================================== */
-
-    // const [introVisible, setIntroVisible] =
-    //     useState(() => {
-
-    //         return (
-    //             sessionStorage.getItem(
-    //                 "bitsol-intro-seen"
-    //             ) !== "true"
-    //         );
-
-    //     });
 
 
 
@@ -343,17 +288,6 @@ const Home = () => {
 
 
     /* =====================================================
-       HERO ANIMATION TIMING
-       ===================================================== */
-
-    // const animationDelay =
-    //     introVisible
-    //         ? 3
-    //         : 0;
-
-
-
-    /* =====================================================
        CURRENT SCENE
        ===================================================== */
 
@@ -362,38 +296,6 @@ const Home = () => {
 
 
 
-    /* =====================================================
-       INTRO TIMER
-       ===================================================== */
-
-    // useEffect(() => {
-
-    //     if (!introVisible) {
-    //         return;
-    //     }
-
-
-    //     const timer =
-    //         window.setTimeout(() => {
-
-    //             sessionStorage.setItem(
-    //                 "bitsol-intro-seen",
-    //                 "true"
-    //             );
-
-
-    //             setIntroVisible(false);
-
-    //         }, 3000);
-
-
-    //     return () => {
-
-    //         window.clearTimeout(timer);
-
-    //     };
-
-    // }, [introVisible]);
 
 
 
@@ -403,19 +305,30 @@ const Home = () => {
 
    The timer resets after every slide change.
    This means:
-   - Automatic change → 6 seconds
-   - Manual arrow click → fresh 6 seconds
-   - Dot click → fresh 6 seconds
+   - Automatic change → 3 seconds
+   - Manual arrow click → fresh 3 seconds
+   - Dot click → fresh 3 seconds
 
-   The visitor always gets the full 6 seconds
+   The visitor always gets the full 3 seconds
    to view the newly selected slide.
    ===================================================== */
 
-    // useEffect(() => {
-    //     if (introVisible) {
-    //         return;
-    //     }
 
+    const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+    const [showPauseTooltip, setShowPauseTooltip] = useState(false);
+
+    const handleCarouselMouseEnter = () => {
+        setIsCarouselPaused(true);
+        setShowPauseTooltip(true);
+    };
+
+    const handleCarouselMouseLeave = () => {
+        setIsCarouselPaused(false);
+        setShowPauseTooltip(false);
+    };
+
+
+    // useEffect(() => {
     //     const timer = window.setTimeout(() => {
     //         setActiveSlide(previous =>
     //             (previous + 1) % heroScenes.length
@@ -426,23 +339,24 @@ const Home = () => {
     //         window.clearTimeout(timer);
     //     };
 
-    // }, [activeSlide, introVisible]);
-
+    // }, [activeSlide]);
 
     useEffect(() => {
-        const timer = window.setTimeout(() => {
-            setActiveSlide(previous =>
-                (previous + 1) % heroScenes.length
+        if (isCarouselPaused) {
+            return;
+        }
+
+        const timer = setTimeout(() => {
+            setActiveSlide(
+                (prev) => (prev + 1) % heroScenes.length
             );
         }, HERO_INTERVAL);
 
-        return () => {
-            window.clearTimeout(timer);
-        };
-
-    }, [activeSlide]);
-
-
+        return () => clearTimeout(timer);
+    }, [
+        activeSlide,
+        isCarouselPaused
+    ]);
 
     /* =====================================================
        MANUAL SLIDE CONTROL
@@ -506,184 +420,6 @@ const Home = () => {
 
 
             {/* =====================================================
-                OPENING CINEMATIC SEQUENCE
-                ===================================================== */}
-
-            {/* <AnimatePresence>
-
-                {introVisible && (
-
-                    <motion.section
-                        className="home-intro"
-
-                        initial={{
-                            opacity: 1
-                        }}
-
-                        exit={{
-                            opacity: 0
-                        }}
-
-                        transition={{
-                            duration: 0.8,
-                            ease:
-                                cinematicEase
-                        }}
-                    >
-
-
-                        <div className="home-intro__content">
-
-
-                    
-
-                            <motion.div
-                                className="home-intro__brand"
-
-                                initial={{
-                                    opacity: 0,
-                                    y: 24
-                                }}
-
-                                animate={{
-                                    opacity: 1,
-                                    y: 0
-                                }}
-
-                                transition={{
-                                    duration: 0.8,
-                                    delay: 0.25,
-                                    ease:
-                                        cinematicEase
-                                }}
-                            >
-
-                                BITSOL
-
-                            </motion.div>
-
-
-
-              
-
-                            <motion.div
-                                className="home-intro__line"
-
-                                initial={{
-                                    scaleX: 0,
-                                    opacity: 0
-                                }}
-
-                                animate={{
-                                    scaleX: 1,
-                                    opacity: 1
-                                }}
-
-                                transition={{
-                                    duration: 0.8,
-                                    delay: 0.45,
-                                    ease:
-                                        cinematicEase
-                                }}
-                            />
-
-
-
-             
-
-                            <motion.div
-                                className="home-intro__statement"
-
-                                initial={{
-                                    opacity: 0,
-                                    y: 30
-                                }}
-
-                                animate={{
-                                    opacity: 1,
-                                    y: 0
-                                }}
-
-                                transition={{
-                                    duration: 0.9,
-                                    delay: 0.7,
-                                    ease:
-                                        cinematicEase
-                                }}
-                            >
-
-                                INDUSTRIAL
-                                <br />
-                                AUTOMATION
-
-                            </motion.div>
-
-
-
-      
-
-                            <motion.div
-                                className="home-intro__bar"
-
-                                initial={{
-                                    scaleX: 0
-                                }}
-
-                                animate={{
-                                    scaleX: 1
-                                }}
-
-                                transition={{
-                                    duration: 1,
-                                    delay: 1.15,
-                                    ease:
-                                        cinematicEase
-                                }}
-                            />
-
-                        </div>
-
-
-
-       
-
-                        <motion.div
-                            className="home-intro__background"
-
-                            initial={{
-                                scale: 1.08,
-                                opacity: 0
-                            }}
-
-                            animate={{
-                                scale: 1,
-                                opacity: 0.16
-                            }}
-
-                            transition={{
-                                duration: 2.2,
-                                ease:
-                                    cinematicEase
-                            }}
-                        >
-
-                            <img
-                                src={heroImage}
-                                alt=""
-                                aria-hidden="true"
-                            />
-
-                        </motion.div>
-
-                    </motion.section>
-
-                )}
-
-            </AnimatePresence> */}
-
-
-
-            {/* =====================================================
                 HERO
                 ===================================================== */}
 
@@ -699,23 +435,6 @@ const Home = () => {
             >
 
 
-                {/* =================================================
-                    HERO IMAGE FRAME
-
-                    IMPORTANT:
-
-                    This frame never changes dimensions.
-
-                    Every image is:
-                    absolute
-                    inset: 0
-                    width: 100%
-                    height: 100%
-                    object-fit: cover
-
-                    Therefore image dimensions cannot affect
-                    document height or scroll behaviour.
-                    ================================================= */}
 
                 <div
                     className="home-hero__visual"
@@ -762,14 +481,6 @@ const Home = () => {
                                     `${currentScene.eyebrow} - Bitsol Automation`
                                 }
 
-                                // className={`
-                                //     home-hero__image
-                                //     kenburns-right
-                                //     ${currentScene.isSystemVisual
-                                //         ? "home-hero__image--system"
-                                //         : ""
-                                //     }
-                                // `}
 
                                 className={`
     home-hero__image
@@ -1136,64 +847,6 @@ const Home = () => {
 
 
 
-                    {/* =================================================
-                        SIDE TEXT
-                        ================================================= */}
-
-                    {/* <AnimatePresence
-                        mode="wait"
-                    >
-
-                        <motion.div
-                            key={
-                                `side-${currentScene.id}`
-                            }
-
-                            className="
-                                home-hero__side
-                            "
-
-                            initial={{
-                                opacity: 0
-                            }}
-
-                            animate={{
-                                opacity: 1
-                            }}
-
-                            exit={{
-                                opacity: 0
-                            }}
-
-                            transition={{
-                                duration: 0.7,
-                                ease:
-                                    cinematicEase
-                            }}
-                        >
-
-                       //     {
-                                currentScene
-                                    .sideLabels
-                                    .map(
-                                        label => (
-
-                                            <span
-                                                key={
-                                                    label
-                                                }
-                                            >
-                                                {label}
-                                            </span>
-
-                                        )
-                                    )
-                            }
-
-                        </motion.div>
-
-                    </AnimatePresence> */}
-
                 </div>
 
 
@@ -1262,7 +915,7 @@ const Home = () => {
 
 
 
-                    <div
+                    {/* <div
                         className="
                             home-hero__carousel-dots
                         "
@@ -1310,8 +963,54 @@ const Home = () => {
                             )
                         }
 
-                    </div>
+                    </div> */}
 
+                    <div
+                        className="
+        home-hero__carousel-dots
+        home-hero__carousel-pause-zone
+    "
+                        onMouseEnter={handleCarouselMouseEnter}
+                        onMouseLeave={handleCarouselMouseLeave}
+                    >
+                        <span className="home-hero__pause-tooltip">
+                            Stay here to pause
+                        </span>
+
+                        {
+                            heroScenes.map(
+                                (
+                                    scene,
+                                    index
+                                ) => (
+
+                                    <button
+                                        key={scene.id}
+                                        type="button"
+
+                                        aria-label={
+                                            `Show hero slide ${index + 1}`
+                                        }
+
+                                        className={`
+                        home-hero__carousel-dot
+                        ${activeSlide === index
+                                                ? "is-active"
+                                                : ""
+                                            }
+                    `}
+
+                                        onClick={() =>
+                                            goToSlide(index)
+                                        }
+                                    >
+                                        <span />
+                                    </button>
+
+                                )
+                            )
+                        }
+                    </div>
 
                     <button
                         type="button"
@@ -1346,8 +1045,7 @@ const Home = () => {
                     transition={{
                         duration: 0.8,
                         delay: 1.5,
-                        // delay:
-                        //     animationDelay + 1.5,
+
                         ease:
                             cinematicEase
                     }}
@@ -1357,11 +1055,7 @@ const Home = () => {
                         SCROLL TO EXPLORE
                     </span>
 
-                    {/* <span
-                        className="
-                            home-hero__foot-line
-                        "
-                    /> */}
+
 
                 </motion.div>
 

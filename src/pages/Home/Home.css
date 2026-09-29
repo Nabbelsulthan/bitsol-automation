@@ -2781,3 +2781,129 @@
     }
 
 }
+
+
+
+/* =========================================================
+   SHORT DESKTOP SCREENS
+   Typography only
+   Does NOT affect tablet/mobile
+   ========================================================= */
+@media (min-width: 901px) and (max-height: 800px) {
+
+    .home-hero__title {
+        font-size:
+            clamp(3.2rem, 6vw, 6.2rem);
+    }
+
+    .home-hero__description {
+        font-size:
+            clamp(0.88rem, 1vw, 1rem);
+    }
+}
+
+
+
+
+/* =========================================
+   CAROUSEL PAUSE ZONE
+   ========================================= */
+
+.home-hero__carousel-pause-zone {
+    position: relative;
+}
+
+
+/* Small pause tooltip */
+
+.home-hero__pause-tooltip {
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 12px);
+
+    transform: translateX(-50%) translateY(4px);
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(20, 28, 30, 0.92);
+    color: #ffffff;
+
+    font-size: 0.68rem;
+    font-weight: 500;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    z-index: 20;
+}
+
+
+/* Tooltip little pointer */
+
+.home-hero__pause-tooltip::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -4px;
+
+    width: 8px;
+    height: 8px;
+
+    background: rgba(20, 28, 30, 0.92);
+
+    transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* Show tooltip while hovering the indicator */
+
+.home-hero__carousel-pause-zone:hover .home-hero__pause-tooltip {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* Slightly larger hover area */
+
+.home-hero__carousel-pause-zone {
+    padding: 8px 10px;
+    margin: -8px -10px;
+}
+
+
+/* Keep the actual pills visually unchanged */
+
+.home-hero__carousel-pause-zone .home-hero__carousel-dot {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .home-hero__pause-tooltip {
+        display: none;
+    }
+
+}

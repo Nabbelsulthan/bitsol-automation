@@ -212,8 +212,8 @@ const OrbitCard = ({
         (value) =>
             index * STEP -
             value *
-                (TOTAL - 1) *
-                STEP
+            (TOTAL - 1) *
+            STEP
     );
 
 
@@ -671,7 +671,7 @@ const Solutions = () => {
         return (
             rect.top <= 5 &&
             rect.bottom >=
-                window.innerHeight - 5
+            window.innerHeight - 5
         );
 
     };
@@ -704,7 +704,7 @@ const Solutions = () => {
             Math.max(
                 0,
                 section.offsetHeight -
-                    window.innerHeight
+                window.innerHeight
             );
 
 
@@ -755,7 +755,7 @@ const Solutions = () => {
             const distance =
                 Math.abs(
                     window.scrollY -
-                        destination
+                    destination
                 );
 
 
@@ -855,7 +855,7 @@ const Solutions = () => {
         const next =
             clampIndex(
                 current +
-                    direction
+                direction
             );
 
 
@@ -1027,22 +1027,244 @@ const Solutions = () => {
        TOUCH CONTROL
        ===================================================== */
 
+    // useEffect(() => {
+
+    //     const handleTouchStart = (
+    //         event
+    //     ) => {
+
+    //         if (
+    //             !isSectionActive()
+    //         ) {
+
+    //             touchStartY.current =
+    //                 null;
+
+    //             return;
+    //         }
+
+
+    //         touchStartY.current =
+    //             event.touches[0].clientY;
+
+    //     };
+
+
+    //     const handleTouchMove = (
+    //         event
+    //     ) => {
+
+    //         if (
+    //             touchStartY.current ===
+    //             null
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         const currentY =
+    //             event.touches[0].clientY;
+
+
+    //         const delta =
+    //             touchStartY.current -
+    //             currentY;
+
+
+    //         /*
+    //          * Ignore tiny movement.
+    //          */
+
+    //         if (
+    //             Math.abs(delta) < 8
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         const direction =
+    //             delta > 0
+    //                 ? 1
+    //                 : -1;
+
+
+    //         const current =
+    //             targetIndex.current;
+
+
+    //         /*
+    //          * At first card:
+    //          * allow native page movement upward.
+    //          */
+
+    //         if (
+    //             direction < 0 &&
+    //             current === 0
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         /*
+    //          * At last card:
+    //          * allow native page movement downward.
+    //          */
+
+    //         if (
+    //             direction > 0 &&
+    //             current === TOTAL - 1
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         event.preventDefault();
+
+    //     };
+
+
+    //     const handleTouchEnd = (
+    //         event
+    //     ) => {
+
+    //         if (
+    //             touchStartY.current ===
+    //             null
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         const endY =
+    //             event.changedTouches[0].clientY;
+
+
+    //         const delta =
+    //             touchStartY.current -
+    //             endY;
+
+
+    //         touchStartY.current =
+    //             null;
+
+
+    //         /*
+    //          * Ignore tiny finger movements.
+    //          */
+
+    //         if (
+    //             Math.abs(delta) < 45
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         const direction =
+    //             delta > 0
+    //                 ? 1
+    //                 : -1;
+
+
+    //         const current =
+    //             targetIndex.current;
+
+
+    //         /*
+    //          * Allow normal page movement
+    //          * at the boundaries.
+    //          */
+
+    //         if (
+    //             direction < 0 &&
+    //             current === 0
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         if (
+    //             direction > 0 &&
+    //             current === TOTAL - 1
+    //         ) {
+    //             return;
+    //         }
+
+
+    //         moveToService(
+    //             direction
+    //         );
+
+    //     };
+
+
+    //     window.addEventListener(
+    //         "touchstart",
+    //         handleTouchStart,
+    //         {
+    //             passive: true,
+    //         }
+    //     );
+
+
+    //     window.addEventListener(
+    //         "touchmove",
+    //         handleTouchMove,
+    //         {
+    //             passive: false,
+    //         }
+    //     );
+
+
+    //     window.addEventListener(
+    //         "touchend",
+    //         handleTouchEnd,
+    //         {
+    //             passive: true,
+    //         }
+    //     );
+
+
+    //     return () => {
+
+    //         window.removeEventListener(
+    //             "touchstart",
+    //             handleTouchStart
+    //         );
+
+
+    //         window.removeEventListener(
+    //             "touchmove",
+    //             handleTouchMove
+    //         );
+
+
+    //         window.removeEventListener(
+    //             "touchend",
+    //             handleTouchEnd
+    //         );
+
+    //     };
+
+    // }, []);
+
+
+
+
+    /* =====================================================
+   TOUCH CONTROL
+   MOBILE
+   Let the browser handle native scrolling.
+   Snap to the next service after the swipe ends.
+   ===================================================== */
+
     useEffect(() => {
 
-        const handleTouchStart = (
-            event
-        ) => {
+        const handleTouchStart = (event) => {
 
-            if (
-                !isSectionActive()
-            ) {
-
-                touchStartY.current =
-                    null;
-
+            if (!isSectionActive()) {
+                touchStartY.current = null;
                 return;
             }
-
 
             touchStartY.current =
                 event.touches[0].clientY;
@@ -1050,107 +1272,25 @@ const Solutions = () => {
         };
 
 
-        const handleTouchMove = (
-            event
-        ) => {
+        const handleTouchEnd = (event) => {
 
             if (
-                touchStartY.current ===
-                null
+                touchStartY.current === null
             ) {
                 return;
             }
-
-
-            const currentY =
-                event.touches[0].clientY;
-
-
-            const delta =
-                touchStartY.current -
-                currentY;
-
-
-            /*
-             * Ignore tiny movement.
-             */
-
-            if (
-                Math.abs(delta) < 8
-            ) {
-                return;
-            }
-
-
-            const direction =
-                delta > 0
-                    ? 1
-                    : -1;
-
-
-            const current =
-                targetIndex.current;
-
-
-            /*
-             * At first card:
-             * allow native page movement upward.
-             */
-
-            if (
-                direction < 0 &&
-                current === 0
-            ) {
-                return;
-            }
-
-
-            /*
-             * At last card:
-             * allow native page movement downward.
-             */
-
-            if (
-                direction > 0 &&
-                current === TOTAL - 1
-            ) {
-                return;
-            }
-
-
-            event.preventDefault();
-
-        };
-
-
-        const handleTouchEnd = (
-            event
-        ) => {
-
-            if (
-                touchStartY.current ===
-                null
-            ) {
-                return;
-            }
-
 
             const endY =
                 event.changedTouches[0].clientY;
-
 
             const delta =
                 touchStartY.current -
                 endY;
 
-
-            touchStartY.current =
-                null;
+            touchStartY.current = null;
 
 
-            /*
-             * Ignore tiny finger movements.
-             */
+            /* Ignore small movements */
 
             if (
                 Math.abs(delta) < 45
@@ -1169,10 +1309,8 @@ const Solutions = () => {
                 targetIndex.current;
 
 
-            /*
-             * Allow normal page movement
-             * at the boundaries.
-             */
+            /* Allow normal page movement
+               at the boundaries */
 
             if (
                 direction < 0 &&
@@ -1190,9 +1328,7 @@ const Solutions = () => {
             }
 
 
-            moveToService(
-                direction
-            );
+            moveToService(direction);
 
         };
 
@@ -1202,15 +1338,6 @@ const Solutions = () => {
             handleTouchStart,
             {
                 passive: true,
-            }
-        );
-
-
-        window.addEventListener(
-            "touchmove",
-            handleTouchMove,
-            {
-                passive: false,
             }
         );
 
@@ -1231,13 +1358,6 @@ const Solutions = () => {
                 handleTouchStart
             );
 
-
-            window.removeEventListener(
-                "touchmove",
-                handleTouchMove
-            );
-
-
             window.removeEventListener(
                 "touchend",
                 handleTouchEnd
@@ -1246,8 +1366,6 @@ const Solutions = () => {
         };
 
     }, []);
-
-
     /* =====================================================
        KEEP INDEX SYNCHRONIZED
        ===================================================== */
@@ -1283,7 +1401,7 @@ const Solutions = () => {
             if (
                 rect.top > 10 ||
                 rect.bottom <
-                    window.innerHeight - 10
+                window.innerHeight - 10
             ) {
                 return;
             }
@@ -1327,7 +1445,7 @@ const Solutions = () => {
             const index =
                 Math.round(
                     travelled /
-                        stepDistance
+                    stepDistance
                 );
 
 
