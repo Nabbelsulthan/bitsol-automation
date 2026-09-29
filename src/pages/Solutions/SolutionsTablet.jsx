@@ -751,7 +751,7 @@ const SolutionsTablet = () => {
                         solutions-tablet__progress
                     "
                     data-aos="fade-up"
-                    data-aos-delay="380"
+                    data-aos-delay="280"
                 >
 
                     <div
