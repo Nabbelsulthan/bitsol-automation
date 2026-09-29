@@ -1537,7 +1537,7 @@
 
 .home-hero__carousel-dot.is-active span {
     animation:
-        heroCarouselProgress 6s linear forwards;
+        heroCarouselProgress 3s linear forwards;
 }
 
 
@@ -1663,6 +1663,42 @@
 }
 
 
+
+
+/* =========================================================
+   DESKTOP — SLIDE 2 ONLY
+   bitsol-hero1.png
+
+   Keep complete diagram visible
+   and clear of the navigation.
+   ========================================================= */
+
+.home-hero__image--system-2 {
+
+    width: 100%;
+
+    height: calc(100% - 90px);
+
+    top: 90px;
+
+    bottom: auto;
+
+    object-fit: contain;
+
+    object-position: center center;
+
+    filter: none;
+
+    background: #eef2f3;
+
+    transform: none !important;
+
+    animation: none !important;
+
+    transform-origin: center center;
+
+    will-change: auto;
+}
 
 /* =========================================================
    SCROLL LINE ANIMATION
@@ -1882,6 +1918,10 @@
    SMALL TABLET / MOBILE
    ========================================================= */
 
+/* =========================================================
+   SMALL TABLET / MOBILE
+   ========================================================= */
+
 @media (max-width: 768px) {
 
     /* -----------------------------------------
@@ -1942,25 +1982,29 @@
        HERO
        ----------------------------------------- */
 
-    /* .home-hero {
+    .home-hero {
 
-        min-height:100svh;
-            
+        min-height:
+            100svh;
 
         height:
-            calc(100svh - 70px);
-    } */
-
-
-    .home-hero {
-        min-height: 100svh;
-        height: 100svh;
+            100svh;
     }
+
 
     .home-hero__container {
-        min-height: 100%;
-        height: 100%;
+
+        min-height:
+            100%;
+
+        height:
+            100%;
     }
+
+
+    /* -----------------------------------------
+       HERO IMAGE
+       ----------------------------------------- */
 
     .home-hero__image {
 
@@ -1971,24 +2015,69 @@
             contrast(1.08) brightness(0.62) saturate(0.72);
     }
 
+
+    /* =========================================================
+       FIRST 3 SYSTEM HERO IMAGES
+       ========================================================= */
+
     .home-hero__image--system {
 
-        object-fit:
-            contain;
+        width: 100%;
+        height: 100%;
 
-        object-position:
-            center center;
+        object-fit: contain;
+        object-position: center center;
 
-        filter:
-            none;
+        filter: none;
 
-        transform:
-            none !important;
+        background: #eef2f3;
 
-        animation:
-            none;
+        animation: none !important;
+
+        transform-origin: center center;
+
+        will-change: transform;
     }
 
+
+
+    /* -----------------------------------------
+       SLIDE 1
+       SCADA & HMI SYSTEMS
+       ----------------------------------------- */
+
+
+    .home-hero__image--system-1 {
+
+        transform:
+            translate3d(3%, -2%, 0) scale(1.22) !important;
+    }
+
+    /* -----------------------------------------
+       SLIDE 2
+       PLC & SCADA INTEGRATION
+       ----------------------------------------- */
+    .home-hero__image--system-2 {
+
+        transform:
+            translate3d(2%, -2%, 0) scale(1.22) !important;
+    }
+
+
+    /* -----------------------------------------
+       SLIDE 3
+       INDUSTRIAL PROCESS CONTROL
+       ----------------------------------------- */
+    .home-hero__image--system-3 {
+
+        transform:
+            translate3d(3%, -2%, 0) scale(1.22) !important;
+    }
+
+
+    /* -----------------------------------------
+       OVERLAY
+       ----------------------------------------- */
 
     .home-hero__overlay {
 
@@ -2004,25 +2093,6 @@
     /* -----------------------------------------
        CONTAINER
        ----------------------------------------- */
-
-    /* .home-hero__container {
-
-        width:
-            calc(100% - 40px);
-
-        min-height:
-            calc(100svh - 70px);
-
-        height:
-            calc(100svh - 70px);
-
-        align-items:
-            center;
-
-        padding:
-            65px 0;
-    } */
-
 
     .home-hero__content {
 
@@ -2169,6 +2239,7 @@
 
 
     .home-hero__carousel-arrow {
+
         width:
             32px;
 
@@ -2228,7 +2299,6 @@
 }
 
 
-
 /* =========================================================
    MOBILE
    ========================================================= */
@@ -2242,75 +2312,109 @@
     }
 
 
+    /* -----------------------------------------
+       HERO IMAGE
+       ----------------------------------------- */
+
     .home-hero__image {
 
         object-position:
             66% center;
     }
 
+
+    /* =========================================================
+       FIRST 3 SYSTEM HERO IMAGES
+       ========================================================= */
+
+
     .home-hero__image--system {
 
-        object-fit:
-            contain;
 
-        object-position:
-            center center;
+        width: 100%;
+        height: 100%;
 
-        filter:
-            none;
+        object-fit: fill;
 
-        transform:
-            none !important;
+        object-position: center center;
 
-        animation:
-            none;
+        filter: none;
+
+        background: #eef2f3;
+
+        animation: none !important;
+
+        transform: none !important;
+
+        transform-origin: center center;
+
+        will-change: auto;
     }
 
+
+    /* -----------------------------------------
+       SLIDE 1
+       ----------------------------------------- */
+
+    .home-hero__image--system-1 {
+
+        transform:
+            translate3d(3%, -2%, 0) scale(1.25) !important;
+    }
+
+    /* -----------------------------------------
+       SLIDE 2
+       ----------------------------------------- */
+
+
+
+
+    .home-hero__image--system-2 {
+
+        transform:
+            translate3d(2%, -2%, 0) scale(1.25) !important;
+    }
+
+
+    /* -----------------------------------------
+       SLIDE 3
+       ----------------------------------------- */
+
+    .home-hero__image--system-3 {
+
+        transform:
+            translate3d(3%, -2%, 0) scale(1.25) !important;
+    }
 
 
     /* -----------------------------------------
        HERO SIZE
        ----------------------------------------- */
 
-    /* .home-hero {
+    .home-hero {
 
         min-height:
-            calc(100svh - 64px);
+            100svh;
 
         height:
-            calc(100svh - 64px);
-    } */
-
-
-    .home-hero {
-        min-height: 100svh;
-        height: 100svh;
+            100svh;
     }
+
 
     .home-hero__container {
-        min-height: 100%;
-        height: 100%;
+
+        min-height:
+            100%;
+
+        height:
+            100%;
     }
+
+
 
     /* -----------------------------------------
        CONTAINER
        ----------------------------------------- */
-
-    /* .home-hero__container {
-
-        width:
-            calc(100% - 32px);
-
-        min-height:
-            calc(100svh - 64px);
-
-        height:
-            calc(100svh - 64px);
-
-        padding:
-            55px 0 58px;
-    } */
-
 
     .home-hero__content {
 
@@ -2463,6 +2567,10 @@
 }
 
 
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
 
 /* =========================================================
    VERY SMALL MOBILE
@@ -2477,12 +2585,20 @@
     }
 
 
+    /* -----------------------------------------
+       TITLE
+       ----------------------------------------- */
+
     .home-hero__title {
 
         font-size:
             2.55rem;
     }
 
+
+    /* -----------------------------------------
+       DESCRIPTION
+       ----------------------------------------- */
 
     .home-hero__description {
 
@@ -2493,6 +2609,10 @@
             0.8rem;
     }
 
+
+    /* -----------------------------------------
+       ACTIONS
+       ----------------------------------------- */
 
     .home-hero__actions {
 
@@ -2518,12 +2638,20 @@
     }
 
 
+    /* -----------------------------------------
+       CAROUSEL
+       ----------------------------------------- */
+
     .home-hero__carousel {
 
         bottom:
             40px;
     }
 
+
+    /* -----------------------------------------
+       SCROLL
+       ----------------------------------------- */
 
     .home-hero__foot {
 

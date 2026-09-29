@@ -250,12 +250,12 @@ const heroScenes = [
 /*
  * The hero deliberately moves slowly.
  *
- * 6 seconds gives the visitor enough time to actually
+ * 3 seconds gives the visitor enough time to actually
  * read the slide instead of feeling like a slideshow.
  */
 
 const HERO_INTERVAL =
-    6000;
+    3000;
 
 
 /*
@@ -758,14 +758,23 @@ const Home = () => {
                                     `${currentScene.eyebrow} - Bitsol Automation`
                                 }
 
+                                // className={`
+                                //     home-hero__image
+                                //     kenburns-right
+                                //     ${currentScene.isSystemVisual
+                                //         ? "home-hero__image--system"
+                                //         : ""
+                                //     }
+                                // `}
+
                                 className={`
-                                    home-hero__image
-                                    kenburns-right
-                                    ${currentScene.isSystemVisual
-                                        ? "home-hero__image--system"
+    home-hero__image
+    kenburns-right
+    ${currentScene.isSystemVisual
+                                        ? `home-hero__image--system home-hero__image--system-${currentScene.id}`
                                         : ""
                                     }
-                                `}
+`}
                             />
 
                         </motion.div>
