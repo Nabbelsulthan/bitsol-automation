@@ -97,107 +97,298 @@ export default async function handler(req, res) {
             subject:
                 `New Website Enquiry - ${cleanRequirement}`,
 
+
             html: `
-                <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
 
-                <html>
-                <head>
-                    <meta charset="UTF-8" />
-                    <title>New Bitsol Website Enquiry</title>
-                </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <body
+    <title>New Website Enquiry - Bitsol Automation</title>
+</head>
+
+<body style="
+    margin:0;
+    padding:0;
+    width:100%;
+    background:#FFFAF3;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#222222;
+">
+
+    <!-- OUTER WRAPPER -->
+    <table
+        width="100%"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+            width:100%;
+            background:#FFFAF3;
+            margin:0;
+            padding:0;
+        "
+    >
+
+        <tr>
+
+            <td
+                align="center"
+                style="
+                    padding:40px 16px;
+                "
+            >
+
+                <!-- MAIN CONTAINER -->
+                <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
                     style="
-                        margin:0;
-                        padding:0;
-                        background:#f4f5f2;
-                        font-family:Arial,Helvetica,sans-serif;
-                        color:#171a18;
+                        max-width:720px;
+                        width:100%;
+                        background:#FFFFFF;
+                        border:1px solid #E8E3DE;
                     "
                 >
 
-                    <div
-                        style="
-                            max-width:700px;
-                            margin:40px auto;
-                            background:#ffffff;
-                            border:1px solid #e5e7e5;
-                            border-radius:12px;
-                            overflow:hidden;
-                        "
-                    >
+                    <!-- =================================================
+                         TOP BRAND BAR
+                         ================================================= -->
 
-                        <div
+                    <tr>
+
+                        <td
                             style="
-                                padding:28px 32px;
-                                background:#101311;
-                                color:#ffffff;
+                                background:#111111;
+                                padding:20px 28px;
                             "
                         >
-                            <div
-                                style="
-                                    font-size:12px;
-                                    letter-spacing:2px;
-                                    font-weight:bold;
-                                    color:#b7d62f;
-                                "
-                            >
-                                BITSOL AUTOMATION
-                            </div>
-
-                            <h1
-                                style="
-                                    margin:12px 0 0;
-                                    font-size:26px;
-                                    line-height:1.2;
-                                "
-                            >
-                                New Website Enquiry
-                            </h1>
-                        </div>
-
-
-                        <div style="padding:32px;">
-
-                            <div
-                                style="
-                                    margin-bottom:26px;
-                                    padding:16px 18px;
-                                    background:#f7f8f5;
-                                    border-left:4px solid #b7d62f;
-                                    border-radius:6px;
-                                "
-                            >
-                                <strong>
-                                    Requirement
-                                </strong>
-
-                                <div
-                                    style="
-                                        margin-top:6px;
-                                        color:#555;
-                                    "
-                                >
-                                    ${escapeHtml(cleanRequirement)}
-                                </div>
-                            </div>
-
 
                             <table
                                 width="100%"
                                 cellpadding="0"
                                 cellspacing="0"
+                                border="0"
+                            >
+
+                                <tr>
+
+                                    <td
+                                        style="
+                                            color:#F62440;
+                                            font-size:13px;
+                                            font-weight:700;
+                                            letter-spacing:2px;
+                                            text-transform:uppercase;
+                                        "
+                                    >
+                                        BITSOL AUTOMATION
+                                    </td>
+
+                                    <td
+                                        align="right"
+                                        style="
+                                            color:#F5F5F5;
+                                            font-size:11px;
+                                            font-weight:600;
+                                            letter-spacing:1px;
+                                            text-transform:uppercase;
+                                        "
+                                    >
+                                        WEBSITE ENQUIRY
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         RED ACCENT
+                         ================================================= -->
+
+                    <tr>
+
+                        <td
+                            style="
+                                height:5px;
+                                background:#F62440;
+                                font-size:0;
+                                line-height:0;
+                            "
+                        >
+                            &nbsp;
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         HEADER
+                         ================================================= -->
+
+                    <tr>
+
+                        <td
+                            style="
+                                padding:38px 40px 30px 40px;
+                                background:#FFFFFF;
+                            "
+                        >
+
+                            <div
                                 style="
-                                    border-collapse:collapse;
+                                    color:#6B6B6B;
+                                    font-size:11px;
+                                    font-weight:700;
+                                    letter-spacing:2px;
+                                    text-transform:uppercase;
+                                    margin-bottom:12px;
+                                "
+                            >
+                                PROJECT ENQUIRY
+                            </div>
+
+
+                            <div
+                                style="
+                                    color:#111111;
+                                    font-size:34px;
+                                    line-height:1.1;
+                                    font-weight:700;
+                                    letter-spacing:-1px;
+                                "
+                            >
+                                New Website Enquiry
+                            </div>
+
+
+                            <!-- REQUIREMENT -->
+                            <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                style="
+                                    margin-top:24px;
+                                    width:100%;
                                 "
                             >
 
                                 <tr>
+
                                     <td
                                         style="
-                                            padding:10px 0;
-                                            width:140px;
-                                            color:#777;
+                                            border-left:4px solid #F62440;
+                                            background:#FFFAF3;
+                                            padding:14px 18px;
+                                        "
+                                    >
+
+                                        <div
+                                            style="
+                                                color:#111111;
+                                                font-size:11px;
+                                                font-weight:700;
+                                                letter-spacing:1px;
+                                                text-transform:uppercase;
+                                                margin-bottom:5px;
+                                            "
+                                        >
+                                            Requirement
+                                        </div>
+
+                                        <div
+                                            style="
+                                                color:#222222;
+                                                font-size:16px;
+                                                font-weight:600;
+                                            "
+                                        >
+                                            ${escapeHtml(cleanRequirement)}
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         DETAILS SECTION
+                         ================================================= -->
+
+                    <tr>
+
+                        <td
+                            style="
+                                padding:0 40px 36px 40px;
+                            "
+                        >
+
+                            <!-- SECTION TITLE -->
+
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                style="
+                                    border-bottom:1px solid #E8E3DE;
+                                "
+                            >
+
+                                <tr>
+
+                                    <td
+                                        style="
+                                            padding:0 0 14px 0;
+                                            color:#111111;
+                                            font-size:13px;
+                                            font-weight:700;
+                                            letter-spacing:1.5px;
+                                            text-transform:uppercase;
+                                        "
+                                    >
+                                        Contact Details
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+
+                            <!-- NAME -->
+
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                style="
+                                    border-bottom:1px solid #F0ECE7;
+                                "
+                            >
+
+                                <tr>
+
+                                    <td
+                                        width="35%"
+                                        style="
+                                            padding:17px 10px 17px 0;
+                                            color:#6B6B6B;
                                             font-size:13px;
                                         "
                                     >
@@ -206,20 +397,41 @@ export default async function handler(req, res) {
 
                                     <td
                                         style="
-                                            padding:10px 0;
+                                            padding:17px 0;
+                                            color:#111111;
+                                            font-size:14px;
                                             font-weight:600;
                                         "
                                     >
                                         ${escapeHtml(cleanName)}
                                     </td>
+
                                 </tr>
 
+                            </table>
+
+
+                            <!-- COMPANY -->
+
+                            ${cleanCompany
+                    ? `
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                style="
+                                    border-bottom:1px solid #F0ECE7;
+                                "
+                            >
 
                                 <tr>
+
                                     <td
+                                        width="35%"
                                         style="
-                                            padding:10px 0;
-                                            color:#777;
+                                            padding:17px 10px 17px 0;
+                                            color:#6B6B6B;
                                             font-size:13px;
                                         "
                                     >
@@ -228,22 +440,42 @@ export default async function handler(req, res) {
 
                                     <td
                                         style="
-                                            padding:10px 0;
+                                            padding:17px 0;
+                                            color:#111111;
+                                            font-size:14px;
+                                            font-weight:600;
                                         "
                                     >
-                                        ${escapeHtml(
-                                            cleanCompany ||
-                                            "Not provided"
-                                        )}
+                                        ${escapeHtml(cleanCompany)}
                                     </td>
+
                                 </tr>
 
+                            </table>
+                            `
+                    : ""
+                }
+
+
+                            <!-- EMAIL -->
+
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                style="
+                                    border-bottom:1px solid #F0ECE7;
+                                "
+                            >
 
                                 <tr>
+
                                     <td
+                                        width="35%"
                                         style="
-                                            padding:10px 0;
-                                            color:#777;
+                                            padding:17px 10px 17px 0;
+                                            color:#6B6B6B;
                                             font-size:13px;
                                         "
                                     >
@@ -252,27 +484,48 @@ export default async function handler(req, res) {
 
                                     <td
                                         style="
-                                            padding:10px 0;
+                                            padding:17px 0;
+                                            font-size:14px;
                                         "
                                     >
+
                                         <a
                                             href="mailto:${escapeHtml(cleanEmail)}"
                                             style="
-                                                color:#315f9d;
+                                                color:#F62440;
                                                 text-decoration:none;
+                                                font-weight:600;
                                             "
                                         >
                                             ${escapeHtml(cleanEmail)}
                                         </a>
+
                                     </td>
+
                                 </tr>
 
+                            </table>
+
+
+                            <!-- PHONE -->
+
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                style="
+                                    border-bottom:1px solid #F0ECE7;
+                                "
+                            >
 
                                 <tr>
+
                                     <td
+                                        width="35%"
                                         style="
-                                            padding:10px 0;
-                                            color:#777;
+                                            padding:17px 10px 17px 0;
+                                            color:#6B6B6B;
                                             font-size:13px;
                                         "
                                     >
@@ -281,69 +534,252 @@ export default async function handler(req, res) {
 
                                     <td
                                         style="
-                                            padding:10px 0;
+                                            padding:17px 0;
+                                            color:#111111;
+                                            font-size:14px;
+                                            font-weight:600;
                                         "
                                     >
-                                        ${escapeHtml(cleanPhone)}
+                                        +91 ${escapeHtml(cleanPhone)}
                                     </td>
+
                                 </tr>
 
                             </table>
 
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         PROJECT DETAILS
+                         ================================================= -->
+
+                    <tr>
+
+                        <td
+                            style="
+                                padding:32px 40px;
+                                background:#FFFAF3;
+                                border-top:1px solid #E8E3DE;
+                                border-bottom:1px solid #E8E3DE;
+                            "
+                        >
 
                             <div
                                 style="
-                                    margin-top:28px;
-                                    padding-top:24px;
-                                    border-top:1px solid #e5e7e5;
+                                    color:#111111;
+                                    font-size:13px;
+                                    font-weight:700;
+                                    letter-spacing:1.5px;
+                                    text-transform:uppercase;
+                                    margin-bottom:16px;
                                 "
                             >
-
-                                <div
-                                    style="
-                                        margin-bottom:10px;
-                                        font-size:13px;
-                                        font-weight:bold;
-                                        color:#777;
-                                        letter-spacing:1px;
-                                    "
-                                >
-                                    PROJECT DETAILS
-                                </div>
-
-                                <div
-                                    style="
-                                        font-size:15px;
-                                        line-height:1.7;
-                                        white-space:pre-wrap;
-                                        color:#303330;
-                                    "
-                                >
-                                    ${escapeHtml(cleanMessage)}
-                                </div>
-
+                                Project Details
                             </div>
 
-                        </div>
+
+                            <div
+                                style="
+                                    color:#222222;
+                                    font-size:15px;
+                                    line-height:1.75;
+                                    white-space:pre-line;
+                                "
+                            >
+                                ${escapeHtml(cleanMessage)}
+                            </div>
+
+                        </td>
+
+                    </tr>
 
 
-                        <div
+                    <!-- =================================================
+                         ACTION AREA
+                         ================================================= -->
+
+                    <tr>
+
+                        <td
                             style="
-                                padding:18px 32px;
-                                background:#f7f8f5;
-                                color:#888;
-                                font-size:11px;
+                                padding:34px 40px;
                             "
                         >
-                            Submitted through
-                            bitsol.in contact form
-                        </div>
 
-                    </div>
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                            >
 
-                </body>
-                </html>
-            `,
+                                <tr>
+
+                                    <td>
+
+                                        <div
+                                            style="
+                                                color:#6B6B6B;
+                                                font-size:11px;
+                                                font-weight:600;
+                                                letter-spacing:1px;
+                                                text-transform:uppercase;
+                                                margin-bottom:7px;
+                                            "
+                                        >
+                                            Submitted through
+                                        </div>
+
+                                        <div
+                                            style="
+                                                color:#111111;
+                                                font-size:14px;
+                                                font-weight:600;
+                                            "
+                                        >
+                                            bitsol.in/contactus.html
+                                        </div>
+
+                                    </td>
+
+
+                                    <td
+                                        align="right"
+                                    >
+
+                                        <a
+                                            href="mailto:${escapeHtml(cleanEmail)}"
+                                            style="
+                                                display:inline-block;
+                                                padding:13px 20px;
+                                                background:#F62440;
+                                                color:#FFFFFF;
+                                                text-decoration:none;
+                                                font-size:12px;
+                                                font-weight:700;
+                                                letter-spacing:0.5px;
+                                                text-transform:uppercase;
+                                            "
+                                        >
+                                            Reply to Enquiry
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         FOOTER
+                         ================================================= -->
+
+                    <tr>
+
+                        <td
+                            style="
+                                padding:22px 40px;
+                                background:#111111;
+                            "
+                        >
+
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                            >
+
+                                <tr>
+
+                                    <td
+                                        style="
+                                            color:#F5F5F5;
+                                            font-size:11px;
+                                            line-height:1.5;
+                                        "
+                                    >
+                                        Bitsol Automation
+                                        <br>
+                                        Industrial Automation & Engineering
+                                    </td>
+
+
+                                    <td
+                                        align="right"
+                                        style="
+                                            color:#6B6B6B;
+                                            font-size:10px;
+                                            line-height:1.5;
+                                        "
+                                    >
+                                        bitsol.in
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <!-- END MAIN CONTAINER -->
+
+
+                <!-- =====================================================
+                     EMAIL DISCLAIMER
+                     ===================================================== -->
+
+                <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    style="
+                        max-width:720px;
+                    "
+                >
+
+                    <tr>
+
+                        <td
+                            align="center"
+                            style="
+                                padding:18px 20px 0 20px;
+                                color:#999999;
+                                font-size:10px;
+                                line-height:1.5;
+                            "
+                        >
+                            This enquiry was submitted through the
+                            Bitsol Automation website.
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
+`,
         });
 
         // -----------------------------------------
